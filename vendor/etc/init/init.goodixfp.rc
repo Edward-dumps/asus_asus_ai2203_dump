@@ -1,0 +1,52 @@
+#
+# rc file for goodix fingerprint
+#
+
+on post-fs-data
+    mkdir /data/vendor/goodix 0777 system system
+    mkdir /data/gf_data 0777 system system
+    setprop ro.hardware.fp_position front_woh
+    setprop ro.hardware.fp_shape round
+    setprop persist.sys.fp.navigation 1
+
+service fp_ver /vendor/bin/sh /vendor/bin/gf_ver.sh
+    class core
+    oneshot
+    disabled
+    seclabel u:r:asus_fingerprint:s0
+
+on property:vendor.goodix.service.ready=1
+    start fp_ver
+
+service fp_cali_status /vendor/bin/cali_check
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:asus_fingerprint:s0
+
+on property:vendor.fp.cali.factory.check=1
+    start fp_cali_status
+
+service fp_shipping_cali_status /vendor/bin/cali_shipping_check
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:asus_fingerprint:s0
+
+on property:vendor.fp.cali.shipping.check=1
+    start fp_shipping_cali_status
+
+service fp_cali_mv /vendor/bin/fp_cali_mv
+    class core
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:asus_fingerprint:s0
+
+on property:sys.fp.mv.file=1
+    start fp_cali_mv

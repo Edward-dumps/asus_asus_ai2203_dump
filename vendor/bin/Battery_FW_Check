@@ -1,0 +1,8 @@
+result=0
+result=`cat /sys/class/power_supply/bms/asus_get_gauge_FW_compare`
+result=`expr $((result))`
+if [ "$result" == "1" ]; then
+    echo "TRUE"
+else
+    echo "FALSE"
+fi

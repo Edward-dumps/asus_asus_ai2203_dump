@@ -1,0 +1,18 @@
+#!/vendor/bin/sh
+
+vbus=`cat /sys/devices/platform/11d04000.i2c/i2c-7/7-0053/rt9490-chg.1.auto/vbus_side_btm`
+if [ "$vbus" -ne "1" ]; then
+	caps=`cat /sys/class/tcpc/type_c_port0/caps_info`
+elif [ "$vbus" -ne "2" ]; then
+	caps=`cat /sys/class/tcpc/type_c_port1/caps_info`
+else
+	echo None
+fi
+
+emarkcheck=`echo $caps | grep 3250`
+
+if [ -z "$emarkcheck" ]; then
+	echo 0
+else
+	echo 1
+fi

@@ -1,0 +1,4 @@
+service vendor.asus.vibratorcontrol2 /vendor/bin/hw/vendor.asus.hardware2.vibratorcontrol2.service
+    class hal
+    user system
+    group system input

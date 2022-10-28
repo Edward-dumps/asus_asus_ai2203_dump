@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--Copyright 2019-2021 (c) Pixelworks Inc. All Rightes Reserved.
+Pixelworks Inc. Company Confidential Strictly Private-->
+<SoftIrisData>
+
+<Information Version="201" Panel="0x30003"/>
+
+<GamutBlend Id="0" Type="10">
+	<BlendCurve Id="0" MaxLevel="1023" BrightnessMode="3">
+		<Point Level="0">
+			<SubGamut Percentage="0" Index="0" />
+			<SubGamut Percentage="100" Index="1" />
+		</Point>
+		<Point Level="224">
+			<SubGamut Percentage="0" Index="0" />
+			<SubGamut Percentage="100" Index="1" />
+		</Point>
+		<Point Level="1023">
+			<SubGamut Percentage="100" Index="0" />
+			<SubGamut Percentage="0" Index="1" />
+		</Point>
+	</BlendCurve>
+</GamutBlend>
+
+<GammaBlend Id="1" Type="8" MaxLevel="2" BrightnessMode="8">
+<Length>1024</Length>
+<Folder>gc_blend_offset_folder</Folder>
+</GammaBlend>
+
+</SoftIrisData>

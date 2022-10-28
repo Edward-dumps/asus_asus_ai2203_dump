@@ -1,0 +1,47 @@
+#################################################################
+#                                                               #
+#                     ASUS SENSOR USER RC                       #
+#                                                               #
+#################################################################
+
+
+on init
+
+
+
+on fs
+
+
+
+on post-fs
+
+
+
+on boot
+    chmod 0766 /sys/devices/virtual/sensors/lsensor/cal
+    chmod 0766 /sys/devices/virtual/sensors/psensor/load_inf_cal
+    chmod 0766 /sys/devices/virtual/sensors/psensor/load_far_cal
+    chmod 0766 /sys/devices/virtual/sensors/psensor/load_near_cal
+    chmod 0766 /sys/devices/virtual/sensors/psensor/load_pocket_cal
+
+
+on post-fs-data
+
+
+
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+#             ALL sensor service (start)
+#
+#         ****DO NOT insert any on property***
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+
+
+
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+#         ALL sensor on property  (start)
+#
+#           ****DO NOT insert service***
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+
+
+

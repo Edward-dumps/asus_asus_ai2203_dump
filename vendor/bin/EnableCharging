@@ -1,0 +1,11 @@
+echo 0 > /sys/devices/platform/11d04000.i2c/i2c-7/7-0053/rt9490-chg.1.auto/input_suspend
+
+status=`cat /sys/devices/platform/11d04000.i2c/i2c-7/7-0053/rt9490-chg.1.auto/input_suspend`
+
+if [ "$status" -eq "0" ]; then
+	echo PASS
+
+else
+	echo FAIL
+
+fi

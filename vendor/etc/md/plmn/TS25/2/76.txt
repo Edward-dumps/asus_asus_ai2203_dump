@@ -1,0 +1,3 @@
+27601,One.al,One.al
+27602,Voda AL,Voda AL
+27603,ALBtelecom,ATmobile

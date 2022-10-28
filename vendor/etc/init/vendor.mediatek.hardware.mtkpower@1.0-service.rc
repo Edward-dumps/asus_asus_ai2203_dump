@@ -1,0 +1,6 @@
+service power-hal-1-0 /vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
+    class hal
+    capabilities NET_ADMIN
+    writepid  /dev/cpuset/system-background/tasks
+    user root
+    group system readproc wifi media media_rw camera audio

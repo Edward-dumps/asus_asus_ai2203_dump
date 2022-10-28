@@ -1,0 +1,7 @@
+service auralight-hal-1-0 /vendor/bin/hw/vendor.asus.hardware.auralight@1.0-service
+    interface vendor.asus.hardware.auralight@1.0::IAuraLight default
+    class hal
+    user system
+    group system
+    # shutting off lights while powering-off
+    shutdown critical

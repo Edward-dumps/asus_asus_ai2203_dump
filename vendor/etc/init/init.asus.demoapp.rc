@@ -1,0 +1,41 @@
+on post-fs
+
+# mount APD
+	write /proc/bootprof "ASUS RC : mount /APD"
+	wait /dev/block/by-name/APD
+	exec /system/bin/e2fsck -p /dev/block/by-name/APD
+	mount ext4 /dev/block/by-name/APD /APD rw wait noatime
+	chown system system /APD
+	chmod 0775 /APD
+	restorecon_recursive /APD
+
+# mount ADF
+	write /proc/bootprof "ASUS RC : mount /ADF"
+	wait /dev/block/by-name/ADF
+	exec /system/bin/e2fsck -p /dev/block/by-name/ADF
+	mount ext4 /dev/block/by-name/ADF /ADF rw wait noatime
+	chown system system /ADF
+	chmod 0775 /ADF
+	restorecon_recursive /ADF
+
+on early-boot
+	start mount_apd
+
+service mount_apd /vendor/bin/sh /vendor/bin/mount_apd.sh
+	user root
+	group root
+	disabled
+	oneshot
+
+on property:sys.boot_completed=1
+	setprop persist.sys.enableAPD 0
+
+on property:persist.sys.enableAPD=1
+	write /proc/bootprof "ASUS RC : on property mount /APD"
+	wait /dev/block/by-name/APD
+	exec /system/bin/e2fsck -p /dev/block/by-name/APD
+	mount ext4 /dev/block/by-name/APD /APD rw wait noatime
+	#start mount_apd
+
+on property:persist.sys.enableAPD=0
+	umount /APD

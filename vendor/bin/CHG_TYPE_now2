@@ -1,0 +1,18 @@
+vbus=`cat /sys/devices/platform/11d04000.i2c/i2c-7/7-0053/rt9490-chg.1.auto/vbus_side_btm`
+if [ "$vbus" -ne "2" ]; then
+	echo None
+	exit
+fi
+
+chgtype=`cat /sys/devices/virtual/extcon-asus/quick_charging/state`
+bctype=`cat /sys/class/power_supply/rt9490-chg.1.auto/type`
+
+if [ "$chgtype" == "7" ]; then
+	echo PD_PPS_65W
+elif [ "$chgtype" == "5" ]; then
+	echo PD_PPS_30W
+elif [ "$bctype" = "USB_DCP" ]; then
+	echo DCP
+else
+	echo None
+fi

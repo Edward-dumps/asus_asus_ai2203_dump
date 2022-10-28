@@ -1,0 +1,22 @@
+#!/system/bin/sh
+
+status=`getprop ro.boot.id.prj`
+
+case $status in
+	"0" )
+		PROJECT='AI2203_Entry'
+		echo $PROJECT
+		;;
+	"1" )
+		PROJECT='AI2203_Pro'
+		echo $PROJECT
+		;;
+	"2" )
+		PROJECT='AI2203_Ultimate'
+		echo $PROJECT
+		;;
+	* )
+		PROJECT='Unknown'
+		echo $PROJECT
+		;;
+esac

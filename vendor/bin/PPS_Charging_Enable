@@ -1,0 +1,14 @@
+echo 0x0e > /d/nu2205_standalone/addr
+reg1=`cat /d/nu2205_standalone/addr`
+reg=`cat /d/nu2205_standalone/data`
+
+# 1:success 0:fail 2: other error
+if [ "$reg1" == "0x0e" ]; then
+	if [ "$reg" == "0x86" ]; then
+		echo 1
+	else
+		echo 0
+	fi
+else
+	echo 0
+fi

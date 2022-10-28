@@ -1,0 +1,387 @@
+#system/core/libcutils/fs_config.c
+#device/qcom/msm8998/msm8998.mk
+# init.asus.debug.rc
+#	Add by Thomas Chu
+#
+on fs
+    write /dev/kmsg mount_asdf
+    mkdir /asdf
+#    wait /dev/block/bootdevice/by-name/asdf
+#    exec /system/bin/e2fsck -p /dev/block/bootdevice/by-name/asdf
+    mount ext4 /dev/block/bootdevice/by-name/asdf /asdf nosuid nodev noatime barrier=1 > /dev/kmsg 2>/dev/kmsg
+    chmod 0777 /asdf/ASDF
+    restorecon_recursive asdf
+    restorecon asdf
+
+on boot
+    chmod 0444 /proc/cmdline
+
+
+on post-fs-data
+# ASUS_BSP +++ [thomas]Add logcat_log folder
+	mkdir  /data/logcat_log 0777 system system
+	restorecon /data/everbootup
+	start logcat-asdf
+	start logcat-crash
+	start writeversion
+
+    chmod 0777 /proc/asusdebug
+
+
+    mkdir /data/log
+    mkdir /data/anr
+    mkdir /data/tombstones
+    mkdir -p  /data/media/asus_log
+   
+    chown system system /data/log
+    chown system system /data/anr
+    chown system system /data/tombstones
+    chown sdcard_rw sdcard_rw /data/media/asus_log
+   
+    chmod 0777 /asdf
+    chmod 0777 /data/anr
+    chmod 0777 /data/tombstones
+    chmod 0757 /data/media/asus_log
+    chmod 0777 /asdf/lastlogcat.txt
+    chmod 0777 /asdf/lastlogcat.txt.1
+    
+#enable zram
+    swapon_all fstab.qcom
+    chmod 0666 /asdf/ASUSEvtlog.txt
+    chmod 0666 /asdf/ASUSEvtlog_old.txt
+
+#on property:vold.decrypt=trigger_restart_framework
+#    start check-datalog
+
+service writeversion /vendor/bin/init.asus.writeversion.sh
+    class late_start
+    user root
+    group root
+    seclabel u:r:savelogmtp:s0
+    disabled
+    oneshot
+
+
+
+
+
+service asus_kernelmsg /system/vendor/bin/init.asus.kernelmessage.sh
+	class late_start
+    user root
+    group root
+    disabled
+    oneshot
+	seclabel u:r:savelogmtp:s0	
+
+on property:persist.vendor.asus.kernelmessage=0
+	start asus_kernelmsg
+
+on property:persist.vendor.asus.kernelmessage=7
+	start asus_kernelmsg
+
+on property:debug.asus.clearlog=1 
+	start cscclearlog 
+	
+
+on property:sys.boot_completed=1
+    start piq_sh
+    start pmodechange
+    stop logcat-asdf
+   start asus_change_binder_debug
+   start cpMTKlog
+	#start last-logcat
+
+
+on property:ro.boot.startlastlog=1
+	start last-logcat
+
+
+service savelogmtp /system/vendor/bin/savelogmtp.sh
+    class late_start
+    user root
+    group root shell system media_rw sdcard_rw wifi
+    oneshot
+    disabled
+seclabel u:r:savelogmtp:s0
+# ASUS_BSP+++ [thomas]Add savelogmtp services
+
+
+service check-datalog /system/bin/sh /system/bin/init.asus.checkdatalog.sh
+    class main
+    user root 
+    group system
+    oneshot
+seclabel u:r:dumpstate:s0
+
+on property:persist.vendor.asus.startlog=1
+    setprop logd.klogd true
+    start check_last
+	start check-datalog
+
+on property:persist.vendor.asus.startlog=0
+    setprop logd.klogd false
+    start check_last
+	start check-datalog
+
+
+#on property:persist.vendor.asus.startlog=1 && property:vold.decrypt=trigger_restart_framework
+#	start check-datalog
+#on property:persist.vendor.asus.startlog=0 && property:vold.decrypt=trigger_restart_framework
+#	start check-datalog
+
+#log_main log_system
+#service logcat /vendor/bin/asuslogcat   -b main -b system -b crash -b kernel -r 10000  -v threadtime -f /data/logcat_log/logcat.txt 
+#	user root
+#	group root
+#seclabel u:r:savelogmtp:s0
+
+#log_radio
+#service logcat-radio /vendor/bin/asuslogcat -r 10000 -b radio -n 10 -v time -f /data/logcat_log/logcat-radio.txt
+#	user root
+#	group root
+#seclabel u:r:savelogmtp:s0
+
+#log_events
+#service logcat-events /vendor/bin/asuslogcat -r 10000 -b events -n 10 -v threadtime -f /data/logcat_log/logcat-events.txt
+#	user root
+#	group root
+#seclabel u:r:savelogmtp:s0
+
+service logcat-monkey /vendor/bin/asuslogcat -b kernel -b main -b system -b crash -r 100000 -n 50 -v threadtime -f /data/logcat_log/monkey_logcat.txt
+	disabled
+seclabel u:r:savelogmtp:s0
+
+#service logcat-net /vendor/bin/asuslogcat -r 10000 -b main -s TcpSocketMonitor TcpSocketLog -n 3 -v threadtime -f /data/logcat_log/logcat-net.txt
+#    class late_start
+#    user root
+#    group root
+#    disabled
+#seclabel u:r:savelogmtp:s0
+
+#service last-logcat /system/vendor/bin/sh /vendor/bin/init.asus.last_logcat.sh
+#	user root
+#	group root
+#	seclabel u:r:savelogmtp:s0
+
+#log_main to asdf folder
+service logcat-asdf /vendor/bin/asuslogcat -b kernel -b main -b system  -b crash -r 10000 -n 2 -v threadtime -f /asdf/asdf-logcat.txt
+    disabled
+	user root
+	group root logd system
+    oneshot
+	seclabel u:r:savelogmtp:s0
+
+service logcat-crash /vendor/bin/asuslogcat -b crash -r 1000 -n 2 -v threadtime -v printable -f /asdf/logcat-crash.txt
+    disabled
+    oneshot
+    seclabel u:r:savelogmtp:s0
+
+service last-logcat /vendor/bin/asuslogcat -b all -r 1000 -n 1 -v threadtime -v printable -f /asdf/lastlogcat.txt
+    disabled
+    oneshot
+    seclabel u:r:savelogmtp:s0
+
+#ASUS_BSP Austin_Tseng : for charger mode logcat +++
+service logcat-charger /vendor/bin/asuslogcat -b kernel -b main -b system  -b crash -r 10000 -n 1 -v threadtime -f /asdf/charger-logcat.txt
+    disabled
+seclabel u:r:savelogmtp:s0
+#ASUS_BSP Austin_Tseng : for charger mode logcat +++
+
+service sendevtlog /system/vendor/bin/sh /system/vendor/bin/sendevtlog.sh
+    class late_start
+    oneshot
+    disabled
+
+service sendlogcatlog /system/vendor/bin/sh /system/vendor/bin/sendlogcatlog.sh
+    class late_start
+    oneshot
+    disabled	
+
+service check_last /system/vendor/bin/sh /system/vendor/bin/init.asus.check_last.sh
+    user root
+    disabled
+    oneshot
+seclabel u:r:savelogmtp:s0
+
+
+on property:persist.vendor.radio.check_asdf=*
+    start asus_chk_asdf
+#ASUS_BSP: [ASDF] Check for Abnormal Shutdown Logs ---
+
+
+    
+	
+
+
+service savelogscomplete  /system/bin/sh /system/vendor/bin/savelogs_complete.sh
+	user root
+        group root
+	oneshot
+	disabled
+seclabel u:r:savelogmtp:s0
+
+service asusdumpstate /system/bin/sh /system/vendor/bin/UTSdumpstate.sh
+	user root
+        group root
+	oneshot
+	disabled
+seclabel u:r:savelogmtp:s0
+
+
+on property:persist.asus.savelogs.complete=1
+	start savelogscomplete
+on property:persist.vendor.asus.savelogs=*
+	start savelogs
+on property:persist.asus.dumpstate=1
+	start asusdumpstate
+
+
+
+
+on property:sys.attempting_factory_reset=true
+       write /proc/asusdebug savelastshutdown
+
+
+
+
+
+# ASUS BSP: Cheryl Chen - Enable logcat for OOB +++
+on property:ro.boot.logcat=y
+	setprop sys.asus.check-data.caller "OOB"
+	start checkdatalog-oob
+
+service checkdatalog-oob /system/vendor/bin/sh /system/vendor/bin/init.asus.checkdatalog.sh
+	class late_start
+	user system
+	disabled
+	oneshot
+	seclabel u:r:system_app:s0
+
+# Main log for OOB
+service logcat-oob /system/bin/logcat -b kernel -b main -b system -b crash -r 10000 -n 3 -v threadtime -f /data/logcat_log/logcat-oob.txt
+	class late_start
+	user system
+	disabled
+	seclabel u:r:system_app:s0
+
+# Radio log for OOB
+service logcat-radio-oob /system/bin/logcat -r 10000 -b radio -n 3 -v time -f /data/logcat_log/logcat-radio-oob.txt
+	class late_start
+	user system
+	disabled
+	seclabel u:r:system_app:s0
+
+# Events log for OOB
+service logcat-event-oob /system/bin/logcat -r 10000 -b events -n 3 -v threadtime -f /data/logcat_log/logcat-event-oob.txt
+	class late_start
+	user system
+	disabled
+	seclabel u:r:system_app:s0
+# ASUS BSP: Cheryl Chen - Enable logcat for OOB ---
+
+service procrankdump /system/vendor/bin/sh /system/vendor/bin/procrankdump.sh
+    user root
+    group root
+    disabled
+    oneshot
+	seclabel u:r:savelogmtp:s0
+	
+service cscclearlog /system/vendor/bin/sh /system/vendor/bin/cscclearlog.sh
+    user root
+    group root
+    disabled
+    oneshot
+	seclabel u:r:savelogmtp:s0
+
+
+service AsusUpdateAttestationKey /system/vendor/bin/sh /vendor/bin/AsusUpdateAttestationKey.sh
+    user root
+    group root
+    disabled
+    seclabel u:r:savelogmtp:s0
+    oneshot
+
+service saveTZlog /system/vendor/bin/sh /vendor/bin/saveTZQSEE.sh
+    user root
+    group root
+    shutdown critical
+   seclabel u:r:savelogmtp:s0
+
+
+service qcom_dcc_debug /system/vendor/bin/sh /vendor/bin/init.qti.kernel.debug-lahaina.sh
+	user root
+	group root
+	disabled
+    seclabel u:r:savelogmtp:s0
+    oneshot
+
+service asus_zram /system/vendor/bin/sh /vendor/bin/init.asus.zram.sh
+	user root
+	group root
+	disabled
+    seclabel u:r:savelogmtp2:s0
+    oneshot
+
+service cpMTKlog /vendor/bin/sh /vendor/bin/captureMTKlog.sh
+	user root
+	group root
+	disabled
+    seclabel u:r:savelogmtp:s0
+    oneshot
+
+
+# ASUSLogTool - Binder Debug
+on property:persist.vendor.asus.binderdebug.enable=*
+    start asus_change_binder_debug
+
+service asus_change_binder_debug /vendor/bin/sh /vendor/bin/init.asus.changebinder.sh
+    class main
+    user root 
+    group system
+    oneshot
+    seclabel u:r:savelogmtp:s0
+
+service pmodechange /system/vendor/bin/sh /vendor/bin/pmodechange.sh
+	user root
+	group root system
+	disabled
+        oneshot
+    seclabel u:r:savelogmtp:s0
+
+on property:persist.vendor.zram.enable=*
+	start asus_zram
+
+on property:vendor.update.attestation.key=*
+	start AsusUpdateAttestationKey
+
+on property:ro.vendor.build.asus.version=*
+        write  /proc/asusevtlog ${ro.vendor.build.asus.version}
+
+# ASUS_BSP Wei +++
+# bugreport is triggered by developer options
+#service bugreport /system/bin/dumpstate -d -p -B -z \
+#        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
+#    class main
+#    disabled
+#    oneshot
+# ASUS_BSP Wei ---
+
+
+on property:ro.boot.ftm=1
+#ASUS_BSP +++ Gavin_Chang "Add Factory TestRecorder tool"
+    symlink /system/bin/TestRecorder /data/data/TestRecorder
+#ASUS_BSP --- Gavin_Chang "Add Factory TestRecorder tool"
+
+service saveaudio /vendor/bin/saveaudio.sh
+    user root
+    group root system audio sdcard_rw media_rw
+    disabled
+    oneshot
+    seclabel u:r:audio_dump:s0
+
+service audiologsizewatcher /vendor/bin/audiologsizewatcher.sh
+    user root
+    group root system audio sdcard_rw media_rw
+    disabled
+#    oneshot
+    seclabel u:r:audio_dump:s0

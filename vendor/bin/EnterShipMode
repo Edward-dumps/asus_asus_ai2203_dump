@@ -1,0 +1,2 @@
+echo 2 > /sys/devices/platform/11d04000.i2c/i2c-7/7-0053/rt9490-chg.1.auto/shipping_mode
+

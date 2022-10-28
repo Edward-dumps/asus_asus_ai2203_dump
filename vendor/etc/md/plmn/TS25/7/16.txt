@@ -1,0 +1,4 @@
+71606,Movistar,Movistar
+71610,CLARO PER,ClaroPER
+71615,Viettel Peru,VTP
+71617,Entel,Entel

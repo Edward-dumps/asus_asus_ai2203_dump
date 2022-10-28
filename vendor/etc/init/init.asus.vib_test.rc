@@ -1,0 +1,30 @@
+
+service vibcali_ship /vendor/bin/sh /vendor/bin/VibCali_ship.sh
+    seclabel u:r:asus_vibrator:s0
+    user root
+    group root
+    oneshot
+    disabled
+
+on property:ro.boot.ftm=1
+    symlink /vendor/bin/VibratorTest /data/data/VibratorTest
+    symlink /vendor/bin/VibCali /data/data/VibCali
+    chown system system /mnt/vendor/persist/vibrator/aw_cali.bin
+    chmod 0664 /sys/class/leds/vibrator/cali
+    chown system shell /sys/class/leds/vibrator/cali
+    chown system system /mnt/vendor/persist/vibrator/aw_rtp_cali.bin
+    chmod 0664 /sys/class/leds/vibrator/osc_cali
+    chown system shell /sys/class/leds/vibrator/osc_cali
+
+on property:vendor.vib.cali=0
+    write /dev/kmsg "[haptic] end ship calibration"
+
+on property:vendor.vib.cali=1
+    chown system system /mnt/vendor/persist/vibrator/aw_cali.bin
+    chmod 0664 /sys/class/leds/vibrator/cali
+    chown system shell /sys/class/leds/vibrator/cali
+    chown system system /mnt/vendor/persist/vibrator/aw_rtp_cali.bin
+    chmod 0664 /sys/class/leds/vibrator/osc_cali
+    chown system shell /sys/class/leds/vibrator/osc_cali
+    write /dev/kmsg "[haptic] start ship calibration"
+    start vibcali_ship

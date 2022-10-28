@@ -1,0 +1,25 @@
+#line 1 "vendor/asus/AI2203/sepolicy/service_contexts"
+#Vice WiFi
+vicewifi                                       u:object_r:vicewifi_service:s0
+
+#ASUS_BSP: Perf ++
+#tencent
+tcexternal              u:object_r:tcexternal_service:s0
+#solarcore_base_service  u:object_r:tcexternal_service:s0
+solarcore_base_service  u:object_r:sc_base_service:s0
+#ASUS_BSP: Perf --
+#line 1 "vendor/asus/AI2203/aw_haptic/sepolicy/service_contexts"
+vendor.asus.hardware2.vibratorcontrol2.IVibratorcontrol2/default                          u:object_r:hal_asusvibctrl2_service:s0
+#line 1 "vendor/asus/AI2203/fingerprint/sepolicy/service_contexts"
+# goodix_fingerprint_service
+com.goodix.FingerprintService					u:object_r:goodix_fingerprint_service:s0
+
+#line 1 "device/mediatek/sepolicy/bsp/non_plat/service_contexts"
+# ==============================================
+# MTK Policy Rule
+# ==============================================
+
+android.hardware.neuralnetworks.IDevice/mtk-gpu_shim    u:object_r:hal_neuralnetworks_service:s0
+android.hardware.neuralnetworks.IDevice/mtk-dsp_shim    u:object_r:hal_neuralnetworks_service:s0
+android.hardware.neuralnetworks.IDevice/mtk-mdla_shim   u:object_r:hal_neuralnetworks_service:s0
+android.hardware.neuralnetworks.IDevice/mtk-neuron_shim u:object_r:hal_neuralnetworks_service:s0

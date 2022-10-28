@@ -1,0 +1,15 @@
+2022/3/24 V1.0
+1. Update inparm for MTK DX-1 no HDR support
+2. Inparm1.txt~inParm12.txt same as ROG6 QCOM Native/sRGB/ASUS WP DCI-P3/DCIP3
+
+2022/3/29 V1.1
+1. chage all inparm line20 from 0->1 for MTK support
+2. Change from 603 line to 605 lines vesioin 604=605=2.2
+
+2022/4/27 V1.2
+1. Rebuid all inparm1~12 from new inparm 3.6.1 version
+2. All dE at max brightness is good now all under 0.7
+
+2022/4/27 V1.3
+1. Update iris_configs.xml to fix Native D75 and ASUS D75 color temperature incorrect issue
+2. Update inparm1 and inparm 3 line 22 to 0

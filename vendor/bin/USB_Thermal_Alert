@@ -1,0 +1,29 @@
+if [ -n "$1" ]; then
+	export CMD=$1
+else
+	echo "Please enter NTC parameter!"
+	exit
+fi
+
+asus_hwid=`getprop ro.boot.id.stage`
+
+if [ "$CMD" -eq "0" ]; then
+	status=`cat /sys/bus/iio/devices/iio:device1/in_voltage20_vin2_100k_input`
+elif [ "$CMD" -eq "1" ]; then
+	if [ "$asus_hwid" -lt "2" ]; then
+		status=`cat /sys/bus/iio/devices/iio:device1/in_voltage19_vin1_100k_input`
+	else
+		status=`cat /sys/bus/iio/devices/iio:device0/in_voltage21_vin3_100k_input`
+	fi
+else
+	echo "Invalid parameter!"
+	exit
+fi
+
+if [ "$status" -lt "200" ]; then
+	echo "FAIL"
+elif [ "$status" -gt "1110" ]; then
+	echo "FAIL"
+else
+	echo "PASS"
+fi

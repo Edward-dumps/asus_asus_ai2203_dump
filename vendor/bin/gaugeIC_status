@@ -1,0 +1,15 @@
+#!/vendor/bin/sh
+
+# 1:Gauge 0:Pmic 2:Other errors
+result=0
+result=`cat /sys/class/power_supply/battery/charge_full_design`
+if [ "5900000" -ge "$result" ] && [ "$result" -ge "5000000" ] ; then
+	echo 1
+	setprop vendor.battery.status.ICcheck 1
+elif [ "$result" -eq "6660000" ] ; then
+	echo 0
+	setprop vendor.battery.status.ICcheck 0
+else
+	echo 2
+	setprop vendor.battery.status.ICcheck 2
+fi

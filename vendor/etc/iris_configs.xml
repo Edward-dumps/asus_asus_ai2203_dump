@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!--Copyright 2019-2021 (c) Pixelworks Inc. All Rightes Reserved.
+Pixelworks Inc. Company Confidential Strictly Private-->
+<IrisData>
+
+<Information Version="210" />
+
+<GoldenFwPath>/vendor/etc</GoldenFwPath>
+<CalibratedFwPath>/mnt/vendor/nvcfg</CalibratedFwPath>
+
+<SoftIrisHDR10Enabled>false</SoftIrisHDR10Enabled>
+<SoftSdr2hdrMethod>0</SoftSdr2hdrMethod>
+
+<!--Pixelworks dimming function-->
+<PxlwDimmingEnabled>false</PxlwDimmingEnabled>
+<PxlwDimmingRate MaxLevel="1024" RefreshRate="60" />
+
+<!--Pixelworks Soft Iris color mode list-->
+<SoftIrisColorModeList DefaultMode="1000">
+</SoftIrisColorModeList>
+
+<!--MCF of primary display-->
+<McfList Display="0">
+	<McfCheck Index="0">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/mcfCheck.txt</McfCheck>
+	<McfCheck Index="1">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/mcfCheck_low.txt</McfCheck>
+	<Mcf Index="0" Type="7" Check="0">/mnt/vendor/nvcfg</Mcf>
+	<Mcf Index="1" Type="7" Check="1">/mnt/vendor/nvcfg</Mcf>
+</McfList>
+
+<!--Soft Iris panel calibration-->
+<InParmList Chip="5" Display="0" Version="100">
+	<InParm Index="1" SubIndex="0" ColorTemp="6500" Pcs="2" Mcf="0" Interpolation="10">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/inParm2.txt</InParm>
+	<InParm Index="1" SubIndex="1" ColorTemp="6500" Pcs="2" Mcf="1" Interpolation="10">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/inParm2.txt</InParm>
+	<InParm Index="4" SubIndex="0" ColorTemp="6500" Pcs="2" Mcf="0" Interpolation="10">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/inParm5.txt</InParm>
+	<InParm Index="4" SubIndex="1" ColorTemp="6500" Pcs="2" Mcf="1" Interpolation="10">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/inParm5.txt</InParm>
+	<InParm Index="7" SubIndex="0" ColorTemp="6500" Pcs="2" Mcf="0" Interpolation="10">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/inParm8.txt</InParm>
+	<InParm Index="7" SubIndex="1" ColorTemp="6500" Pcs="2" Mcf="1" Interpolation="10">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/inParm8.txt</InParm>
+	<InParm Index="10" SubIndex="0" ColorTemp="6500" Pcs="2" Mcf="0" Interpolation="10">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/inParm11.txt</InParm>
+	<InParm Index="10" SubIndex="1" ColorTemp="6500" Pcs="2" Mcf="1" Interpolation="10">/vendor/etc/inparm/irissoft/inparm_ai2203_mp/inParm11.txt</InParm>
+</InParmList>
+
+</IrisData>

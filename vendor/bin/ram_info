@@ -1,0 +1,19 @@
+#!/system/bin/sh
+
+status=`getprop ro.boot.ddr.vendor`
+
+case $status in
+	1 )
+		echo SAMSUNG
+;;
+	6 )
+		echo HYNIX
+;;
+	ff )
+		echo MICRON
+;;
+	* )
+		echo unknown_vendor
+;;
+
+esac

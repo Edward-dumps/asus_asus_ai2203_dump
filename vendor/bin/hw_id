@@ -1,0 +1,32 @@
+#!/system/bin/sh
+
+PROP_STAGE=$(getprop ro.boot.id.stage)
+	case $PROP_STAGE in
+		"0" )
+			echo EVB
+			;;
+		"1" )
+			echo SR1
+			;;
+		"2" )
+			echo SR2
+			;;
+		"3" )
+			echo ER1
+			;;
+		"4" )
+			echo ER2
+			;;
+		"5" )
+			echo PR1
+			;;
+		"6" )
+			echo PR2
+			;;
+		"7" )
+			echo MP
+			;;
+		 *  )
+			echo Unknown
+			;;
+	esac
