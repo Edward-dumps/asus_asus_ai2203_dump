@@ -1,0 +1,8 @@
+﻿[{"wallpaper":"default_slideshow_wallpaper01","title":"太空遨游","description":"驾驭超越光速的太空战舰，在宇宙中自由穿梭旅行。","author":""},
+{"wallpaper":"default_slideshow_wallpaper02","title":"宇宙通道","description":"星际旅人在宇宙通道之间往返奔走，造访浩瀚的平行宇宙。","author":""},
+{"wallpaper":"default_slideshow_wallpaper03","title":"闪烁电路","description":"一闪一闪的电路，体现利落质感与肃杀美学的完美融合。","author":""},
+{"wallpaper":"default_slideshow_wallpaper04","title":"人工智能","description":"人工智能正在重组和重建世界。","author":""},
+{"wallpaper":"default_slideshow_wallpaper05","title":"未来科技","description":"未来科技不仅改变了网络空间，还改变了地球空间和太空。","author":""},
+{"wallpaper":"default_slideshow_wallpaper06","title":"赛博方块","description":"在赛博世界，立方体光速传输数据与传递信息。","author":""},
+{"wallpaper":"default_slideshow_wallpaper07","title":"科幻世界","description":"科幻世界充满无穷的想象，浩瀚宇宙拥有无尽的奥秘。","author":""},
+{"wallpaper":"default_slideshow_wallpaper08","title":"虚拟变形","description":"未来的各种有形物体，将以天马行空，变形幻想以近乎真实的方式呈现。","author":""}]

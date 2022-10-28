@@ -1,0 +1,8 @@
+﻿[{"wallpaper":"default_slideshow_wallpaper01","title":"Space Travel","description":"Ride a space warship that exceeds the speed of light and travel freely across the universe.","author":""},
+{"wallpaper":"default_slideshow_wallpaper02","title":"Universe Corridor","description":"Interstellar travelers cross through the corridors of spacetime and visit countless parallel universes.","author":""},
+{"wallpaper":"default_slideshow_wallpaper03","title":"Flashing Circuit","description":"The flashing circuit reflects the perfect fusion of ordered texture and august aesthetics.","author":""},
+{"wallpaper":"default_slideshow_wallpaper04","title":"Artificial Intelligence","description":"Artificial intelligence is transforming and rebuilding the world in unimaginable ways.","author":""},
+{"wallpaper":"default_slideshow_wallpaper05","title":"Futuristic Tech","description":"Futuristic tech transforms humanity beyond not only cyberspace, but also geospace.","author":""},
+{"wallpaper":"default_slideshow_wallpaper06","title":"Cyber Cube","description":"In the cyber world, these cubes transport information at the speed of light.","author":""},
+{"wallpaper":"default_slideshow_wallpaper07","title":"Sci-fi World","description":"The sci-fi world is full of endless imagination, and the vast universe holds endless mysteries.","author":""},
+{"wallpaper":"default_slideshow_wallpaper08","title":"Virtual Deformation","description":"In the future, all kinds of tangible objects will be made imaginative, and fantasy will be presented in an almost real way.","author":""}]

@@ -1,0 +1,10 @@
+service AsusFocusService /system/bin/AsusFocusService
+    class main
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:AsusFocusService:s0
+
+on property:vendor.asus.gamingtype=*
+    restart AsusFocusService

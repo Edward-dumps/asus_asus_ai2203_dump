@@ -1,0 +1,86 @@
+
+on post-fs-data
+    mkdir /data/logcat_log
+    mkdir /data/bootup
+    restorecon_recursive /data/logcat_log
+    restorecon_recursive /data/bootup
+    chown system system /data/logcat_log
+    chown system system /data/bootup
+    chmod 0777 /data/logcat_log
+    chmod 0777 /data/bootup
+
+    mkdir /data/vendor/mdlogfilters
+    chown shell log /data/vendor/mdlogfilters
+    chmod 0777 /data/vendor/mdlogfilters
+
+    copy /vendor/etc/mdlogfilters/catcher_filter_1_unlwctg_n.bin /data/vendor/mdlogfilters/catcher_filter_1_unlwctg_n.bin
+    copy /vendor/etc/mdlogfilters/catcher_filter_PLS_PS_ONLY.bin /data/vendor/mdlogfilters/catcher_filter_PLS_PS_ONLY.bin
+
+on property:sys.boot_completed=1
+    start asus_chk_asdf
+
+#ASUS DEBUG: logcat Services to /logcat_log +++
+
+#service logcat-radio /system/bin/logcat -r 10000 -b radio -n ${persist.vendor.asus.logcat.filenum:-10} -v time -f /data/logcat_log/logcat-radio.txt
+service logcat-radio /system/bin/logcat -r 10000 -b radio -n 20 radio -v time -f /data/logcat_log/logcat-radio.txt
+    class late_start
+    user root
+    group root
+    disabled
+    seclabel u:r:dumpstate:s0
+
+#service logcat-events /system/bin/logcat -r 10000 -b events -n ${persist.vendor.asus.logcat.filenum:-10} -v threadtime -f /data/logcat_log/logcat-events.txt
+service logcat-events /system/bin/logcat -r 10000 -n 20 -b events  -v threadtime -f /data/logcat_log/logcat-events.txt
+    class late_start
+    user root
+    group root
+    disabled
+    seclabel u:r:dumpstate:s0
+
+service logcat /system/bin/logcat -b all  -n ${persist.vendor.asus.logcat.filenum:-20} -r 10000  -v threadtime -f /data/logcat_log/logcat.txt
+#service logcat /system/bin/logcat -b main -b system -b crash -b kernel -n 20  -r 10000  -v threadtime -f /data/logcat_log/logcat.txt
+    class late_start
+    user root 
+    group root  sdcard_rw
+    disabled
+    seclabel u:r:dumpstate:s0
+#ASUS DEBUG: logcat Services to /logcat_log ---
+
+service savelogs /system/bin/sh /system/bin/savelogs.sh
+        class late_start
+        user root
+        group sdcard_rw
+        oneshot
+        disabled
+    seclabel u:r:dumpstate:s0
+
+service savelogmtp_sys /system/bin/sh /system/bin/savelogmtp_sys.sh
+   class late_start
+    user root
+    group root shell system media_rw sdcard_rw wifi
+    #group root system media_rw
+    oneshot
+    disabled
+    seclabel u:r:dumpstate:s0
+
+
+service asus_chk_asdf /system/bin/sh /system/bin/init.asus.check_asdf.sh
+    user root
+    group root shell system media_rw sdcard_rw wifi
+    disabled
+    oneshot
+    seclabel u:r:dumpstate:s0
+
+#AS-K SSR SAR and Modem Log Config+
+# config subsystem restart
+on property:persist.logd.modem.restart=*
+    restart ssr_cfg    
+
+service ssr_cfg /system/bin/ssr_cfg.sh
+#Set class as core to avoid be killed when Cryptfs running
+    class core
+    user system
+    group system radio
+    disabled
+    oneshot
+

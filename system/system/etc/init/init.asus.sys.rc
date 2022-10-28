@@ -1,0 +1,500 @@
+#################################################################
+#								#
+#   	              ASUS SYS RC				#
+#								#
+#################################################################
+#################################
+#
+#   	booting on trigger
+#
+# ****DO NOT insert any services***
+#
+#################################
+
+
+
+###################################################################################
+
+on init
+
+
+on fs
+
+
+on post-fs
+
+# mount APD
+write /proc/bootprof "ASUS RC : mount /APD"
+wait /dev/block/by-name/APD
+exec /system/bin/e2fsck -p /dev/block/by-name/APD
+mount ext4 /dev/block/by-name/APD /APD rw wait noatime
+chown system system /APD
+chmod 0771 /APD
+restorecon_recursive /APD
+
+# mount ADF
+write /proc/bootprof "ASUS RC : mount /ADF"
+wait /dev/block/by-name/ADF
+exec /system/bin/e2fsck -p /dev/block/by-name/ADF
+mount ext4 /dev/block/by-name/ADF /ADF rw wait noatime
+chown system system /ADF
+chmod 0771 /ADF
+restorecon_recursive /ADF
+
+# mount batinfo
+write /proc/bootprof "ASUS RC : mount /batinfo"
+wait /dev/block/by-name/batinfo
+exec /system/bin/e2fsck -p /dev/block/by-name/batinfo
+mount ext4 /dev/block/by-name/batinfo /batinfo rw wait noatime
+chown system system /batinfo
+chmod 0777 /batinfo
+restorecon_recursive /batinfo
+
+# mount asdf
+write /proc/bootprof "ASUS RC : mount /asdf"
+wait /dev/block/by-name/asdf
+exec /system/bin/e2fsck -p /dev/block/by-name/asdf
+mount ext4 /dev/block/by-name/asdf /asdf rw wait noatime
+chown system system /asdf
+chmod 0771 /asdf
+restorecon_recursive /asdf
+
+on post-fs-data
+
+#jack
+mkdir /data/system/mcd 0777 system system
+chown system system /data/system/mcd
+chown system system /dev/cpuset/background/cpus
+chown system system /dev/cpuset/system-background/cpus
+chown system system /dev/cpuset/top-app/cpus
+chown system system /dev/cpuset/foreground/cpus
+
+# ASUS BSP Battery +++
+chmod 0777 /system/bin/backup_batinfo.sh
+chmod 0777 /system/bin/erase_batinfo.sh
+chmod 0777 /system/bin/restore_batinfo.sh
+
+chown system system /system/bin/backup_batinfo.sh
+chown system system /system/bin/erase_batinfo.sh
+chown system system /system/bin/restore_batinfo.sh
+
+chmod 0777 /batinfo/.bs
+chmod 0777 /batinfo/bat_safety
+chmod 0777 /batinfo/Batpercentage
+# ASUS BSP Battery ---
+
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+#               ALL ASUS service (start)
+#
+#         ****DO NOT insert any on property***
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+
+
+# ASUS BSP Battery +++
+service backup_batinfo /system/bin/backup_batinfo.sh
+    class core
+    user root
+    group root system
+    oneshot
+    seclabel u:r:asus_battery:s0
+    disabled
+
+service erase_batinfo /system/bin/erase_batinfo.sh
+    class core
+    user root
+    group root system
+    oneshot
+    seclabel u:r:asus_battery:s0
+    disabled
+
+service restore_batinfo /system/bin/restore_batinfo.sh
+    class core
+    user root
+    group root system
+    oneshot
+    seclabel u:r:asus_battery:s0
+    disabled
+# ASUS BSP Battery ---
+
+###-----------------------------------------------###
+#                ALL ASUS service (end)
+# 
+#         ***DO NOT insert any on property***   
+###-----------------------------------------------###
+
+#####################################################
+#####################################################
+#####################################################
+
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+#               ALL ASUS on property  (start)
+# 
+#           ****DO NOT insert service***     
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+
+#### jack for gaming tuning        +++ 
+on property:vendor.asus.gamingtype=*
+    chmod 440 /data/vendor/BBY/glt.cfg 
+    chmod 440 /data/vendor/BBY/aivrs.ini
+    copy /data/vendor/BBY/glt.cfg /data/system/mcd/glt.cfg
+    copy /data/vendor/BBY/aivrs.ini /data/system/mcd/aivrs.ini
+    chmod 666 /data/system/mcd/qt.cfg
+    chmod 666 /data/system/mcd/glt.cfg 
+    chmod 666 /data/system/mcd/aivrs.ini
+    rm /data/vendor/BBY/aivrs.ini
+    rm /data/vendor/BBY/glt.cfg
+    chown system system /data/system/mcd/qt.cfg
+    chown system system /data/system/mcd/glt.cfg 
+    chown system system /data/system/mcd/aivrs.ini
+    
+on property:sys.foregroundapp=*
+	setprop vendor.asus.foregroundapp ${sys.foregroundapp}
+
+on property:vendor.asus.hackgpu=1
+    setprop vendor.debug.gpud.enable 1
+    setprop vendor.debug.gpud.process.name ""
+    setprop vendor.debug.gpud.gl.vendor Qualcomm
+    setprop vendor.debug.gpud.gl.renderer "Adreno (TM) 730"
+    
+#### jack for gaming tuning      ++++
+    
+on property:vendor.factory.adbon=1
+    copy /vendor/factory/adbkey.pub /data/misc/adb/adb_keys
+    chown system shell /data/misc/adb/adb_keys
+    chmod 0640 /data/misc/adb/adb_keys
+
+# ASUS_BSP Paul +++
+on property:ro.product.system.brand=*
+    setprop sys.audio.system.brand ${ro.product.system.brand}
+    setprop vendor.audio.system.brand ${ro.product.system.brand}
+
+on property:vendor.use.audio.eu.parameters=*
+    setprop sys.use.audio.eu.parameters ${vendor.use.audio.eu.parameters}
+
+on property:vendor.audio.calibration=0
+    setprop sys.audio.calibration 0
+
+on property:sys.audio.calibration=1
+    setprop vendor.audio.calibration 1
+    start audio_amp_cal
+
+on property:sys.audio.boot_sound.completed=*
+    setprop vendor.audio.boot_sound.completed ${sys.audio.boot_sound.completed}
+
+on property:vendor.audio.crus.smartpa.inited=*
+    setprop sys.audio.crus.smartpa.inited ${vendor.audio.crus.smartpa.inited}
+
+on property:sys.audio.amp.reg_dump=*
+    start audio_amp_reg_dump
+
+on property:vendor.asus.autofota=1
+    setprop persist.sys.boot_sound.autofota 1
+    setprop persist.vendor.boot_vib.autofota 1
+    setprop vendor.asus.autofota 2
+
+on property:sys.audio.capture.offload.disabled=*
+    setprop vendor.audio.capture.offload.disabled ${sys.audio.capture.offload.disabled}
+# ASUS_BSP Paul ---
+
+# ASUS_BSP vibrator +++
+on property:sys.vib.cali=0
+	setprop vendor.vib.cali 0
+
+on property:sys.vib.cali=1
+	setprop vendor.vib.cali 1
+
+on property:vendor.vib.cali.state=*
+    setprop persist.vib.cali.state ${vendor.vib.cali.state}
+    #setprop sys.vib.cali.state ${vendor.vib.cali.state}
+
+on property:vendor.vib.cali.cali_r=*
+    setprop persist.vib.cali.cali_r ${vendor.vib.cali.cali_r}
+
+on property:vendor.vib.cali.osc_cali_r=*
+    setprop persist.vib.cali.osc_cali_r ${vendor.vib.cali.osc_cali_r}
+# ASUS_BSP vibrator ---
+
+# For ACCY dongle type
+on property:vendor.asus.dongletype=*
+	setprop sys.asus.dongletype ${vendor.asus.dongletype}
+
+# ASUS_BSP : For Inbox Fan control +++
+on property:persist.sys.asus.userfan=*
+	setprop persist.vendor.asus.userfan ${persist.sys.asus.userfan:-1}
+
+on property:sys.asus.thermalfan=*
+	setprop vendor.asus.thermalfan ${sys.asus.thermalfan:-1}
+
+on property:persist.sys.asus.micfansettings=*
+	setprop persist.vendor.asus.micfansettings ${persist.sys.asus.micfansettings:-1}
+
+on property:sys.asus.fan.mic=*
+	setprop vendor.asus.fan.mic ${sys.asus.fan.mic:-1}
+
+on property:persist.sys.asus.tempfan=*
+	setprop persist.vendor.asus.tempfan ${persist.sys.asus.tempfan:-1}
+
+on property:vendor.fan.rpm=*
+	setprop sys.fan.rpm ${vendor.fan.rpm:0}
+
+on property:persist.sys.asus.userfanrpm=*
+	setprop persist.vendor.asus.userfanrpm ${persist.sys.asus.userfanrpm:-1}
+
+on property:persist.sys.asus.coolerstage=*
+	setprop persist.vendor.asus.coolerstage ${persist.sys.asus.coolerstage:-1}
+
+# ASUS_BSP : For Inbox Fan control ---
+
+# For Kunai GTS Workaround +++
+on property:sys.gamepad.left_fwupdate=1
+    setprop vendor.gamepad.left_fwupdate 1
+
+on property:vendor.gamepad.left_fwupdate=0
+	setprop sys.gamepad.left_fwupdate 0
+on property:vendor.gamepad.left_fwupdate=2
+	setprop sys.gamepad.left_fwupdate 2
+on property:vendor.gamepad.left_fwupdate=3
+	setprop sys.gamepad.left_fwupdate 3
+
+on property:sys.gamepad.holder_fwupdate=1
+    setprop vendor.gamepad.holder_fwupdate 1
+
+on property:vendor.gamepad.holder_fwupdate=0
+	setprop sys.gamepad.holder_fwupdate 0
+on property:vendor.gamepad.holder_fwupdate=2
+	setprop sys.gamepad.holder_fwupdate 2
+on property:vendor.gamepad.holder_fwupdate=3
+	setprop sys.gamepad.holder_fwupdate 3
+
+on property:sys.gamepad.wireless_fwupdate=1
+    setprop vendor.gamepad.wireless_fwupdate 1
+
+on property:vendor.gamepad.wireless_fwupdate=0
+	setprop sys.gamepad.wireless_fwupdate 0
+on property:vendor.gamepad.wireless_fwupdate=2
+	setprop sys.gamepad.wireless_fwupdate 2
+on property:vendor.gamepad.wireless_fwupdate=3
+	setprop sys.gamepad.wireless_fwupdate 3
+# For Kunai GTS Workaround ---
+
+# For Kunai III GTS Workaround +++
+on property:sys.gamepad3.left_fwupdate=1
+    setprop vendor.gamepad3.left_fwupdate 1
+
+on property:vendor.gamepad3.left_fwupdate=0
+	setprop sys.gamepad3.left_fwupdate 0
+on property:vendor.gamepad3.left_fwupdate=2
+	setprop sys.gamepad3.left_fwupdate 2
+on property:vendor.gamepad3.left_fwupdate=3
+	setprop sys.gamepad3.left_fwupdate 3
+
+on property:sys.gamepad3.middle_fwupdate=1
+    setprop vendor.gamepad3.middle_fwupdate 1
+
+on property:vendor.gamepad3.middle_fwupdate=0
+	setprop sys.gamepad3.middle_fwupdate 0
+on property:vendor.gamepad3.middle_fwupdate=2
+	setprop sys.gamepad3.middle_fwupdate 2
+on property:vendor.gamepad3.middle_fwupdate=3
+	setprop sys.gamepad3.middle_fwupdate 3
+
+on property:sys.gamepad3.right_fwupdate=1
+    setprop vendor.gamepad3.right_fwupdate 1
+
+on property:vendor.gamepad3.right_fwupdate=0
+	setprop sys.gamepad3.right_fwupdate 0
+on property:vendor.gamepad3.right_fwupdate=2
+	setprop sys.gamepad3.right_fwupdate 2
+on property:vendor.gamepad3.right_fwupdate=3
+	setprop sys.gamepad3.right_fwupdate 3
+
+on property:sys.gamepad3.bt_fwupdate=1
+    setprop vendor.gamepad3.bt_fwupdate 1
+
+on property:vendor.gamepad3.bt_fwupdate=0
+	setprop sys.gamepad3.bt_fwupdate 0
+on property:vendor.gamepad3.bt_fwupdate=2
+	setprop sys.gamepad3.bt_fwupdate 2
+on property:vendor.gamepad3.bt_fwupdate=3
+	setprop sys.gamepad3.bt_fwupdate 3
+
+on property:vendor.gamepad3.left_fwver=*
+	setprop sys.gamepad3.left_fwver ${vendor.gamepad3.left_fwver}
+on property:vendor.gamepad3.right_fwver=*
+	setprop sys.gamepad3.right_fwver ${vendor.gamepad3.right_fwver}
+on property:vendor.gamepad3.middle_fwver=*
+	setprop sys.gamepad3.middle_fwver ${vendor.gamepad3.middle_fwver}
+on property:vendor.gamepad3.bt_fwver=*
+	setprop sys.gamepad3.bt_fwver ${vendor.gamepad3.bt_fwver}
+
+on property:vendor.remotefw.gamepad3.bt_fwver=*
+	setprop vendor.asus.tmpVersion ${vendor.remotefw.gamepad3.bt_fwver:-1}
+
+on property:vendor.asus.gamepad.generation=*
+	setprop sys.asus.gamepad.generation ${vendor.asus.gamepad.generation}
+on property:vendor.asus.gamepad.type=*
+	setprop sys.asus.gamepad.type ${vendor.asus.gamepad.type}
+# For Kunai III GTS Workaround ---
+
+# For inbox FW update +++
+on property:vendor.fandg.aura_fwupdate=0
+	setprop sys.fandg.aura_fwupdate 0
+on property:vendor.fandg.aura_fwupdate=2
+	setprop sys.fandg.aura_fwupdate 2
+
+on property:vendor.fandg.mcu_fwupdate=0
+	setprop sys.fandg.mcu_fwupdate 0
+on property:vendor.fandg.mcu_fwupdate=2
+	setprop sys.fandg.mcu_fwupdate 2
+
+on property:vendor.fandg.pd_fwupdate=0
+	setprop sys.fandg.pd_fwupdate 0
+on property:vendor.fandg.pd_fwupdate=2
+	setprop sys.fandg.pd_fwupdate 2
+
+on property:vendor.fandg.pd_update_progress=*
+	setprop sys.fandg.pd_update_progress ${vendor.fandg.pd_update_progress:-1}
+
+on property:vendor.inbox.aura_fwver=*
+	setprop sys.inbox.aura_fwver ${vendor.inbox.aura_fwver:-1}
+on property:vendor.inbox.inbox_fwver=*
+	setprop sys.inbox.inbox_fwver ${vendor.inbox.inbox_fwver:-1}
+on property:vendor.inbox.pd_fwver=*
+	setprop sys.inbox.pd_fwver ${vendor.inbox.pd_fwver:-1}
+
+on property:vendor.oem.asus.inboxid=*
+	setprop sys.oem.asus.inboxid ${vendor.oem.asus.inboxid:-1}
+
+on property:vendor.asusfw.fandg6.inbox_fwver=*
+	setprop sys.asusfw.fandg6.inbox_fwver ${vendor.asusfw.fandg6.inbox_fwver:-1}
+on property:vendor.asusfw.fandg6.aura_fwver=*
+	setprop sys.asusfw.fandg6.aura_fwver ${vendor.asusfw.fandg6.aura_fwver:-1}
+on property:vendor.asusfw.fandg6.pd_fwver=*
+	setprop sys.asusfw.fandg6.pd_fwver ${vendor.asusfw.fandg6.pd_fwver:-1}
+# For inbox FW update ---
+
+# ASUS_BSP : For ACCY FW status +++
+on property:vendor.asus.accy.fw_status=*
+	setprop sys.asus.accy.fw_status ${vendor.asus.accy.fw_status}
+on property:vendor.asus.accy.fw_status2=*
+	setprop sys.asus.accy.fw_status2 ${vendor.asus.accy.fw_status2}
+on property:vendor.asus.accy.fw_status3=*
+	setprop sys.asus.accy.fw_status3 ${vendor.asus.accy.fw_status3}
+on property:vendor.asus.accy.fw_status4=*
+	setprop sys.asus.accy.fw_status4 ${vendor.asus.accy.fw_status4}
+
+on property:vendor.asusfw.gamepad3.left_fwver=*
+	setprop sys.asusfw.gamepad3.left_fwver ${vendor.asusfw.gamepad3.left_fwver}
+on property:vendor.asusfw.gamepad3.right_fwver=*
+	setprop sys.asusfw.gamepad3.right_fwver ${vendor.asusfw.gamepad3.right_fwver}
+on property:vendor.asusfw.gamepad3.middle_fwver=*
+	setprop sys.asusfw.gamepad3.middle_fwver ${vendor.asusfw.gamepad3.middle_fwver}
+on property:vendor.asusfw.gamepad3.bt_fwver=*
+	setprop sys.asusfw.gamepad3.bt_fwver ${vendor.asusfw.gamepad3.bt_fwver}
+# ASUS_BSP : For ACCY FW status ---
+
+# ASUS_BSP USBH +++
+on property:sys.asus.donglestate_GV_PD=*
+	setprop vendor.asus.donglestate_GV_PD ${sys.asus.donglestate_GV_PD}
+on property:sys.asus.usb.speed=*
+	setprop vendor.asus.usb.speed ${sys.asus.usb.speed}
+# ASUS_BSP USBH ---
+
+#ASUS_BSP Beryl +++
+on property:vendor.asus.audio.dump_stream_a2p=*
+    setprop vendor.a2dp.streamout.pcm ${vendor.asus.audio.dump_stream_a2p}
+on property:vendor.asus.audio.dump_stream_a2p=1    
+    setprop vendor.asus.audio.dump_stream 1
+on property:vendor.asus.audio.dump_stream_adsp=*
+    setprop vendor.streamin.dsp.dump ${vendor.asus.audio.dump_stream_adsp}
+    setprop vendor.streamout.dsp.dump ${vendor.asus.audio.dump_stream_adsp}
+
+on property:vendor.asus.audio.dump_stream_adsp=1
+    setprop vendor.asus.audio.dump_stream 1
+on property:vendor.asus.audio.dump_stream_vm=*
+    setprop persist.vendor.audiohal.vm_cfg ${vendor.asus.audio.dump_stream_vm}
+on property:vendor.asus.audio.dump_stream_vm=1    
+    setprop vendor.asus.audio.dump_stream 1
+on property:vendor.asus.audio.dump_stream_af=*
+    setprop vendor.aaudio.pcm ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.af.effect.pcm ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.af.mixer.drc.pcm ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.af.mixer.end.pcm ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.af.mixer.pcm ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.af.offload.write.raw ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.af.record.dump.pcm ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.af.resampler.pcm ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.af.track.pcm ${vendor.asus.audio.dump_stream_af}
+    setprop persist.vendor.audiohal.aurisys.pcm_dump_on ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.streamin.pcm.dump ${vendor.asus.audio.dump_stream_af}
+    setprop vendor.streamout.pcm.dump ${vendor.asus.audio.dump_stream_af}
+
+on property:vendor.asus.audio.dump_stream_af=1    
+    setprop vendor.asus.audio.dump_stream 1
+    
+on property:vendor.asus.audio.dump_stream=1
+    start audiologsizewatcher
+on property:vendor.asus.audio.dump_stream_adsp=0
+    start saveaudio
+    
+on property:vendor.asus.audio.dump_stream=0
+    stop audiologsizewatcher
+    setprop vendor.asus.audio.dump_stream_a2p 0
+    setprop vendor.asus.audio.dump_stream_adsp 0
+    setprop vendor.asus.audio.dump_stream_vm 0
+    setprop vendor.asus.audio.dump_stream_af 0
+
+#ASUS_BSP Beryl ---
+
+#ASUS_BSP Battery +++
+on property:sys.batinfo.backup=1
+    #start batinfo_backup
+
+    # stop battery safety upgrade
+    write /proc/Batt_Cycle_Count/batt_safety_csc 3
+    # change file chmod to can not write
+    chmod 0440 /batinfo/.bs
+    chmod 0440 /batinfo/bat_safety
+    chmod 0440 /batinfo/Batpercentage
+    # copy battery safety to sdcard
+    copy /batinfo/.bs /sdcard/.bs
+    copy /batinfo/bat_safety /sdcard/bat_safety
+    copy /batinfo/Batpercentage /sdcard/Batpercentage
+    # change file chmod 777
+    chmod 0440 /sdcard/.bs
+    chmod 0440 /sdcard/bat_safety
+    chmod 0440 /sdcard/Batpercentage
+    chown system system /sdcard/.bs
+    chown system system /sdcard/bat_safety
+    chown system system /sdcard/Batpercentage
+    write /proc/Batt_Cycle_Count/batt_safety_csc 4
+
+on property:sys.batinfo.erase=1
+    #start erase_batinfo
+
+    # stop battery safety upgrade
+    write /proc/Batt_Cycle_Count/batt_safety_csc 3
+    # delete battery safety
+    rm /batinfo/.bs
+    rm /batinfo/Batpercentage
+    rm /batinfo/bat_safety
+    # initial battery safety data
+    write /proc/Batt_Cycle_Count/batt_safety_csc 0
+    # reload battery safety data
+    write /proc/Batt_Cycle_Count/batt_safety_csc 9
+    # start battery safety upgrade
+    write /proc/Batt_Cycle_Count/batt_safety_csc 4
+
+#on property:sys.batinfo.restore=1
+#    start restore_batinfo
+#ASUS_BSP Battery ---
+
+# ASUS BSP Display, for hdcp +++
+on property:sys.debug.hdcp=*
+    setprop vendor.debug.hdcp ${sys.debug.hdcp}
+
+###-----------------------------------------------###
+#              ALL ASUS on property (end)
+# 
+#            ****DO NOT insert service***     
+###-----------------------------------------------###

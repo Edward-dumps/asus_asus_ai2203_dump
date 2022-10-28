@@ -1,0 +1,113 @@
+{
+	"displayname":"sys extreme power saving",
+	"configurations": [
+		{
+			"category":"Temperature",
+			"items": [
+				{
+					"name":"PERF_RES_CUSTOM_TARGET_TEMP",
+					"code":"0x10008000",
+					"value":"38000",
+					"valueset": [
+						"42000","45000","48000","51000","55000"
+					]
+				},
+				{
+					"name":"PERF_RES_CUSTOM_THERMAL_POLICY ",
+					"code":"0x10010000",
+					"value":"0",
+					"valueset": [
+						"0","1","2","3","4","5","6","7","8"
+					]
+				}
+			]
+		},
+		{
+			"category":"CPU",
+			"items": [
+				{
+					"name":"PERF_RES_CPUFREQ_MIN_CLUSTER_0",
+					"code":"0x00400000",
+					"value":"200000",
+					"valueset": [
+						"200000"
+					]
+				},
+				{
+					"name":"PERF_RES_CPUFREQ_MAX_CLUSTER_0",
+					"code":"0x00404000",
+					"value":"1050000",
+					"valueset": [
+						"1050000"
+					]
+				},
+				{
+					"name":"PERF_RES_CPUFREQ_MIN_CLUSTER_1",
+					"code":"0x00400100",
+					"value":"400000",
+					"valueset": [
+						"400000"
+					]
+				},
+				{
+					"name":"PERF_RES_CPUFREQ_MAX_CLUSTER_1",
+					"code":"0x00404100",
+					"value":"1100000",
+					"valueset": [
+						"1100000"
+					]
+				},
+				{
+					"name":"PERF_RES_CPUFREQ_MIN_CLUSTER_2",
+					"code":"0x00400200",
+					"value":"1300000",
+					"valueset": [
+						"1300000"
+					]
+				},
+				{
+					"name":"PERF_RES_CPUFREQ_MAX_CLUSTER_2",
+					"code":"0x00404200",
+					"value":"1900000",
+					"valueset": [
+						"1900000"
+					]
+				}
+			]
+		},
+		{
+			"category":"GPU",
+			"items": [
+				{
+					"name":"PERF_RES_GPU_FREQ_MAX",
+					"code":"0x00c04000",
+					"value":"29",
+					"valueset": [
+						"0","5","10","15","19","24","29","33","38","42"
+					]
+				},
+				{
+					"name":"PERF_RES_GPU_FREQ_MIN",
+					"code":"0x00c00000",
+					"value":"42",
+					"valueset": [
+						"0","5","10","15","19","24","29","33","38","42"
+					]
+				}
+			]
+		},
+		{
+			"category":"POWERHAL_SCREEN_OFF_STATE",
+			"items": [
+				{
+					"name":"PERF_RES_POWERHAL_SCREEN_OFF_STATE",
+					"code":"0x03400000",
+					"value":"2",
+					"valueset": [
+						"0","1","2","3"
+					]
+				}
+			]
+		}
+	]
+}

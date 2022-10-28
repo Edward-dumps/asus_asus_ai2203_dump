@@ -1,0 +1,500 @@
+#!/system/bin/sh
+
+#
+# Asus Bluetooth RF Test Tool. Just For userdebug and eng-build.
+#
+
+BT_Service="BT-ATD-Command"
+LOG_TAG="BtTest"
+DBG_LOG=1
+
+myBtRfTool=/system/bin/BtRfTool
+myBtRfTestStatus=/data/bluetooth/BtRfTest_status
+myCmdNamedRxInfo=/data/bluetooth/BtRfTest_Rx_logs
+
+HexToDec(){
+    echo "$((16#$1))"
+}
+
+logi () {
+    /system/bin/log -t $LOG_TAG -p i "$LOG_NAME $@"
+}
+
+loge () {
+    /system/bin/log -t $LOG_TAG -p e "$LOG_NAME $@"
+}
+
+getBtRfTestStatus() {
+
+    logi "====== getBtRfTestStatus() ======"
+
+    status=`ps -A| grep autobt_server`
+
+    logi "getBtRfTestStatus(): status=$status"
+
+    case $status in
+        "")
+            ENABLE=0
+        ;;
+        *)
+            ENABLE=1
+        ;;
+    esac
+}
+
+getBtStatus() {
+
+    logi "====== getBtStatus() ======"
+
+    EnableStatus=`cat $myBtRfTestStatus` > /dev/null 2> /dev/null
+
+    logi "getBtStatus(): EnableStatus=$EnableStatus"
+
+    if [ "$EnableStatus" == "Bluetooth is ENABLE" ]; then
+        BT_ENABLE=1
+    else
+        BT_ENABLE=0
+    fi
+}
+
+CheckBluetoothStatus() {
+
+    getBtRfTestStatus
+
+    if [ "$ENABLE" == "1" ]; then
+        logi "Already enable BtRfTest, We turning off BtRfTest."
+        autobt_client exit > /dev/null 2> /dev/null
+        sleep 1
+        pkill autobt_server > /dev/null 2> /dev/null
+        pkill autobt_server > /dev/null 2> /dev/null
+        pkill autobt_server > /dev/null 2> /dev/null
+        pkill autobt_server > /dev/null 2> /dev/null
+    fi
+}
+if [ "$1" == "" ] && [ "$2" == "" ]; then
+    loge "FAIL: wrong input Parameter"
+
+    echo "FAIL"
+    echo "FAIL: wrong input Parameter"
+    exit 0
+fi
+
+#Enable Bluetooth
+if [ "$1" == "0" ] && [ "$2" == "0" ];then
+    logi "BtTest 0 0 - Enable Bluetooth"
+
+    CheckBluetoothStatus
+
+    empty=`cat /dev/null > $myBtRfTestStatus` > /dev/null 2> /dev/null
+
+    logi "BtRfTool -s: Start BtRfService"
+    $myBtRfTool -s
+    sleep 3.5
+
+    Counter=0
+    while [ $Counter -le 10 ];
+    do
+        logi "Counter=$Counter"
+        logi "BT_ENABLE=$BT_ENABLE"
+
+        getBtStatus
+
+        if [ "$BT_ENABLE" == "1" ];then
+            echo "PASS"
+            logi "Enable Bluetooth Success"
+            exit 0
+        else
+            logi "Counterr++"
+            Counter=$(($Counter+1))
+        fi
+        sleep 1
+    done
+
+    if [ "$BT_ENABLE" == "0" ];then
+        echo "FAIL"
+        logi "Enable Bluetooth Failed"
+        autobt_client exit > /dev/null 2> /dev/null
+        exit 0
+    fi
+
+    exit 0
+fi
+
+#Disable Bluetooth
+if [ "$1" == "0" ] && [ "$2" == "1" ];then
+    logi "BtTest 0 1 - Disable Bluetooth"
+
+    getBtRfTestStatus
+
+    if [ "$ENABLE" == "0" ]; then
+        #Make sure BtRfTest_fifo is empty.
+        logi "BtRfTest State : Off"
+        echo "PASS"
+        exit 0
+    else
+        autobt_client exit > /dev/null 2> /dev/null
+        sleep 1
+        logi "Bt state is already Off"
+        echo "PASS"
+        exit 0
+    fi
+
+    exit 0
+fi
+
+#Check BT Chip states.
+getBtRfTestStatus
+if [ "$ENABLE" == "0" ]; then
+    logi "BtRfTest status is disable. Please enable BtRfTest first."
+    echo "FAIL"
+    exit 0
+fi
+
+#Enter TestMode
+if [ "$1" == "1" ] && [ "$2" == "0" ];then
+    logi "BtTest 1 0 - Enter test mode"
+
+    autobt_client testmode --power 6
+
+    exit 0
+fi
+
+#Exit TestMode
+if [ "$1" == "1" ] && [ "$2" == "1" ];then
+    logi "BtTest 1 1 - Exit test mode"
+
+    autobt_client end_testmode
+
+    exit 0
+fi
+
+#Reset
+if [ "$1" == "2" ];then
+    logi "BtTest 2 - Reset BT chip"
+
+    autobt_client reset
+
+    exit 0
+fi
+
+#TX
+if [ "$1" == "3" ];then
+
+    if [ "$2" == "" ] || [ "$3" == "" ] || [ "$4" == "" ] ; then
+        loge "FAIL: wrong input Parameter"
+        echo "FAIL: wrong input Parameter"
+        exit 0
+    fi
+
+    logi "BtTest 3 $2 $3 $4 - TX mode"
+
+    CHANNEL_NUM=$2
+    HEX_PACKET_TYPE=`$myBtRfTool -c $3`
+    HEX_MODULATION_TYPE=`$myBtRfTool -c $4`
+
+    #ex:autobt tx --pattern 0x01 --hopping 0x00 --channel 7 --type 0x04 --length 27
+    if [ "$HEX_PACKET_TYPE" == "04" ]; then
+        # DH1: packet size is 27 bytes (0x1B)
+        autobt_client tx --pattern $HEX_MODULATION_TYPE --hopping 0x00 --channel $CHANNEL_NUM --type $HEX_PACKET_TYPE --length 27
+    elif [ "$HEX_PACKET_TYPE" == "0B" ]; then
+        # DH3: packet size is 183 bytes (0xB7)
+        autobt_client tx --pattern $HEX_MODULATION_TYPE --hopping 0x00 --channel $CHANNEL_NUM --type $HEX_PACKET_TYPE --length 183
+    elif [ "$HEX_PACKET_TYPE" == "0F" ]; then
+        # DH5: packet size is 339 bytes (0x153)
+        autobt_client tx --pattern $HEX_MODULATION_TYPE --hopping 0x00 --channel $CHANNEL_NUM --type $HEX_PACKET_TYPE --length 339
+    else
+        autobt_client tx --pattern $HEX_MODULATION_TYPE --hopping 0x00 --channel $CHANNEL_NUM --type $HEX_PACKET_TYPE --length 1234
+    fi
+
+    exit 0
+fi
+
+#RX
+if [ "$1" == "4" ];then
+
+    if [ "$2" == "" ] || [ "$3" == "" ]; then
+        loge "FAIL: wrong input Parameter"
+        echo "FAIL: wrong input Parameter"
+        exit 0
+    fi
+
+    logi "BtTest 4 $2 $3 - RX mode"
+
+    CHANNEL_NUM=$2
+    HEX_PACKET_TYPE=`$myBtRfTool -c $3`
+
+    #LitePoint IQ2010
+    #autobt_client nsrx --pattern 0x04 --channel $HEX_CHANNEL_NUM --type $HEX_PACKET_TYPE --addr 6BC6967E
+
+    #ex:autobt nsrx --pattern 0x02 --channel 5 --type 0x2A --addr 88C0FFEE
+    #LitePoint IQflex
+    autobt_client nsrx --pattern 0x04 --channel $CHANNEL_NUM --type $HEX_PACKET_TYPE --addr 88C0FFEE
+
+    exit 0
+fi
+
+#GetBER
+if [ "$1" == "5" ];then
+    logi "BtTest 5 - RX test end - Get BER"
+
+    #Clear RX log
+    echo > $myCmdNamedRxInfo > /dev/null 2> /dev/null
+
+    #Bluetooth Get BER
+    autobt_client end_nsrx > /dev/null 2> /dev/null
+    sleep 0.5
+
+    RxPktCount=0
+    BitErrRate=0
+
+    while read line
+    do a=$(($a+1));
+        #loge "a=$a : $line"
+        if [[ $line = *"Total received packet:"* ]]; then
+            RxPktCount=`echo $line | awk '{print $4}'`
+        fi
+        if [[ $line = *"Bit Error Rate:"* ]]; then
+            BitErrRate=`echo $line | awk '{print $4}'`
+        fi
+
+    done < "$myCmdNamedRxInfo"
+
+    logi "RxPktCount = $RxPktCount BitErrRate = $BitErrRate"
+
+    BER=`echo ${BitErrRate%.*}`
+
+    logi "Number of received packets=$RxPktCount, BER=$BER"
+    echo "Number of received packets=$RxPktCount, BER=$BER"
+
+    BtTestResult=$?
+
+    case $BtTestResult in
+        0)
+            logi "Bluetooth Get BER success"
+        ;;
+        *)
+            exit 0
+        ;;
+    esac
+
+    #Reset BT chip
+    autobt_client reset > /dev/null 2> /dev/null
+
+    exit 0
+fi
+
+#TX END
+if [ "$1" == "6" ];then
+    logi "BtTest 6 - TX end"
+
+    autobt_client end_tx
+
+    exit 0
+fi
+
+#Return BT Chip Solution
+if [ "$1" == "7" ];then
+    logi "BtTest 7 - Return BT Chip Solution"
+
+    echo "MT6637"
+
+    exit 0
+fi
+
+#TX Hopping
+if [ "$1" == "9" ];then
+
+    if [ "$2" == "" ] || [ "$3" == "" ]; then
+        loge "FAIL: wrong input Parameter"
+        echo "FAIL: wrong input Parameter"
+        exit 0
+    fi
+
+    logi "BtTest 9 $2 $3 - TX Hopping mode"
+
+    HEX_PACKET_TYPE=`$myBtRfTool -c $2`
+    HEX_MODULATION_TYPE=`$myBtRfTool -c $3`
+
+    if [ "$HEX_PACKET_TYPE" == "04" ]; then
+        # DH1: packet size is 27 bytes (0x1B)
+        autobt_client tx --pattern $HEX_MODULATION_TYPE --hopping 0x01 --channel 0 --type $HEX_PACKET_TYPE --length 27
+    elif [ "$HEX_PACKET_TYPE" == "0B" ]; then
+        # DH3: packet size is 183 bytes (0xB7)
+        autobt_client tx --pattern $HEX_MODULATION_TYPE --hopping 0x01 --channel 0 --type $HEX_PACKET_TYPE --length 183
+    elif [ "$HEX_PACKET_TYPE" == "0F" ]; then
+        # DH5: packet size is 339 bytes (0x153)
+        autobt_client tx --pattern $HEX_MODULATION_TYPE --hopping 0x01 --channel 0 --type $HEX_PACKET_TYPE --length 339
+    else
+        autobt_client tx --pattern $HEX_MODULATION_TYPE --hopping 0x01 --channel 0 --type $HEX_PACKET_TYPE --length 1234
+    fi
+
+    exit 0
+fi
+
+#BT LE TX
+if [ "$1" == "10" ] && [ "$2" == "1" ];then
+
+    if [ "$2" == "" ] || [ "$3" == "" ] || [ "$4" == "" ] || [ "$5" == "" ] || [ "$6" == "" ]; then
+        loge "FAIL: wrong input Parameter"
+        echo "FAIL: wrong input Parameter"
+        exit 0
+    fi
+
+    logi "BtTest 10 $2 $3 $4 $5 $6 - LE TX mode"
+
+    CHANNEL_NUM=$4
+    PACKET_PAYLOAD=`$myBtRfTool -c $6`
+
+    #Bluetooth entered LE TX Mode
+    autobt_client bletx --pattern $PACKET_PAYLOAD --channel $CHANNEL_NUM
+
+    exit 0
+fi
+
+#BT LE TX END
+if [ "$1" == "10" ] && [ "$2" == "3" ];then
+    logi "BtTest 10 - LE TX End"
+
+    #Bluetooth LE TX end
+    autobt_client end_bletx
+
+    exit 0
+fi
+
+#BT LE RX
+if [ "$1" == "10" ] && [ "$2" == "0" ];then
+
+    if [ "$2" == "" ] || [ "$3" == "" ] || [ "$4" == "" ]; then
+        loge "FAIL: wrong input Parameter"
+        echo "FAIL: wrong input Parameter"
+        exit 0
+    fi
+
+    logi "BtTest 10 $2 $3 $4 - LE Rx mode"
+
+    CHANNEL_NUM=$4
+
+    #Bluetooth entered LE RX Mode Start
+    #ex:autobt blerx --channel 20
+    autobt_client blerx --channel $CHANNEL_NUM
+
+    exit 0
+fi
+
+#LE RX End
+if [ "$1" == "10" ] && [ "$2" == "2" ];then
+    logi "BtTest 14 - LE test end"
+
+    #Clear RX log
+    echo > $myCmdNamedRxInfo > /dev/null 2> /dev/null
+
+    #Bluetooth LE RX end
+    autobt_client end_blerx > /dev/null 2> /dev/null
+
+    BtTestResult=$?
+    sleep 0.5
+
+    while read line
+    do a=$(($a+1));
+        #loge "a=$a : $line"
+        if [[ $line = *"Total received packet:"* ]]; then
+            LE_result=`echo $line | awk '{print $4}'`
+        fi
+    done < "$myCmdNamedRxInfo"
+
+    logi "LE_packets_Num: $LE_result"
+
+    case $BtTestResult in
+        0)
+            logi "LE Test End success"
+            echo "PASS (Number_Of_Packets:$LE_result)"
+        ;;
+        *)
+            echo "FAIL"
+            logi "Bluetooth entered LE RX start failed"
+            exit 0
+        ;;
+    esac
+
+    exit 0
+fi
+
+#BT SVC enable
+if [ "$1" == "11" ] && [ "$2" == "1" ];then
+    logi "BtTest 11 1 - BT SVC enable"
+
+    #Bluetooth SVC enable
+    svc bluetooth enable
+
+    exit 0
+fi
+
+#BT SVC disalbe
+if [ "$1" == "11" ] && [ "$2" == "0" ];then
+    logi "BtTest 11 0 - BT SVC disable"
+
+    #Bluetooth SVC enable
+    svc bluetooth disable
+
+    exit 0
+fi
+
+#TX CW mode
+if [ "$1" == "12" ];then
+
+    if [ "$2" == "" ]; then
+        loge "FAIL: wrong input Parameter"
+        echo "FAIL: wrong input Parameter"
+        exit 0
+    fi
+
+    logi "BtTest 8 $2 - TX CW mode"
+
+    CHANNEL_NUM=$2
+
+    autobt_client txcw --channel $CHANNEL_NUM
+
+    exit 0
+fi
+
+#BT Enhance Rx
+if [ "$1" == "14" ] && [ "$2" == "0" ];then
+
+    if [ "$2" == "" ] || [ "$3" == "" ] || [ "$4" == "" ] || [ "$5" == "" ] || [ "$6" == "" ]; then
+        loge "FAIL: wrong input Parameter"
+        echo "FAIL: wrong input Parameter"
+        exit 0
+    fi
+    logi "BtTest 14 $2 $3 $4 $5 $6 - LE Enhance Rx mode"
+
+    CHANNEL_NUM=$4
+    HEX_PHY=`$myBtRfTool -c $5`
+    HEX_MODULATION_INDEX=`$myBtRfTool -c $6`
+
+    #Bluetooth entered LE Enhance RX Mode
+    #ex:autobt bleerx --channel 20 --phy 0x02 --index 0x00
+    autobt_client bleerx --channel $CHANNEL_NUM --phy $HEX_PHY --index $HEX_MODULATION_INDEX
+
+    exit 0
+fi
+
+#BT Enhance Tx
+if [ "$1" == "14" ] && [ "$2" == "1" ];then
+    if [ "$2" == "" ] || [ "$3" == "" ] || [ "$4" == "" ] || [ "$5" == "" ] || [ "$6" == "" ] || [ "$7" == "" ]; then
+        loge "FAIL: wrong input Parameter"
+        echo "FAIL: wrong input Parameter"
+        exit 0
+    fi
+    logi "BtTest 14 $2 $3 $4 $5 $6 $7- LE Enhance Tx mode"
+
+    CHANNEL_NUM=$4
+    PAYLOAD_LENGTH=$5
+    HEX_PACKET_PAYLOAD=`$myBtRfTool -c $6`
+    HEX_PHY=`$myBtRfTool -c $7`
+
+    #Bluetooth entered LE Enhance Tx Mode
+    #ex:autobt bleetx --channel 39 --length 2 --pattern 0x01 --phy 0x01
+    autobt_client bleetx --channel $CHANNEL_NUM --length $PAYLOAD_LENGTH --pattern $HEX_PACKET_PAYLOAD --phy $HEX_PHY
+
+    exit 0
+fi

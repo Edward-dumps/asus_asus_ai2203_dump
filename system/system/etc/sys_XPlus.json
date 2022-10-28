@@ -1,0 +1,68 @@
+{
+	"displayname":"sys_XPlus",
+	"configurations": [
+		{
+			"category":"Temperature",
+			"items": [
+				{
+					"name":"PERF_RES_CUSTOM_TARGET_TEMP",
+					"code":"0x10008000",
+					"value":"51000",
+					"valueset": [
+						"42000","45000","48000","51000","55000"
+					]
+				},
+				{
+					"name":"PERF_RES_CUSTOM_MAX_FPS_DIFF ",
+					"code":"0x1000c000",
+					"value":"3",
+					"valueset": [
+						"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"
+					]
+				},
+				{
+					"name":"PERF_RES_CUSTOM_THERMAL_POLICY ",
+					"code":"0x10010000",
+					"value":"5",
+					"valueset": [
+						"0","1","2","3","4","5","6","7","8"
+					]
+				}
+			]
+		},
+		{
+			"category":"GPU",
+			"items": [
+				{
+					"name":"PERF_RES_GPU_FREQ_MAX",
+					"code":"0x00c04000",
+					"value":"0",
+					"valueset": [
+						"0","5","10","15","19","24","29","33","38","42"
+					]
+				},
+				{
+					"name":"PERF_RES_GPU_FREQ_MIN",
+					"code":"0x00c00000",
+					"value":"33",
+					"valueset": [
+						"0","5","10","15","19","24","29","33","38","42"
+					]
+				}
+			]
+		},
+		{
+			"category":"POWERHAL_SCREEN_OFF_STATE",
+			"items": [
+				{
+					"name":"PERF_RES_POWERHAL_SCREEN_OFF_STATE",
+					"code":"0x03400000",
+					"value":"2",
+					"valueset": [
+						"0","1","2","3"
+					]
+				}
+			]
+		}
+	]
+}
