@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>स्कॅन करत आहे…</item>
+        <item>कनेक्ट करत आहे…</item>
+        <item>ऑथेंटिकेट करत आहे…</item>
+        <item>आयपी ॲड्रेस मिळवत आहे…</item>
+        <item>कनेक्ट केले</item>
+        <item>निलंबित केले</item>
+        <item>डिस्कनेक्ट करत आहे…</item>
+        <item>डिस्कनेक्ट केले</item>
+        <item>अयशस्वी</item>
+        <item>ब्लॉक केले</item>
+        <item>खराब कनेक्शन तात्पुरते टाळत आहे</item>
+    </string-array>
+</resources>

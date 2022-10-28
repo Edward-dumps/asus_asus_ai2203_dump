@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_00" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_01" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_02" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_03" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_04" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_05" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_06" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_07" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_08" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_09" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_10" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_11" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_12" />
+    <item android:duration="58" android:drawable="@drawable/face_enroll_anim1_13" />
+    <item android:duration="988" android:drawable="@drawable/face_enroll_anim1_14" />
+</animation-list>

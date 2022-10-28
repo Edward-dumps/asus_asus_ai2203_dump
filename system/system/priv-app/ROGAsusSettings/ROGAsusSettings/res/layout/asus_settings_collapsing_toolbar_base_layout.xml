@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:androidprv="http://schemas.android.com/apk/prv/res/android">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/content_parent" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:transitionGroup="true" app:layout_constraintBottom_toTopOf="@id/oobe_navbar_container" app:layout_constraintTop_toTopOf="parent">
+        <com.asus.commonresx.widget.AsusResxAppBarLayout android:id="@id/app_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Widget.AsusResx.AppBarLayout">
+            <com.asus.commonresx.widget.AdjustableToolbarLayout android:id="@id/collapsing_toolbar" android:layout_width="fill_parent" android:layout_height="@dimen/asusresx_toolbar_one_line_height" app:toolbarId="@id/action_bar" style="@style/Widget.AsusResx.AdjustableToolbarLayout">
+                <Toolbar android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="?actionBarSize" app:layout_collapseMode="pin" />
+            </com.asus.commonresx.widget.AdjustableToolbarLayout>
+        </com.asus.commonresx.widget.AsusResxAppBarLayout>
+        <FrameLayout android:id="@id/content_frame" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="com.asus.commonresx.widget.AsusResxScrollingViewBehavior" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <FrameLayout android:id="@id/oobe_navbar_container" android:background="?android:colorPrimary" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/content_parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

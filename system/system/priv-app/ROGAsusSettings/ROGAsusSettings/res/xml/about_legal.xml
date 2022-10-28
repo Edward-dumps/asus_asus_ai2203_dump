@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/legal_information" android:key="legal_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <Preference android:title="@string/general_sourcecode_offer_title" android:key="general_sourcecode_offer">
+        <intent android:action="android.settings.SOURCECODE" />
+    </Preference>
+    <Preference android:title="@string/geonames_cc_by_title" android:key="geonames_cc_by">
+        <intent android:action="android.settings.cc_by.GEONAMES" />
+    </Preference>
+    <Preference android:title="@string/copyright_title" android:key="copyright" settings:controller="com.android.settings.deviceinfo.legal.CopyrightPreferenceController" />
+    <Preference android:title="@string/license_title" android:key="license" settings:controller="com.android.settings.deviceinfo.legal.LicensePreferenceController" />
+    <Preference android:title="@string/terms_title" android:key="terms" settings:controller="com.android.settings.deviceinfo.legal.TermsPreferenceController" />
+    <Preference android:title="@string/module_license_title" android:key="module_license" android:fragment="com.android.settings.deviceinfo.legal.ModuleLicensesDashboard" settings:controller="com.android.settings.deviceinfo.legal.ModuleLicensesListPreferenceController" />
+    <Preference android:title="@string/webview_license_title" android:key="webview_license" settings:controller="com.android.settings.deviceinfo.legal.WebViewLicensePreferenceController" />
+    <Preference android:title="@string/ozo_license_title" android:key="ozo_software_licence" settings:controller="com.android.settings.deviceinfo.legal.OZOPreferenceController">
+        <intent android:action="android.settings.OZO.LICENSE" />
+    </Preference>
+    <Preference android:title="@string/wallpaper_attributions" android:key="wallpaper_attributions" android:summary="@string/wallpaper_attributions_values" settings:controller="com.android.settings.deviceinfo.legal.WallpaperAttributionsPreferenceController" />
+</PreferenceScreen>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/framerate_root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="180.0dip" android:divider="@null" android:dividerHeight="0.0dip" android:choiceMode="singleChoice" />
+            <include android:id="@id/footer" layout="@layout/asus_preference_footer" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

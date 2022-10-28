@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/wifi_settings" settings:keywords="@string/keywords_wifi"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.wifi.LinkablePreference android:key="wifi_status_message" />
+    <Preference android:title="@string/mobile_assistant_title" android:key="mobile_assistant_settings" android:summary="@string/mobile_assistant_summary" android:fragment="com.android.settings.wifi.MobileAssistantSettings" />
+    <PreferenceCategory android:layout="@layout/preference_category_no_label" android:key="connected_access_point" />
+    <PreferenceCategory android:layout="@layout/preference_category_no_label" android:key="access_points" />
+    <com.android.settings.datausage.DataUsagePreference android:title="@string/wifi_data_usage" android:key="wifi_data_usage" />
+</PreferenceScreen>

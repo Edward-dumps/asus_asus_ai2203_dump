@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>स्क्यान गर्दै…</item>
+        <item>कनेक्ट गर्दै…</item>
+        <item>प्रमाणीकरण गर्दै…</item>
+        <item>IP एड्रेस हासिल गर्दै…</item>
+        <item>कनेक्ट गरिएको छ</item>
+        <item>निलम्बन गरियो</item>
+        <item>डिस्कनेक्ट गर्दै…</item>
+        <item>डिस्कनेक्ट गरिएको छ</item>
+        <item>Wi-Fi कनेक्ट गर्न सकिएन</item>
+        <item>रोक लगाइयो</item>
+        <item>केही समयका लागि कमजोर इन्टरनेटलाई बेवास्ता गर्दै</item>
+    </string-array>
+</resources>

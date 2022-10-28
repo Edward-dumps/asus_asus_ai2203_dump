@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:height="@dimen/preview_item_button_size_height" android:width="@dimen/preview_item_button_size_width" android:drawable="@drawable/preview_recycleview_item_checkbox_on_external" />
+    <item android:height="@dimen/preview_item_button_checked_size_height" android:width="@dimen/preview_item_button_checked_size_width" android:drawable="@drawable/preview_recycleview_item_checkbox_on_internal" android:left="@dimen/preview_item_button_padding" android:top="@dimen/preview_item_button_padding" />
+</layer-list>

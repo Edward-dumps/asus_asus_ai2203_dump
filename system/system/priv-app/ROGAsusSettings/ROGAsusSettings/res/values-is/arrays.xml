@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Leitar…</item>
+        <item>Tengist…</item>
+        <item>Auðkennir…</item>
+        <item>Sækir IP-tölu…</item>
+        <item>Tengt</item>
+        <item>Í bið</item>
+        <item>Aftengist…</item>
+        <item>Aftengt</item>
+        <item>Mistókst</item>
+        <item>Lokað</item>
+        <item>Forðast lélega tengingu tímabundið</item>
+    </string-array>
+</resources>

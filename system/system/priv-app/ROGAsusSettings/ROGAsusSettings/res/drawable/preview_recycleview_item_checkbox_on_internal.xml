@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/preview_item_button_internal_bg_color" />
+    <corners android:radius="10.0dip" />
+    <stroke android:width="2.0dip" android:color="@color/preview_item_button_internal_border_color" />
+    <size android:height="@dimen/preview_item_button_checked_size_height" android:width="@dimen/preview_item_button_checked_size_width" />
+</shape>

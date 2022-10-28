@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Скан хийж байна…</item>
+        <item>Холбогдож байна…</item>
+        <item>Баталгаажуулж байна…</item>
+        <item>IP хаягийг авч байна…</item>
+        <item>Холбогдсон</item>
+        <item>Түр хаасан</item>
+        <item>Салгаж байна…</item>
+        <item>Салгасан</item>
+        <item>Амжилтгүй боллоо</item>
+        <item>Блоклосон</item>
+        <item>Сул холболтоос түр зайлсхийж байна</item>
+    </string-array>
+</resources>

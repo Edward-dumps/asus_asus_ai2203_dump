@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Որոնում…</item>
+        <item>Միացում…</item>
+        <item>Նույնականացում…</item>
+        <item>IP հասցեի ստացում…</item>
+        <item>Միացած է</item>
+        <item>Կասեցված է</item>
+        <item>Անջատվում է…</item>
+        <item>Կապը չեղարկված է</item>
+        <item>Չհաջողվեց միանալ</item>
+        <item>Արգելափակված է</item>
+        <item>Անջատվել է վատ կապի պատճառով</item>
+    </string-array>
+</resources>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View android:id="@id/switch_divider_line" android:background="?android:dividerVertical" android:layout_width="1.0dip" android:layout_height="30.0dip" android:layout_marginStart="@dimen/asusres_widget_horizontal_padding" android:layout_marginEnd="@dimen/asusres_widget_horizontal_padding" android:backgroundTint="?asusresPreferenceSwitchDividerColor"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

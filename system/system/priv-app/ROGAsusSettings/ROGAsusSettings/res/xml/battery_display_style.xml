@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/battery_display_style_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/battery_display_style_icon" android:key="battery_display_style_icon" />
+    <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/battery_display_style_percent" android:key="battery_display_style_percentage" />
+    <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/battery_display_style_all" android:key="battery_display_style_icon_and_percentage" />
+</PreferenceScreen>

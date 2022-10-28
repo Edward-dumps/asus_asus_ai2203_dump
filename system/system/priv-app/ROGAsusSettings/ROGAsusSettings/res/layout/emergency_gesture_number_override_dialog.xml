@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="24.0dip" android:paddingVertical="8.0dip">
+        <EditText android:id="@id/emergency_gesture_number_override" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/min_tap_target_size" android:inputType="numberSigned" android:imeOptions="actionDone" />
+    </LinearLayout>
+</ScrollView>

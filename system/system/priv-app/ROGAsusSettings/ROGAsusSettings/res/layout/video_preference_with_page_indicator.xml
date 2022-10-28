@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:enabled="false" android:gravity="center" android:orientation="vertical" android:id="@id/gesture_animation_view" android:padding="16.0dip" android:clipChildren="true" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="?android:listPreferredItemHeightSmall"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.settings.widget.AspectRatioFrameLayout android:enabled="false" android:id="@id/video_container" android:layout_width="fill_parent" android:layout_height="57.149994mm">
+        <TextureView android:enabled="false" android:layout_gravity="center" android:id="@id/video_texture_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:enabled="false" android:id="@id/video_preview_image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+    </com.android.settings.widget.AspectRatioFrameLayout>
+    <View android:enabled="false" android:id="@id/padding" android:layout_width="fill_parent" android:layout_height="3.1749878mm" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="?android:textColorSecondary" android:gravity="center" android:id="@id/video_preference_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/window_animation_speed_desc" android:paddingStart="?android:listPreferredItemPaddingStart" android:paddingEnd="?android:listPreferredItemPaddingEnd" />
+</LinearLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/secure_unlock_with_fingerprint_item"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:persistent="false" android:title="@string/asus_wakeup_with_fingerprint_item" android:key="wakeup_with_fingerprint" android:summary="@string/asus_wakeup_with_fingerprint_summary" />
+</PreferenceScreen>

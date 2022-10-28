@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/asus_faceunlock_main_view_padding" android:paddingRight="@dimen/asus_faceunlock_main_view_padding" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/title_view" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/facelock_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="70.0dip" android:layout_marginTop="40.0dip" android:src="@drawable/ic_lock_icon" />
+            <TextView android:textAppearance="@android:style/TextAppearance.Material.Title" android:textSize="36.0sp" android:gravity="center|left" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="40.0dip" android:singleLine="false" />
+        </LinearLayout>
+        <RelativeLayout android:id="@id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/bubbles_app_toggle_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.AsusresMainSwitchPreference android:title="@string/notifications_bubble_setting_title" android:key="global_notification_bubbles" app:controller="com.android.settings.notification.BubbleNotificationPreferenceController" />
+    <com.android.settings.widget.VideoPreference android:persistent="false" android:title="@string/summary_placeholder" android:key="bubbles_illustration" app:animation="@raw/bubble_notification_animation_ROG" app:controller="com.android.settings.widget.VideoPreferenceController" />
+    <com.android.settingslib.widget.LayoutPreference android:layout="@layout/notification_bubble_desc" android:selectable="false" android:key="notification_bubbles_desc" />
+</PreferenceScreen>

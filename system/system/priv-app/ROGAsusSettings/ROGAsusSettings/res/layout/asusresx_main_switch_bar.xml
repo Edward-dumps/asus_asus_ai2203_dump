@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?android:activatedBackgroundIndicator" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/frame" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/asusresx_switchbar_margin" android:minHeight="@dimen/asusresx_min_switch_bar_height" android:paddingStart="@dimen/asusresx_switchbar_margin_start" android:paddingEnd="@dimen/asusresx_switchbar_margin_end">
+        <TextView android:textAppearance="?android:textAppearanceListItem" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/switch_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" android:layout_weight="1.0" android:layout_marginEnd="@dimen/asusresx_main_switch_title_margin" android:layout_marginVertical="@dimen/asusresx_main_switch_title_margin" style="@style/TextAppearance.AsusResx.Widget.MainSwitch.Title" />
+        <Switch android:layout_gravity="center_vertical" android:id="@android:id/switch_widget" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="48.0dip" />
+    </LinearLayout>
+</LinearLayout>

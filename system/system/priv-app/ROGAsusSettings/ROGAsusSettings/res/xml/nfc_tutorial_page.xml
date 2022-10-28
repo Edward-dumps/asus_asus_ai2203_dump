@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/nfc_quick_toggle_title" android:key="nfc_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settingslib.widget.IllustrationPreference android:selectable="false" android:key="pref_tutorial" settings:IllustrationMessage="@string/asus_nfc_tutorial_1_rog3" settings:allowDividerBelow="false" settings:lottie_rawRes="@drawable/asus_settings_nfc_illustration_tequila_light" settings:searchable="false" />
+    <SwitchPreference android:title="@string/nfc_secure_settings_title" android:key="nfc_secure_settings" android:summary="@string/nfc_secure_toggle_summary" settings:controller="com.android.settings.nfc.SecureNfcPreferenceController" />
+    <Preference android:title="@string/nfc_payment_settings_title" android:key="default_payment_app" android:fragment="com.android.settings.nfc.PaymentSettings" settings:controller="com.android.settings.applications.specialaccess.DefaultPaymentSettingsPreferenceController" settings:keywords="@string/keywords_default_payment_app" />
+</PreferenceScreen>

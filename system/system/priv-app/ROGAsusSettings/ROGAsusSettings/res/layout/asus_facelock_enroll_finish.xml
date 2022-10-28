@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/message" android:paddingLeft="@dimen/asus_faceunlock_content_view_left_padding" android:paddingRight="@dimen/asus_faceunlock_content_view_right_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/asus_suw_description_margin_top" android:text="@string/asus_security_settings_facelock_enroll_finish_message" style="@style/TextAppearance.FacelockMessage" />
+    <TextView android:id="@id/note" android:paddingLeft="@dimen/asus_faceunlock_content_view_left_padding" android:paddingRight="@dimen/asus_faceunlock_content_view_right_padding" android:paddingBottom="@dimen/asus_faceunlock_main_view_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/asus_security_settings_facelock_enroll_note_2" android:layout_above="@id/divider" style="@style/TextAppearance.FacelockMessage" />
+    <View android:id="@id/divider" android:background="@color/asus_choose_lock_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_above="@id/bottom_bar" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/bottom_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <com.android.settings.widget.CustomLockBackButton android:gravity="center" android:id="@id/cancel_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/face_register_finish_cancel_button_2" android:layout_weight="1.0" style="@style/ChooseLockButton.Negative" />
+        <com.android.settings.widget.CustomLockNextButton android:gravity="center" android:id="@id/next_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/face_register_finish_confirm_button" android:layout_weight="1.0" style="@style/ChooseLockButton_Positive" />
+    </LinearLayout>
+</RelativeLayout>

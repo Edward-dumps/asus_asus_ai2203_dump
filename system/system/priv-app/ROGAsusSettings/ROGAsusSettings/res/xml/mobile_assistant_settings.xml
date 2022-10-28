@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/mobile_assistant_title" android:key="mobile_assistant_configure_settings_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference android:title="@string/wifi_cellular_data_fallback_title" android:key="auto_switch" android:summary="@string/aosp_network_switch_summary" />
+    <com.android.settings.widget.PrimarySwitchPreference android:title="@string/slm_assistant_title" android:key="toggle_slm" android:summary="@string/slm_assistant_summary2" android:fragment="com.android.settings.wifi.slm.SlmSettings" />
+</PreferenceScreen>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="?side_margin" android:paddingEnd="?side_margin"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/asus_password_header" />
+    <TextView android:textSize="16.0sp" android:textColor="?android:textColorPrimary" android:id="@id/message" android:paddingLeft="@dimen/asus_password_header_padding_left" android:paddingRight="@dimen/asus_password_header_padding_right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="12.699982mm" android:text="@string/lock_screen_notifications_interstitial_message" />
+    <ScrollView android:scrollbars="none" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <RadioGroup android:id="@id/radio_group" android:paddingLeft="@dimen/asus_password_header_padding_left" android:paddingRight="@dimen/asus_password_header_padding_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checkedButton="@id/redact_sensitive">
+            <com.android.settings.RestrictedRadioButton android:id="@id/show_all" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="11.747986mm" android:text="@string/lock_screen_notifications_summary_show" style="@style/RedactionItemAndLabel" />
+            <com.android.settings.RestrictedRadioButton android:id="@id/redact_sensitive" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="11.747986mm" android:text="@string/lock_screen_notifications_summary_hide" style="@style/RedactionItemAndLabel" />
+            <com.android.settings.RestrictedRadioButton android:id="@id/hide_all" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="11.747986mm" android:text="@string/lock_screen_notifications_summary_disable" style="@style/RedactionItemAndLabel" />
+            <com.android.settings.RestrictedRadioButton android:id="@id/use_bio" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="11.747986mm" android:text="@string/lock_screen_notifications_summary_face" style="@style/RedactionItemAndLabel" />
+        </RadioGroup>
+    </ScrollView>
+    <LinearLayout android:layout_gravity="bottom|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:background="@color/asus_choose_lock_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.android.settings.widget.CustomLockNextButton android:layout_gravity="center" android:id="@id/redaction_done_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/app_notifications_dialog_done" android:layout_weight="1.0" style="@style/ChooseLockButton_Positive" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

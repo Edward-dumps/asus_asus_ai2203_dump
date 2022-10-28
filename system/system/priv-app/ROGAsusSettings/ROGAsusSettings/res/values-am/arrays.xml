@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>በመቃኘት ላይ…</item>
+        <item>በመገናኘት ላይ…</item>
+        <item>በማረጋገጥ ላይ…</item>
+        <item>የአይፒ አድራሻን በማግኘት ላይ…</item>
+        <item>ተገናኝቷል</item>
+        <item>ታግዷል</item>
+        <item>ግንኝነት በማቋረጥ ላይ…</item>
+        <item>ተቋርጧል</item>
+        <item>አልተሳካም</item>
+        <item>ታግዷል</item>
+        <item>ለጊዜው ከደካማ ግንኙነት በመታቀብ ላይ</item>
+    </string-array>
+</resources>

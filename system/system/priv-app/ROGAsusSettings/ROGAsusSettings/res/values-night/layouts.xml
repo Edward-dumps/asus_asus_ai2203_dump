@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="layout" name="commonui_alert_dialog_button_bar">@layout/alert_dialog_button_bar_material_dark</item>
+</resources>

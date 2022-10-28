@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>მიმდინარეობს სკანირება…</item>
+        <item>მიმდინარეობს დაკავშირება…</item>
+        <item>მიმდინარეობს ავთენტიკაცია…</item>
+        <item>მიმდინარეობს IP მისამართის მიღება…</item>
+        <item>დაკავშირებული</item>
+        <item>შეჩერებული</item>
+        <item>კავშირი წყდება…</item>
+        <item>კავშირი გაწყვეტილია</item>
+        <item>ვერ განხორციელდა</item>
+        <item>დაბლოკილი</item>
+        <item>სუსტი კავშირის დროებით თავიდან აცილება</item>
+    </string-array>
+</resources>

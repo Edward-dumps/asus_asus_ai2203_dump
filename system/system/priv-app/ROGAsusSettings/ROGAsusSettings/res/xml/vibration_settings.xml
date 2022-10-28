@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/accessibility_vibration_settings_title" android:key="system_vibration_instensity"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/asus_call_settings_title" android:key="vibration_call_settings">
+        <Preference android:title="@string/asus_vibrate_when_ringing_title" android:key="vibrate_for_calls" android:fragment="com.android.settings.sound.VibrateForCallsPreferenceFragment" settings:controller="com.android.settings.sound.VibrateForCallsPreferenceController" settings:keywords="@string/keywords_vibrate_for_calls" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/vibration_intensity_settings" android:key="sound_vibration_preference_screen">
+        <com.android.settings.notification.vibrationintensity.VibrationSeekBarPreference android:title="@string/also_vibrate_for_calls_title" android:key="ringtone_vibration_preference_screen" settings:keywords="@string/keywords_ring_vibration" />
+        <com.android.settings.notification.vibrationintensity.VibrationSeekBarPreference android:title="@string/also_vibrate_for_notification_title" android:key="notification_vibration_preference_screen" />
+        <com.android.settings.notification.vibrationintensity.VibrationSeekBarPreference android:title="@string/accessibility_touch_vibration_title" android:key="touch_vibration_preference_screen" />
+    </PreferenceCategory>
+</PreferenceScreen>

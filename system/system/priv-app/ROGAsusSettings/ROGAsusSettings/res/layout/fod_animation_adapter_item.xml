@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/item_container" android:background="@drawable/fod_animation_select_item_background" android:padding="@dimen/asus_fingerprint_fod_animation_item_padding" android:layout_width="@dimen/asus_fingerprint_fod_animation_item_width" android:layout_height="@dimen/asus_fingerprint_fod_animation_item_height" android:layout_marginBottom="@dimen/asus_fingerprint_fod_animation_item_margin_bottom" android:layout_marginHorizontal="6.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/imageView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <ImageView android:id="@id/imageView_indicator" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/fod_animation_indicator_classic1" scaleType="centerInside" />
+</FrameLayout>

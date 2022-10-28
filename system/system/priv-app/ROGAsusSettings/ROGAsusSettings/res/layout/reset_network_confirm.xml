@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/TextAppearance.PreferenceTitle.SettingsLib" android:id="@id/reset_network_confirm" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="12.0dip" android:text="@string/reset_network_final_desc" android:layout_weight="1.0" android:layout_marginStart="?android:listPreferredItemPaddingStart" android:layout_marginEnd="?android:listPreferredItemPaddingEnd" />
+    <LinearLayout android:gravity="center" android:layout_gravity="bottom|center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/asus_fingerprint_btn_bottom_margin">
+        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="0.17" />
+        <com.android.settings.widget.CustomSettingsButton android:gravity="center" android:id="@id/execute_reset_network" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/reset_network_final_button_text" android:layout_weight="0.65" />
+        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="0.17" />
+    </LinearLayout>
+</LinearLayout>

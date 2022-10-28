@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_advanced_settings_onehand_ctrl" android:key="one_hand_mode_fragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settingslib.widget.LayoutPreference android:layout="@layout/one_hand_mode_layout" android:title="@string/summary_placeholder" android:selectable="false" android:key="key_one_hand_mode_layout" settings:controller="com.android.settings.asusadvancedsettings.OneHandModeLayoutPreferenceController" />
+    <PreferenceCategory android:title="@string/one_handed_mode_swipe_down_category" android:key="gesture_one_handed_mode_swipe_down" settings:controller="com.android.settings.gestures.OneHandedPreferenceCategoryController">
+        <com.android.settingslib.widget.RadioButtonPreference android:title="@string/one_handed_action_pull_down_screen_title" android:key="gesture_one_handed_action_pull_screen_down" android:summary="@string/one_handed_action_pull_down_screen_summary" settings:controller="com.android.settings.gestures.OneHandedActionPullDownPrefController" />
+        <com.android.settingslib.widget.RadioButtonPreference android:title="@string/one_handed_action_show_notification_title" android:key="gesture_one_handed_action_show_notification" android:summary="@string/one_handed_action_show_notification_summary" settings:controller="com.android.settings.gestures.OneHandedActionShowNotificationPrefController" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_advanced_settings_title" android:key="one_hand_mode_advanced_settings">
+        <Preference android:title="@string/asus_advanced_settings_onehand_custom_shift_settings_title" android:key="key_custom_shift">
+            <intent android:targetPackage="com.android.settings" android:targetClass="com.android.settings.asusadvancedsettings.OneHandModeRegularShiftActivity" />
+        </Preference>
+        <Preference android:title="@string/asus_advanced_settings_onehand_trigger_region_title" android:key="one_hand_mode_side_settings_entry" settings:controller="com.android.settings.asusadvancedsettings.OneHandModeAdvancedSettingsController">
+            <intent android:targetPackage="com.asus.systemui" android:action="com.android.intent.action.NAVIBAR_EDGE_MENU_TUNER" />
+        </Preference>
+        <Preference android:title="@string/asus_advanced_settings_onehand_gesture_sensitivity" android:key="one_hand_mode_gesture_sensitivity">
+            <intent android:targetPackage="com.android.settings" android:action="com.android.settings.ONE_HAND_MODE_SENSITIVITY" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

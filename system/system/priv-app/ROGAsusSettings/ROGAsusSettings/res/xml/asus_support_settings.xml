@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_support_settings" android:key="support_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="@string/asus_zenui_faq_settings" android:key="zenui_faq_settings">
+        <intent android:action="android.intent.action.VIEW" android:data="https://zentalk.asus.com/en/categories/faq/" />
+    </Preference>
+    <Preference android:title="@string/asus_zentalk_settings" android:key="zentalk_settings">
+        <intent android:action="android.intent.action.VIEW" android:data="https://zentalk.asus.com/" />
+    </Preference>
+    <Preference android:title="@string/asus_my_asus_settings" android:key="my_asus_settings" />
+</PreferenceScreen>

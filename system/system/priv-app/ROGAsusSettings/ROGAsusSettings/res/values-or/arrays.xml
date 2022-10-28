@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>ସ୍କାନ୍ କରାଯାଉଛି…</item>
+        <item>ସଂଯୋଗ ହେଉଛି…</item>
+        <item>ପ୍ରାମାଣିକରଣ କରାଯାଉଛି…</item>
+        <item>IP ଠିକଣା ପ୍ରାପ୍ତ କରୁଛି…</item>
+        <item>ସଂଯୋଗ ହୋଇଛି</item>
+        <item>ସାମୟିକ ଭାବରେ ବନ୍ଦ କରାଯାଇଛି</item>
+        <item>ବିଚ୍ଛିନ୍ନ କରାଯାଉଛି…</item>
+        <item>ବିଚ୍ଛିନ୍ନ କରାଯାଇଛି</item>
+        <item>ଅସଫଳ</item>
+        <item>ବ୍ଲକ୍ କରାଯାଇଛି</item>
+        <item>ଦୁର୍ବଳ ସଂଯୋଗକୁ ସାମୟିକ ଭାବେ ଏଡ଼ାଉଛି</item>
+    </string-array>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/about_settings" android:key="my_device_info_pref_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:layout="@layout/preference_category_no_label" />
+    <com.android.settingslib.widget.LayoutPreference android:layout="@layout/settings_entity_header" android:selectable="false" android:key="my_device_info_header" android:order="0" settings:controller="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoHeaderPreferenceController" settings:isPreferenceVisible="false" />
+    <com.android.settingslib.widget.LayoutPreference android:layout="@layout/rog_device_settings_entity_header" android:selectable="false" android:key="about_device_info_card" android:order="0" settings:controller="com.android.settings.deviceinfo.aboutphone.DeviceAboutPhonePreferenceController" settings:isPreferenceVisible="false" />
+    <com.android.settings.widget.ValidatedEditTextPreference android:title="@string/my_device_info_device_name_preference_title" android:key="device_name" android:summary="@string/summary_placeholder" android:order="1" settings:controller="com.android.settings.deviceinfo.DeviceNamePreferenceController" settings:enableCopying="true" />
+    <Preference android:title="@string/device_status" android:key="status_info" android:summary="@string/asus_device_status_summary" android:order="2" android:fragment="com.android.settings.deviceinfo.StatusDashboardFragment" />
+    <Preference android:title="@string/legal_information" android:key="legal_container" android:order="15" android:fragment="com.android.settings.LegalSettings" />
+    <Preference android:title="@string/about_privacy_settings_title" android:key="inspire_asus" android:order="19">
+        <intent android:targetPackage="com.android.settings" android:targetClass="com.android.settings.Settings$GDPR16YearsNotifyFragment">
+            <extra android:name=":settings:show_fragment_title" android:value="@string/about_privacy_settings_title" />
+        </intent>
+    </Preference>
+    <Preference android:title="@string/firmware_version" android:key="os_firmware_version" android:summary="@string/summary_placeholder" android:order="30" settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController" settings:enableCopying="true" settings:keywords="@string/keywords_android_version" />
+    <Preference android:title="@string/asus_security_patch" android:key="security_key" android:order="45" settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController" settings:enableCopying="true" />
+    <Preference android:title="@string/asus_hardware_info" android:key="device_model" android:summary="@string/asus_hardware_info_summary" android:order="50" android:fragment="com.android.settings.deviceinfo.HardwareInformationFragment" settings:controller="com.android.settings.deviceinfo.HardwareInfoPreferenceController" settings:enableCopying="true" settings:keywords="@string/keywords_model_and_hardware" />
+    <Preference android:title="@string/software_info" android:key="software_info" android:summary="@string/software_info_summary" android:order="55" android:fragment="com.android.settings.deviceinfo.SoftwareInformationFragment" settings:controller="com.android.settings.deviceinfo.SoftwareInformationController" settings:keywords="@string/keywords_software" />
+</PreferenceScreen>

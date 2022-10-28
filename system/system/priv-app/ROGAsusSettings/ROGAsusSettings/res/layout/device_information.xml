@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/phone_photo_id" android:layout_width="135.0dip" android:layout_height="190.0dip" android:src="@drawable/phone_photo" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textColor="?android:textColorSecondary" android:id="@id/cpu_name_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cpu_frequency_title" android:textDirection="locale" />
+        <TextView android:textSize="20.0dip" android:textColor="?android:textColorPrimary" android:ellipsize="end" android:id="@id/cpu_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="3" android:textDirection="locale" />
+        <View android:layout_width="@dimen/device_info_card_padding" android:layout_height="@dimen/device_info_card_padding" />
+        <TextView android:textColor="?android:textColorSecondary" android:id="@id/memory_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/memory_size_title" android:textDirection="locale" />
+        <TextView android:textSize="20.0dip" android:textColor="?android:textColorPrimary" android:id="@id/memory_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textDirection="locale" />
+        <View android:layout_width="@dimen/device_info_card_padding" android:layout_height="@dimen/device_info_card_padding" />
+        <TextView android:textColor="?android:textColorSecondary" android:id="@id/storage_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/storage_settings" android:textDirection="locale" />
+        <TextView android:textSize="20.0dip" android:textColor="?android:textColorPrimary" android:id="@id/storage_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textDirection="locale" />
+    </LinearLayout>
+</LinearLayout>

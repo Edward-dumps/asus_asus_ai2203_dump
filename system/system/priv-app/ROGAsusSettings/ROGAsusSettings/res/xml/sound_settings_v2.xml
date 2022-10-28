@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_sound_settings" android:key="sound_settings" settings:keywords="@string/keywords_sounds"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/asus_volume_adjustment_category" android:key="volume_adjustment_category" android:order="-250" />
+    <com.android.settings.notification.VolumeSeekBarPreference android:icon="@drawable/ic_notifications" android:title="@string/ring_volume_option_title" android:key="ring_volume" android:order="-240" settings:controller="com.android.settings.notification.RingVolumePreferenceController" />
+    <com.android.settings.notification.VolumeSeekBarPreference android:icon="@drawable/ic_asus_ic_notification" android:title="@string/notification_volume_option_title" android:key="notification_volume" android:order="-230" settings:controller="com.android.settings.notification.NotificationVolumePreferenceController" />
+    <com.android.settings.notification.VolumeSeekBarPreference android:icon="@drawable/ic_audio_alarm" android:title="@string/alarm_volume_option_title" android:key="alarm_volume" android:order="-220" settings:controller="com.android.settings.notification.AlarmVolumePreferenceController" />
+    <com.android.settings.notification.VolumeSeekBarPreference android:icon="@drawable/ic_media_stream" android:title="@string/media_volume_option_title" android:key="media_volume" android:order="-210" settings:controller="com.android.settings.notification.MediaVolumePreferenceController" />
+    <com.android.settings.notification.VolumeSeekBarPreference android:icon="@drawable/ic_local_phone_24_lib" android:title="@string/call_volume_option_title" android:key="call_volume" android:order="-200" settings:controller="com.android.settings.notification.CallVolumePreferenceController" />
+    <Preference android:icon="@drawable/ic_local_phone_24_lib" android:title="@string/call_volume_option_title" android:key="toggle_callvolume_tutorial" android:order="-190" settings:controller="com.android.settings.notification.AsusCallVolumePreferenceController">
+        <intent android:action="android.telecom.action.SHOW_CALL_VOLUME_SETTINGS" />
+    </Preference>
+    <SwitchPreference android:title="@string/outdoor_mode_title" android:key="outdoor_mode" android:summary="@string/outdoor_mode_summary" android:order="-180" settings:controller="com.android.settings.notification.OutdoorModePreferenceController" />
+    <ListPreference android:title="@string/take_call_on_title" android:key="take_call_on_output" android:order="-170" android:dialogTitle="@string/take_call_on_title" settings:controller="com.android.settings.sound.HandsFreeProfileOutputPreferenceController" settings:searchable="false" />
+    <Preference android:title="@string/media_output_title" android:key="media_output" android:order="-160" android:dialogTitle="@string/media_output_title" settings:controller="com.android.settings.sound.MediaOutputPreferenceController" settings:searchable="false" />
+    <SwitchPreference android:title="@string/mute_media_in_silent_mode_title" android:key="key_silent_mode_mute_media" android:summary="@string/mute_media_in_silent_mode_summary" android:order="-150" />
+    <Preference android:title="@string/sync_ring_and_notification_and_media_volumes_title" android:key="sync_ring_volume_with_notification_with_media_volume" android:summary="@string/summary_ring_and_notification_and_media_volumes_title" android:order="-140" settings:controller="com.android.settings.notification.VolumeSyncingPreferenceController" />
+    <com.android.settings.widget.PrimarySwitchPreference android:title="@string/adaptive_ring_volume" android:key="toggle_smart_volume" android:summary="@string/smart_volume_button_feature_description" android:order="-130" android:defaultValue="false" settings:keywords="@string/asus_sound_vibration_keywords_smart_ringtone">
+        <intent android:action="android.telecom.action.SHOW_SMART_VOLUME_SETTINGS" />
+    </com.android.settings.widget.PrimarySwitchPreference>
+    <ListPreference android:entries="@array/asus_default_volume_key_stream_entries" android:title="@string/volume_key_default_stream_radio_button_title" android:key="default_volume_key_stream_key" android:order="-120" android:entryValues="@array/asus_default_volume_key_stream_values" settings:controller="com.android.settings.notification.DefaultVolumeKeyStreamPreferenceController" />
+    <Preference android:title="@string/media_controls_title" android:key="media_controls_summary" android:order="-100" android:fragment="com.android.settings.sound.MediaControlsSettings" settings:controller="com.android.settings.sound.MediaControlsParentPreferenceController" settings:keywords="@string/keywords_media_controls" />
+    <Preference android:title="@string/asus_audiowizard_entry_title" android:key="audiowizard_entry" android:order="-95">
+        <intent android:targetPackage="com.asus.audiowizard" android:action="android.intent.action.MAIN" android:targetClass="com.asus.audiowizard.MainActivity" />
+    </Preference>
+    <Preference android:title="@string/asus_bluetooth_volume_title" android:key="bluetooth_volume" android:order="-90" android:fragment="com.android.settings.notification.AsusBluetoothVolumeSettings" settings:controller="com.android.settings.notification.AsusBluetoothVolumeController" />
+    <PreferenceCategory android:title="@string/asus_dont_disturb_category" android:key="dont_disturb_category" android:order="-80" />
+    <com.android.settingslib.RestrictedPreference android:title="@string/asus_zen_mode_settings_title" android:key="zen_mode" android:order="-70" android:fragment="com.android.settings.notification.zen.ZenModeSettings" settings:controller="com.android.settings.notification.zen.ZenModePreferenceController" settings:keywords="@string/keywords_sounds_and_notifications_interruptions" settings:useAdminDisabledSummary="true" />
+    <Preference android:title="@string/priority_mode_title" android:key="priority_mode" android:order="-60">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.AsusPriorityModeSettingsActivity" />
+    </Preference>
+    <com.android.settings.widget.PrimarySwitchPreference android:title="@string/gesture_prevent_ringing_sound_title" android:key="gesture_prevent_ringing_sound" android:order="-55" android:fragment="com.android.settings.gestures.PreventRingingGestureSettings" settings:controller="com.android.settings.gestures.PreventRingingParentPreferenceController" />
+    <PreferenceCategory android:title="@string/asus_ringtone_sound_category" android:key="ringtone_and_sound_category" android:order="-50" />
+    <Preference android:title="@string/asus_ringtone_title" android:key="dual_sim_ringtone" android:order="-45" settings:allowDividerAbove="true">
+        <intent android:action="com.android.phone.action.AsusDualTabRingtoneActivity" />
+    </Preference>
+    <com.android.settings.DefaultRingtonePreference android:title="@string/asus_ringtone_title" android:key="phone_ringtone" android:summary="@string/summary_placeholder" android:order="-45" android:dialogTitle="@string/asus_ringtone_title" android:ringtoneType="ringtone" settings:keywords="@string/asus_sound_settings" />
+    <SwitchPreference android:persistent="false" android:title="@string/AI_ringtone" android:key="button_AI_ringtone" android:summary="@string/smart_ringtone_description" android:order="-40" android:defaultValue="false" />
+    <com.android.settings.DefaultRingtonePreference android:persistent="false" android:title="@string/asus_alarm_ringtone_title" android:key="alarm_ringtone" android:summary="@string/summary_placeholder" android:order="-30" android:dialogTitle="@string/asus_alarm_ringtone_title" android:ringtoneType="alarm" />
+    <com.android.settings.DefaultRingtonePreference android:title="@string/asus_notification_ringtone_title" android:key="notification_ringtone" android:summary="@string/summary_placeholder" android:order="-20" android:dialogTitle="@string/asus_notification_ringtone_title" android:ringtoneType="notification" />
+    <PreferenceCategory android:title="@string/asus_system_effect_category" android:key="other_sounds_and_vibrations_category" android:order="-10">
+        <Preference android:entries="@array/flip_camera_sound_entries" android:title="@string/asus_flip_camera_sound" android:key="flip_camera_sound" android:summary="@string/summary_placeholder" android:entryValues="@array/flip_camera_sound_values" android:fragment="com.android.settings.flipcamera.FlipCameraSoundPreferenceFragment" />
+        <SwitchPreference android:title="@string/dial_pad_tones_title" android:key="dial_pad_tones" />
+        <SwitchPreference android:title="@string/screen_locking_sounds_title" android:key="screen_locking_sounds" />
+        <SwitchPreference android:title="@string/asus_charging_sounds_title" android:key="charging_sounds" />
+        <SwitchPreference android:title="@string/touch_sounds_title" android:key="touch_sounds" />
+        <SwitchPreference android:title="@string/docking_sounds_title" android:key="docking_sounds" />
+        <ListPreference android:title="@string/dock_audio_media_title" android:key="dock_audio_media" android:summary="%s" />
+        <SwitchPreference android:title="@string/boot_sounds_title" android:key="boot_sounds" />
+        <ListPreference android:title="@string/emergency_tone_title" android:key="emergency_tone" android:summary="%s" />
+        <SwitchPreference android:title="@string/startup_sound_title" android:key="startup_sound" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_system_vibration_category" android:key="system_vibration_category" android:order="-5">
+        <com.android.settings.widget.PrimarySwitchPreference android:title="@string/accessibility_vibration_settings_title" android:key="vibrate_and_haptic" android:order="-10" android:fragment="com.android.settings.notification.VibrationSettings" />
+    </PreferenceCategory>
+    <Preference android:title="@string/sound_work_settings" android:key="sound_work_settings" android:order="100" android:fragment="com.android.settings.notification.SoundWorkSettings" settings:controller="com.android.settings.notification.WorkSoundsPreferenceController" />
+</PreferenceScreen>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/header_category_system" android:key="system_dashboard_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <Preference android:title="@string/about_settings" android:key="top_level_about_device" android:order="-300" android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment" />
+    <Preference android:title="@string/language_settings" android:key="language_input_settings" android:order="-260" android:fragment="com.android.settings.language.LanguageAndInputSettings" />
+    <Preference android:title="@string/date_and_time" android:key="date_time_settings" android:order="-240" android:fragment="com.android.settings.datetime.DateTimeSettings" settings:controller="com.android.settings.datetime.DateTimePreferenceController" />
+    <Preference android:title="@string/reset_dashboard_title" android:key="reset_dashboard" android:order="-55" android:fragment="com.android.settings.system.ResetDashboardFragment" settings:controller="com.android.settings.system.ResetPreferenceController" />
+    <Preference android:title="@string/asus_advanced_settings_data_transfer" android:key="toggle_data_transfer" android:order="-52" settings:controller="com.android.settings.datatransfer.DataTransferPreferenceController" settings:keywords="@string/asus_system_keywords_data_transfer" />
+    <Preference android:title="@string/asus_local_backup_title" android:key="toggle_local_backup" android:order="-47" android:fragment="com.android.settings.localbackup.LocalBackupFragment" settings:controller="com.android.settings.localbackup.LocalBackupPreferenceController" settings:keywords="@string/asus_system_keywords_local_backup" />
+    <com.android.settings.widget.NotificationPreference android:title="@string/system_update_settings_list_item_title" android:key="system_update_settings" android:summary="@string/summary_placeholder" android:order="-30" settings:controller="com.android.settings.system.SystemUpdatePreferenceController" settings:keywords="@string/keywords_system_update_settings">
+        <intent android:action="android.settings.ASUS_SYSTEM_UPDATE_SETTINGS" />
+    </com.android.settings.widget.NotificationPreference>
+    <Preference android:title="@string/additional_system_update_settings_list_item_title" android:key="additional_system_update_settings" android:order="-29" settings:controller="com.android.settings.system.AdditionalSystemUpdatePreferenceController">
+        <intent android:targetPackage="@string/additional_system_update" android:action="android.intent.action.MAIN" android:targetClass="@string/additional_system_update_menu" />
+    </Preference>
+    <Preference android:title="@string/regulatory_labels" android:key="regulatory_info" android:order="-20" settings:controller="com.android.settings.deviceinfo.RegulatoryInfoPreferenceController">
+        <intent android:action="android.settings.SHOW_REGULATORY_INFO" />
+    </Preference>
+</PreferenceScreen>

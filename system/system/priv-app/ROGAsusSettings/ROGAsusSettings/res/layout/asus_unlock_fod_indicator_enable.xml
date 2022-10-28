@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/fod_inicator_enable_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="17.0dip" android:layout_marginStart="75.0dip" android:layout_marginEnd="8.0dip">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/linear_inicator_show" android:layout_width="14.759979mm" android:layout_height="wrap_content" android:layout_marginRight="63.0dip">
+            <ImageView android:id="@id/img_inicator_show" android:layout_width="14.759979mm" android:layout_height="30.639984mm" android:src="@drawable/fod_show" android:scaleType="centerCrop" />
+            <TextView android:textAppearance="@style/TextAppearance.DeviceDefault.Subhead" android:id="@id/text_inicator_show" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/condition_expand_show" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/linear_inicator_hide" android:layout_width="14.759979mm" android:layout_height="wrap_content">
+            <ImageView android:id="@id/img_inicator_hide" android:layout_width="14.759979mm" android:layout_height="30.639984mm" android:src="@drawable/fod_hide" android:scaleType="centerCrop" />
+            <TextView android:textAppearance="@style/TextAppearance.DeviceDefault.Subhead" android:id="@id/text_inicator_hide" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/condition_expand_hide" />
+        </LinearLayout>
+    </LinearLayout>
+    <RadioGroup android:orientation="horizontal" android:id="@id/radiobtn_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:layout_marginBottom="25.0dip" android:checkedButton="@id/radiobtn_inicator_show" android:layout_marginStart="75.0dip">
+        <com.android.settings.RestrictedRadioButton android:id="@id/radiobtn_inicator_show" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0799866mm" />
+        <com.android.settings.RestrictedRadioButton android:id="@id/radiobtn_inicator_hide" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.985992mm" />
+    </RadioGroup>
+</LinearLayout>

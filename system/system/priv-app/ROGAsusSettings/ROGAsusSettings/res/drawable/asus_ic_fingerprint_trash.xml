@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="24.0dip" android:width="24.0dip" android:viewportWidth="24.0" android:viewportHeight="24.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/obiwan_icon_tint_color" android:pathData="M14.9044,4.41052V3.2695H9.0956v1.141H4.18577V6.34679H5.18848V18.19414A2.53916,2.53916,0,0,0,7.7247,20.7305H16.2753a2.53916,2.53916,0,0,0,2.53622-2.53636V6.34679h1.00271V4.41052Zm1.97085,13.78362a.60063.60063,0,0,1-.6.60009H7.7247a.60063.60063,0,0,1-.6-.60009V6.34679h9.7505ZM11.13559,8.28292H9.19933v8.5749h1.93627Zm3.80339,0H13.00271v8.5749H14.939Z" />
+</vector>

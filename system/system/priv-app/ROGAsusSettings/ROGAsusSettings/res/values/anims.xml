@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="anim" name="asusresx_popup_enter_material">@anim/asusres_popup_enter_material</item>
+    <item type="anim" name="asusresx_popup_exit_material">@anim/asusres_popup_exit_material</item>
+</resources>

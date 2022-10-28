@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/usb_type_settings_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.CustomThemeListPreference android:entries="@array/usb_connection_type_items" android:title="@string/usb_connection_type_title" android:key="usb_connection_type" android:dialogTitle="@string/usb_connection_type_title" android:entryValues="@array/usb_connection_type_values" />
+    <SwitchPreference android:title="@string/usb_always_ask_once_connected" android:key="check_always_ask_once_connected" android:defaultValue="true" />
+</PreferenceScreen>

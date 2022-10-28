@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/rog_wallpaper_theme_dashboard_title" android:key="wallpapers_and_themes"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.AsusSystemUIThemePreference android:title="@string/asus_theme_store_title" android:key="systemui_store" />
+    <com.android.settings.widget.AsusSystemUIThemePreference android:title="@string/asus_theme_app_title2" android:key="systemui_theme" />
+    <Preference android:title="@string/asus_title_wallpaper_and_color" android:key="wallpaper_style" android:summary="@string/asus_wallpaper_and_color_summary" />
+    <Preference android:title="@string/asus_lock_screen_wallpaper_slideshow" android:key="lockscreen_wallpaper_slideshow" settings:controller="com.android.settings.security.LockScreenWallpaperSlideshow" />
+</PreferenceScreen>

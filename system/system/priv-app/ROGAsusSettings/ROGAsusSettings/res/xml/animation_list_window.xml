@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/window_animation_speed_title" android:key="power_key_fragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.VideoPreference android:title="@string/summary_placeholder" android:key="windows_video" settings:animation="@raw/animation_window" settings:controller="com.android.settings.widget.AnimationVideoPreferenceController" settings:preview="@drawable/animation_window" />
+    <com.android.settings.widget.AnimationListPreference android:persistent="false" android:title="@string/asus_power_key_selection_classic" android:key="pref_animation_list_speed" />
+</PreferenceScreen>

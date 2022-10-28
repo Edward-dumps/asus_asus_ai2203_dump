@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/confirm_lock_background_base" />
+    <com.android.internal.widget.LinearLayoutWithDefaultTouchRecepient android:orientation="horizontal" android:id="@id/topLayout" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="5.1">
+            <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <include layout="@layout/asus_password_header" />
+            <FrameLayout android:gravity="left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/asus_password_land_text_padding_left" android:layout_marginTop="1.5899963mm">
+                <TextView android:textColor="@color/asus_suw_theme_color" android:id="@id/headerText" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@android:style/TextAppearance.Material.Headline" />
+                <TextView android:textColor="?android:textColorPrimary" android:id="@id/detailsText" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </FrameLayout>
+            <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <ImageView android:gravity="center" android:id="@id/fingerprintIcon" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <Button android:id="@id/cancelButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/cancel" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" style="@android:style/Widget.Material.Button.Borderless" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="2.8">
+            <com.android.internal.widget.LockPatternView android:layout_gravity="center" android:id="@id/lockPattern" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="@dimen/asus_password_pattern_margin" android:layout_weight="1.0" />
+            <TextView android:gravity="center" android:id="@id/errorText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="1.5999756mm" android:accessibilityLiveRegion="polite" style="@style/TextAppearance.ConfirmDeviceCredentialsErrorText" />
+        </LinearLayout>
+        <View android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.9" />
+    </com.android.internal.widget.LinearLayoutWithDefaultTouchRecepient>
+</FrameLayout>

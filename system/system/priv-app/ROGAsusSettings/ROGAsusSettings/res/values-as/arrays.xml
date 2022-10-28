@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>স্কেন কৰি থকা হৈছে…</item>
+        <item>সংযোগ কৰি থকা হৈছে…</item>
+        <item>বিশ্বাসযোগ্যতা প্ৰমাণীকৰণ কৰি থকা হৈছে…</item>
+        <item>আইপি ঠিকনা সংগ্ৰহ কৰি থকা হৈছে…</item>
+        <item>সংযোজিত</item>
+        <item>নিলম্বন কৰা হৈছে</item>
+        <item>সংযোগ বিচ্ছিন্ন কৰি থকা হৈছে…</item>
+        <item>সংযোগ বিচ্ছিন্ন হৈছে</item>
+        <item>বিফল হৈছে</item>
+        <item>অৱৰোধ কৰা আছে</item>
+        <item>সাময়িকভাৱে দুৰ্বল সংযোগ দেখুওৱা হোৱা নাই</item>
+    </string-array>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Nagsa-scan…</item>
+        <item>Kumokonekta…</item>
+        <item>Ino-authenticate…</item>
+        <item>Kinukuha ang IP address…</item>
+        <item>Konektado</item>
+        <item>Nasuspinde</item>
+        <item>Nagdidiskonekta…</item>
+        <item>Nadiskonekta</item>
+        <item>Hindi matagumpay</item>
+        <item>Naka-block</item>
+        <item>Pansamantalang iniiwasan ang mahinang koneksyon</item>
+    </string-array>
+</resources>

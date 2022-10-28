@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_advanced_settings_flip_camera_features"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <PreferenceCategory android:title="@string/asus_advanced_settings_camera_adjustment_category" android:key="camera_adjustment_category">
+        <com.android.settings.widget.PrimarySwitchPreference android:title="@string/asus_advanced_settings_flip_camera_toolbar_title" android:key="flip_camera_toolbar" android:fragment="com.android.settings.flipcamera.FlipCameraToolbarFragment" />
+        <SwitchPreference android:title="@string/asus_advanced_settings_flip_camera_confirm_dialog_title" android:key="flip_camera_confirm_dialog" android:summary="@string/asus_advanced_settings_flip_camera_confirm_dialog_summary" />
+        <SwitchPreference android:title="@string/asus_advanced_settings_quick_angle_shooting_title" android:key="quick_angle_shooting" android:summary="@string/asus_advanced_settings_quick_angle_shooting_summary" />
+        <Preference android:title="@string/asus_advanced_settings_quick_angle_shooting_restore_title" android:key="quick_angle_shooting_restore" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_advanced_settings_camera_retraction_category" android:key="camera_retraction_category">
+        <Preference android:title="@string/asus_advanced_settings_camera_retraction_category" android:key="double_tap_retract_camera" android:summary="@string/asus_advanced_settings_retract_camera_new_summary2" android:fragment="com.android.settings.flipcamera.DoubleTapRetractPreferenceFragment" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_advanced_settings_protective_case_category" android:key="asus_cover_protective_case_category">
+        <Preference android:title="@string/asus_advanced_settings_case_type_title" android:key="key_case_type" android:summary="@string/asus_advanced_settings_case_type_none" settings:controller="com.android.settings.flipcamera.AsusCaseTypePreferenceController" />
+    </PreferenceCategory>
+</PreferenceScreen>

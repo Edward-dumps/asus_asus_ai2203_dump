@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/security_settings_fingerprint_preference_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/secure_with_facelock_category" android:key="secure_with_facelock">
+        <SwitchPreference android:persistent="false" android:title="@string/asus_security_settings_facelock_enroll_finish_title" android:key="unlock_device_with_facelock" android:summary="@string/secure_unlock_with_facelock_summary" />
+        <SwitchPreference android:persistent="false" android:title="@string/secure_reveal_notification_item" android:key="reveal_notify_with_facelock" android:summary="@string/secure_reveal_notification_summary_2" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/facelock_management_category" android:key="facelock_management" />
+    <com.android.settings.widget.NoticePreferenceWithIcon android:key="facelock_notice" />
+</PreferenceScreen>

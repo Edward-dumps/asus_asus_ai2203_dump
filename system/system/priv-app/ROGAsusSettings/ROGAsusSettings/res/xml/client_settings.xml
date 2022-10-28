@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settingslib.widget.LayoutPreference android:layout="@layout/client_settings_header" android:selectable="false" android:key="client_header_view" android:order="-10000" settings:allowDividerBelow="true" />
+    <PreferenceCategory android:title="@string/advanced_settings" android:key="configure_advanced" android:order="15">
+        <com.android.settings.wifi.tether.WifiTetherDescriptionListPreference android:entries="@array/wifi_tether_traffic_config_entries" android:title="@string/wifi_tether_traffic_limitation_title" android:key="client_traffic_config" android:summary="@string/summary_placeholder" android:dialogLayout="@layout/client_traffic_config_listview" android:entryValues="@array/wifi_tether_traffic_config_values" />
+        <com.android.settings.wifi.tether.WifiTetherDescriptionListPreference android:title="@string/wifi_tether_time_limitation_title" android:key="client_time_config" android:summary="@string/summary_placeholder" android:dialogLayout="@layout/client_time_config_listview" android:entryValues="@array/wifi_tether_time_config_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_hardware_info" android:key="hardware_info"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <Preference android:title="@string/cpu_frequency_title" android:key="cpu_frequency" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusCPUPreferenceController" settings:keywords="@string/cpu_frequency_title" />
+    <Preference android:title="@string/memory_size_title" android:key="memory_size" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusMemorySizePreferenceController" settings:keywords="@string/memory_size_title" />
+    <Preference android:title="@string/gps_version" android:key="gps_version" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusGPSPreferenceController" settings:keywords="@string/gps_version" />
+    <Preference android:title="@string/wifi_version" android:key="wifi_version" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusWifiVersionPreferenceController" settings:keywords="@string/wifi_version" />
+    <Preference android:title="@string/bt_version" android:key="bt_version" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusBTVersionPreferenceController" settings:keywords="@string/bt_version" />
+    <Preference android:title="@string/touch_version_title" android:key="touch_version" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusTouchVersionPreferenceController" settings:keywords="@string/touch_version_title" />
+    <Preference android:title="@string/touch_version_rear_title2" android:key="touch_version_rear" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusTouchVersionRearPreferenceController" settings:keywords="@string/touch_version_rear_title" />
+    <Preference android:title="@string/battery_version_title" android:key="battery_version" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusBatteryVersionPreferenceController" settings:keywords="@string/battery_version_title" />
+    <Preference android:title="@string/asus_fingerprint_version" android:key="fingerprint_version" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusFingerPrintVerPreferenceController" settings:keywords="@string/asus_fingerprint_version" />
+    <Preference android:title="@string/asus_mcu_version" android:key="mcu_version" android:summary="@string/device_info_default" settings:controller="com.android.settings.deviceinfo.AsusCameraMotorVerPreferenceController" settings:keywords="@string/asus_mcu_version" />
+    <PreferenceCategory android:title="@string/asus_category_aero_active" android:key="category_aero_active">
+        <Preference android:title="@string/asus_gaming_aura_version" android:key="aero_aura_version" android:summary="@string/asus_gaming_aura_version" settings:keywords="@string/asus_gaming_aura_version" />
+        <Preference android:title="@string/asus_gaming_audio_version" android:key="aero_audio_version" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/asus_gaming_aura_mcu_version" android:key="aero_mcu_version" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/asus_gaming_pd_version" android:key="aero_pd_version" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/asus_gaming_aura_uuid_version" android:key="aero_uuid_version" android:summary="@string/asus_gaming_unconnected" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_category_twinview_dock" android:key="category_twinview_dock">
+        <Preference android:title="@string/asus_gaming_aura_version" android:key="twinview_aura_version" android:summary="@string/asus_gaming_aura_version" />
+        <Preference android:title="@string/asus_gaming_audio_version" android:key="twinview_audio_version" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/asus_gaming_tough_panel_version" android:key="twinview_tough_panel_version" android:summary="@string/asus_gaming_tough_panel_version" settings:keywords="@string/asus_gaming_tough_panel_version" />
+        <Preference android:title="@string/asus_gaming_dock_version" android:key="twinview_dock_version" android:summary="@string/asus_gaming_dock_version" />
+        <Preference android:title="@string/asus_gaming_pd_version" android:key="twinview_usbpd_version" android:summary="@string/asus_gaming_pd_version" />
+        <Preference android:title="@string/asus_gaming_dp_version" android:key="twinview_dp_version" android:summary="@string/asus_gaming_dp_version" />
+        <Preference android:title="@string/battery_version_title" android:key="twinview_battery_version" android:summary="@string/asus_gaming_unconnected" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_category_desktop_dock" android:key="category_desktop_dock">
+        <Preference android:title="@string/asus_gaming_aura_version" android:key="desktop_aura_version" android:summary="@string/asus_gaming_aura_version" settings:keywords="@string/asus_gaming_aura_version" />
+        <Preference android:title="@string/asus_gaming_audio_version" android:key="desktop_audio_version" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/asus_gaming_dock_version" android:key="desktop_dock_version" android:summary="@string/asus_gaming_dock_version" />
+        <Preference android:title="@string/asus_gaming_pd_version" android:key="desktop_usbpd_version" android:summary="@string/asus_gaming_pd_version" />
+        <Preference android:title="@string/asus_gaming_hub1_version" android:key="desktop_hub1_version" android:summary="@string/asus_gaming_hub1_version" />
+        <Preference android:title="@string/asus_gaming_hub2_version" android:key="desktop_hub2_version" android:summary="@string/asus_gaming_hub2_version" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_category_gamepad" android:key="category_gamepad">
+        <Preference android:title="@string/asus_gaming_gamepad_left_handle" android:key="gamepad_left_handle" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/asus_gaming_gamepad_holder" android:key="gamepad_holder" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/asus_gaming_gamepad_wireless_dongle" android:key="gamepad_wireless_dongle" android:summary="@string/asus_gaming_unconnected" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_category_gamepad2" android:key="category_gamepad2">
+        <Preference android:title="@string/asus_gaming_gamepad2_left_handle" android:key="gamepad2_left_handle" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/asus_gaming_gamepad2_right_handle" android:key="gamepad2_right_handle" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/asus_gaming_gamepad_charger" android:key="gamepad2_charger" android:summary="@string/asus_gaming_unconnected" />
+        <Preference android:title="@string/bt_version" android:key="gamepad2_bluetooth" android:summary="@string/asus_gaming_unconnected" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_category_usbcto35" android:key="category_usbcto35">
+        <Preference android:title="@string/asus_gaming_audio_version" android:key="usbcto35_audio_version" android:summary="@string/asus_gaming_unconnected" />
+    </PreferenceCategory>
+</PreferenceScreen>

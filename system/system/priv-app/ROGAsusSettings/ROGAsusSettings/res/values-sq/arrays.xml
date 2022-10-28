@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Po skanon…</item>
+        <item>Po lidhet…</item>
+        <item>Po vërtetohet…</item>
+        <item>Po merr adresën IP…</item>
+        <item>Lidhur</item>
+        <item>Pezulluar</item>
+        <item>Po shkëputet…</item>
+        <item>Shkëputur</item>
+        <item>Pa sukses</item>
+        <item>Bllokuar</item>
+        <item>Po shmang përkohësisht një lidhje të dobët</item>
+    </string-array>
+</resources>

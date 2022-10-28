@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/fingerprint_enrolling_content" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.android.settings.biometrics.fingerprint.AsusFingerprintImage android:id="@id/fingerprint_animator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/asus_fingerint_enrollment_step_0" />
+        <com.android.settings.biometrics.fingerprint.AsusFingerprintRedDot android:id="@id/fingerprint_red_dot" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/asus_fingerint_enrollment_step_0" />
+    </FrameLayout>
+    <TextView android:textSize="25.0sp" android:textColor="?android:colorAccent" android:gravity="center" android:id="@id/progress_text" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/asus_fingerprint_enrolling_proggress_text_margin_top" />
+</LinearLayout>

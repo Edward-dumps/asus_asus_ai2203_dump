@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/entity_header" android:paddingTop="25.0dip" android:paddingBottom="25.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingEnd="?android:listPreferredItemPaddingEnd"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/qr_code" android:layout_width="144.0dip" android:layout_height="144.0dip" android:layout_marginBottom="25.0dip" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/entity_header_content" android:paddingLeft="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:paddingEnd="16.0dip">
+            <TextView android:ellipsize="marquee" android:gravity="start" android:id="@id/entity_header_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" android:textDirection="locale" style="@style/TextAppearance.EntityHeaderTitle" />
+            <TextView android:id="@id/entity_header_summary" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/TextAppearance.EntityHeaderSummary" />
+        </LinearLayout>
+        <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <com.android.settings.widget.CustomSettingsButton android:id="@id/forget_button" android:paddingLeft="0.0dip" android:paddingRight="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" android:text="@string/forget" />
+            <com.android.settings.widget.CustomSettingsButton android:id="@id/signin_button" android:paddingLeft="0.0dip" android:paddingRight="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" android:text="@string/wifi_sign_in_button_text" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

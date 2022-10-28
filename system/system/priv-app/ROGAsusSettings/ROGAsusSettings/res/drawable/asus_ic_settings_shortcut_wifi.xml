@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/asus_shortcut_background" />
+    <foreground>
+        <vector android:height="200.0dip" android:width="200.0dip" android:viewportWidth="100.0" android:viewportHeight="100.0">
+            <group android:translateX="-4.0" android:translateY="-4.0">
+                <path android:fillColor="@color/asus_shortcut_icon_color" android:pathData="M31.6,47.43l4.07,4.08a25.93,25.93 0,0 1,36.66 0l4.07,-4.08A31.7,31.7 0,0 0,31.6 47.43ZM47.89,63.73L54,69.84l6.11,-6.11A8.63,8.63 0,0 0,47.89 63.73ZM39.74,55.58 L43.82,59.65a14.4,14.4 0,0 1,20.36 0l4.08,-4.07A20.19,20.19 0,0 0,39.74 55.58Z" />
+            </group>
+        </vector>
+    </foreground>
+</adaptive-icon>

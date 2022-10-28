@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Се скенира…</item>
+        <item>Се поврзува…</item>
+        <item>Се проверува…</item>
+        <item>Се добива IP-адресата…</item>
+        <item>Поврзано</item>
+        <item>Прекинато</item>
+        <item>Се исклучува…</item>
+        <item>Не е поврзано</item>
+        <item>Неуспешно</item>
+        <item>Блокирано</item>
+        <item>Привремено избегнува лоша врска</item>
+    </string-array>
+</resources>

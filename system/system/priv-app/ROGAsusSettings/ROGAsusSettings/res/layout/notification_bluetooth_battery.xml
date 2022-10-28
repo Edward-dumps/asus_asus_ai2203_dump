@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/left_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/left_battery_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/battery" android:tint="@color/battery_notification_image_color" />
+        <TextView android:textAppearance="@style/TextAppearance.DeviceDefault.Notification" android:id="@id/left_battery_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/primary_device_battery_title" />
+        <TextView android:textAppearance="@style/TextAppearance.DeviceDefault.Notification" android:id="@id/left_battery_value" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/right_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/right_battery_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/battery" android:tint="@color/battery_notification_image_color" />
+        <TextView android:textAppearance="@style/TextAppearance.DeviceDefault.Notification" android:id="@id/right_battery_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/secondary_device_battery_title" />
+        <TextView android:textAppearance="@style/TextAppearance.DeviceDefault.Notification" android:id="@id/right_battery_value" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:background="@color/asus_fod_animation_background_mask_color" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <RelativeLayout android:layout_gravity="center" android:layout_width="22.699982mm" android:layout_height="49.20999mm">
+            <ImageView android:id="@id/preview" android:background="@drawable/fod_animation_preview_background" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/indicator" android:layout_width="fill_parent" android:layout_height="13.169983mm" android:layout_marginTop="30.629974mm" android:src="@drawable/fod_animation_indicator_classic1" scaleType="centerInside" />
+        </RelativeLayout>
+    </FrameLayout>
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:clipChildren="true" android:clipToPadding="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ScrollView android:scrollbars="none" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="13.0sp" android:textColor="?android:textColorPrimary" android:layout_gravity="center_horizontal" android:id="@id/hintText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.4899902mm" android:layout_marginBottom="3.4899902mm" android:text="@string/asus_fingerprint_animation_title" android:fontFamily="sans-serif-medium" />
+                <androidx.recyclerview.widget.RecyclerView android:orientation="vertical" android:id="@id/list" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/asus_fingerprint_fod_animation_adapter_margin_land" android:layout_marginRight="@dimen/asus_fingerprint_fod_animation_adapter_margin_land" android:paddingHorizontal="16.0dip" app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" app:spanCount="3" />
+            </LinearLayout>
+        </ScrollView>
+        <com.android.settings.widget.CustomSettingsButton android:textSize="15.0sp" android:layout_gravity="center_horizontal" android:id="@id/apply_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:minWidth="197.0dip" android:text="@string/apply" />
+    </LinearLayout>
+</LinearLayout>

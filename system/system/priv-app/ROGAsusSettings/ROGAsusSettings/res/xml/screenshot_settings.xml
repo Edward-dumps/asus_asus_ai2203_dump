@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_advanced_settings_screenshot"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <com.android.settings.widget.PrimarySwitchPreference android:title="@string/three_finger_screenShot_title" android:key="three_finger_screenshot" android:fragment="com.android.settings.display.ThreeFingerScreenshotPreferenceFragment" />
+    <SwitchPreference android:title="@string/screenshot_rog_watermark_title" android:key="rog_screenshot_watermark" android:summary="@string/screenshot_rog_automatic_watermark_title" settings:controller="com.android.settings.screenshot.ScreenShotWatermarkController" />
+    <Preference android:title="@string/toolbar_on_off" android:key="gamegenie_toolbar_settings" android:summary="@string/toolbar_on_off_summary" settings:controller="com.android.settings.screenshot.ScreenShotGameGenieToolBarController">
+        <intent android:action="com.asus.gamewidget.action.TOOLBAR_SETTINGS" />
+    </Preference>
+    <SwitchPreference android:title="@string/screenshot_crop_title" android:key="screenshot_crop" android:summary="@string/screenshot_crop_summary" settings:controller="com.android.settings.screenshot.ScreenshotCropController" />
+    <SwitchPreference android:title="@string/screenshot_with_toolbar_title" android:key="screenshot_show_toolbar" android:summary="@string/screenshot_with_toolbar_summary" settings:controller="com.android.settings.screenshot.ScreenshotShowToolbarController" />
+    <SwitchPreference android:title="@string/set_screenshot_editor_title_v2" android:key="set_screenshot_editor" android:summary="@string/set_screenshot_editor_summary" settings:controller="com.android.settings.screenshot.ScreenShotEditController" />
+    <SwitchPreference android:title="@string/overwrite_original_screenshot_after_editing_title" android:key="overwrite_original_screenshot_after_editing" android:summary="@string/overwrite_original_screenshot_after_editing_summary" settings:controller="com.android.settings.screenshot.OverwriteOriginalScreenShotAfterEditController" />
+    <ListPreference android:title="@string/recent_apps_key_long_press_control_title" android:key="recent_apps_key_long_press_control_settings" />
+    <SwitchPreference android:title="@string/screenshot_sound_title" android:key="screenshot_sound" />
+    <SwitchPreference android:title="@string/screenshot_notify_title" android:key="screenshot_notify" />
+    <ListPreference android:title="@string/screenshot_format" android:key="screenshot_format" />
+</PreferenceScreen>

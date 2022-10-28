@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Traži se…</item>
+        <item>Povezuje se…</item>
+        <item>Potvrđuje se identitet…</item>
+        <item>Preuzima se IP adresa…</item>
+        <item>Povezano je</item>
+        <item>Suspendovano</item>
+        <item>Prekida se veza…</item>
+        <item>Veza je prekinuta</item>
+        <item>Nije uspelo</item>
+        <item>Blokirano</item>
+        <item>Privremeno izbegavanje loše veze</item>
+    </string-array>
+</resources>

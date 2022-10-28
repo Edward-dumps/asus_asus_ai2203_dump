@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/container" android:background="@android:color/black" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/img_back" android:paddingLeft="16.0dip" android:paddingTop="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="centerCrop" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textColor="@android:color/white" android:id="@id/text_dec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/asus_advanced_settings_onehand_custom_shift" android:layout_above="@id/paddingView" android:layout_centerInParent="true" />
+    <View android:id="@id/paddingView" android:layout_width="fill_parent" android:layout_height="11.270996mm" android:layout_above="@id/preview_window" />
+    <LinearLayout android:id="@id/preview_window" android:layout_width="fill_parent" android:layout_height="63.5mm" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/img_preview" android:layout_width="57.149994mm" android:layout_height="127.0mm" android:src="@drawable/one_hand_mode_regular_shift_preview" android:scaleType="centerCrop" />
+    </LinearLayout>
+    <ImageView android:id="@id/img_arrow" android:layout_width="12.059998mm" android:layout_height="22.21997mm" android:src="@drawable/one_hand_mode_regular_shift_arrow" android:scaleType="centerCrop" android:layout_alignTop="@id/paddingView" android:layout_centerInParent="true" />
+</RelativeLayout>

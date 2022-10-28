@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/memory_accelerate_apps_catalog"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:key="pref_optiflex_enable_title" android:summary="@string/optiflex_enable_description" />
+    <SwitchPreference android:title="@string/optiflex_accelerated" android:key="pref_optiflex_enable_switch" android:defaultValue="true" />
+    <SwitchPreference android:title="@string/auto_select" android:key="pref_optiflex_auto_mode_switch" android:defaultValue="true" />
+    <PreferenceCategory android:title="@string/optiflex_accelerated" android:key="pref_optiflex_category_accelerated">
+        <Preference android:key="pref_optiflex_select_over_a_num" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/optiflex_nonaccelerated" android:key="pref_optiflex_category_nonaccelerated" />
+</PreferenceScreen>

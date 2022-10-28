@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/gesture_animation_view" android:paddingLeft="2.3809814mm" android:clipChildren="true" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.30249mm" android:minHeight="?android:listPreferredItemHeightSmall" android:importantForAccessibility="noHideDescendants"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/video_container1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/flipcamera_video_container_margin_right">
+        <FrameLayout android:layout_width="@dimen/flipcamera_video_container_width" android:layout_height="@dimen/flipcamera_video_container_height">
+            <FrameLayout android:padding="@dimen/flipcamera_video_container_padding_2dp" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextureView android:layout_gravity="center" android:id="@id/video_texture_view1" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <ImageView android:id="@id/video_preview_image1" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <ImageView android:id="@id/select_image1" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <TextView android:textAppearance="?android:textAppearanceListItem" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/flipcamera_video_container_padding_16dp" android:text="@string/asus_advanced_settings_case_type_none" />
+        <RadioButton android:id="@id/radio_btn1" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.8999939mm" android:layout_marginTop="@dimen/flipcamera_video_container_padding_16dp" android:layout_marginBottom="@dimen/flipcamera_video_container_padding_16dp" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/video_container2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/flipcamera_video_container_margin_right">
+        <FrameLayout android:id="@id/video_container2" android:layout_width="@dimen/flipcamera_video_container_width" android:layout_height="@dimen/flipcamera_video_container_height">
+            <FrameLayout android:padding="@dimen/flipcamera_video_container_padding_2dp" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextureView android:layout_gravity="center" android:id="@id/video_texture_view2" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <ImageView android:id="@id/video_preview_image2" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <ImageView android:id="@id/select_image2" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <TextView android:textAppearance="?android:textAppearanceListItem" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/flipcamera_video_container_padding_16dp" android:text="@string/asus_advanced_settings_case_type_asus" />
+        <RadioButton android:id="@id/radio_btn2" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.8999939mm" android:layout_marginTop="@dimen/flipcamera_video_container_padding_16dp" android:layout_marginBottom="@dimen/flipcamera_video_container_padding_16dp" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/video_container3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/flipcamera_video_container_margin_right">
+        <FrameLayout android:id="@id/video_container3" android:layout_width="@dimen/flipcamera_video_container_width" android:layout_height="@dimen/flipcamera_video_container_height">
+            <FrameLayout android:padding="@dimen/flipcamera_video_container_padding_2dp" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextureView android:layout_gravity="center" android:id="@id/video_texture_view3" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <ImageView android:id="@id/video_preview_image3" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <ImageView android:id="@id/select_image3" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <TextView android:textAppearance="?android:textAppearanceListItem" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/flipcamera_video_container_padding_16dp" android:text="@string/asus_advanced_settings_case_type_rhinoshield" />
+        <RadioButton android:id="@id/radio_btn3" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.8999939mm" android:layout_marginTop="@dimen/flipcamera_video_container_padding_16dp" android:layout_marginBottom="@dimen/flipcamera_video_container_padding_16dp" />
+    </LinearLayout>
+</LinearLayout>

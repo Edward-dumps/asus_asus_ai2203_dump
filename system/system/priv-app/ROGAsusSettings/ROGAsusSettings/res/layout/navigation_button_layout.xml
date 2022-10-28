@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="?android:selectableItemBackground" android:focusable="true" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="?android:listPreferredItemHeight" android:layout_weight="1.0" android:paddingStart="24.0dip">
+        <com.android.settings.RestrictedRadioButton android:id="@id/button_back_home_recent" android:layout_width="wrap_content" android:layout_height="fill_parent" android:checkMark="?android:listChoiceIndicatorSingle" />
+        <ImageView android:id="@id/image_back_home_recent" android:clickable="true" android:layout_width="wrap_content" android:layout_height="64.0dip" android:src="@drawable/asus_navigationbar_pic_1_zenui_six" android:scaleType="centerInside" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="?android:selectableItemBackground" android:focusable="true" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="?android:listPreferredItemHeight" android:layout_weight="1.0" android:paddingStart="24.0dip">
+        <com.android.settings.RestrictedRadioButton android:id="@id/button_recent_home_back" android:layout_width="wrap_content" android:layout_height="fill_parent" android:checkMark="?android:listChoiceIndicatorSingle"
+          xmlns:android="http://schemas.android.com/apk/res/android" />
+        <ImageView android:id="@id/image_recent_home_back" android:clickable="true" android:layout_width="wrap_content" android:layout_height="64.0dip" android:src="@drawable/asus_navigationbar_pic_2_zenui_six" android:scaleType="centerInside" />
+    </LinearLayout>
+</LinearLayout>

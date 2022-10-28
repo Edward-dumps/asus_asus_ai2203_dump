@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Iyaskena…</item>
+        <item>Iyaxhuma…</item>
+        <item>Iyaqinisekisa…</item>
+        <item>Ithola ikheli lasesizindeni se-inthanethi…</item>
+        <item>Ixhunyiwe</item>
+        <item>Kumiswe okwesikhashana</item>
+        <item>Iyanqamula…</item>
+        <item>Inqamukile</item>
+        <item>Akuphumelelanga</item>
+        <item>Ivinjiwe</item>
+        <item>Okwesikhashana ivikela ukuxhumana okungaqinile</item>
+    </string-array>
+</resources>

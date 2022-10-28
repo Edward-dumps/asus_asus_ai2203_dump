@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textAppearance="@style/TextAppearance.PreferenceTitle.SettingsLib" android:id="@id/sud_layout_description" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="28.0dip" android:text="@string/asus_reset_all_settings_desc" android:layout_weight="1.0" android:layout_marginStart="@dimen/dashboard_tile_image_margin_start" android:layout_marginEnd="12.0dip" />
+    <LinearLayout android:gravity="center" android:layout_gravity="bottom|center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/asus_fingerprint_btn_bottom_margin">
+        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="0.17" />
+        <com.android.settings.widget.CustomSettingsButton android:gravity="center" android:id="@id/initiate_main_clear" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/asus_reset_all_settings" android:layout_weight="0.65" />
+        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="0.17" />
+    </LinearLayout>
+</LinearLayout>

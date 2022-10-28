@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="?android:listPreferredItemPaddingStart" android:paddingEnd="?android:listPreferredItemPaddingEnd"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="?android:textColorSecondary" android:id="@id/blank1" android:layout_width="wrap_content" android:layout_height="16.0dip" android:text="" />
+    <CheckedTextView android:textAppearance="?android:textAppearanceListItemSmall" android:gravity="center_vertical" android:id="@android:id/text1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checkMark="@null" android:drawableLeft="?android:listChoiceIndicatorSingle" android:drawablePadding="21.0dip" />
+    <TextView android:textColor="?android:textColorSecondary" android:id="@id/blank2" android:layout_width="wrap_content" android:layout_height="16.0dip" android:text="" />
+    <TextView android:textAppearance="?android:textAppearanceListItemSecondary" android:textColor="?android:textColorSecondary" android:id="@id/summary" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/refresh_rate_auto_desc2" android:paddingStart="51.0dip" />
+</LinearLayout>

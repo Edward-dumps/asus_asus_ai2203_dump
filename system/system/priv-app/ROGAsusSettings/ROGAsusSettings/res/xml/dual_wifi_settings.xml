@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/dual_wifi_settings_title_for_WW"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.dualwifi.TipsPreference android:persistent="false" android:enabled="false" android:title="" android:selectable="false" android:key="first_tips" android:summary="@string/dual_wifi_settings_first_tips_for_WW" android:shouldDisableView="false" />
+    <PreferenceCategory android:title="@string/dual_wifi_settings_status_category" android:key="connection_status">
+        <com.android.settings.dualwifi.WifiInfoPreference android:title="@string/dual_wifi_settings_status_main_wifi_title" android:key="current_connected_main_wifi_ap" android:summary="@string/summary_placeholder" />
+        <com.android.settings.dualwifi.WifiInfoPreference android:title="@string/dual_wifi_settings_status_dual_wifi_title" android:key="current_connected_dual_wifi_ap" android:summary="@string/summary_placeholder" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/dual_wifi_settings_available_ap_category" android:key="available_connections_tip">
+        <com.android.settings.dualwifi.TipsPreference android:persistent="false" android:enabled="false" android:title="" android:selectable="false" android:key="second_tips" android:summary="@string/dual_wifi_settings_first_tips_for_WW" android:shouldDisableView="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/preference_category_no_label" android:key="connected_access_point" />
+    <PreferenceCategory android:layout="@layout/preference_category_no_label" android:key="access_points" />
+    <Preference android:title="Saved networks for dual Wi-Fi" android:key="saved_dual_networks" android:fragment="com.android.settings.dualwifi.savedaccesspoints2.SavedDualAccessPointsWifiSettings2" />
+</PreferenceScreen>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/slm_assistant_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.settings.dualwifi.TipsPreference android:key="slm_assistant_description" />
+    <PreferenceCategory android:title="@string/installed" android:key="installed_apps_list_category" />
+</PreferenceScreen>

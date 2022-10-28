@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/animator_duration_speed_title" android:key="power_key_fragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.VideoPreference android:title="@string/summary_placeholder" android:key="duraion_video" settings:animation="@raw/animation_duration" settings:controller="com.android.settings.widget.AnimationVideoPreferenceController" settings:preview="@drawable/animation_duration" />
+    <com.android.settings.widget.AnimationListPreference android:persistent="false" android:title="@string/asus_power_key_selection_classic" android:key="pref_animation_list_duration" />
+</PreferenceScreen>

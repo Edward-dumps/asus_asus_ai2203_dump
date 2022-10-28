@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/message" android:paddingLeft="@dimen/asus_faceunlock_content_view_left_padding" android:paddingRight="@dimen/asus_faceunlock_content_view_right_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/asus_suw_description_margin_top" android:text="@string/asus_security_settings_facelock_enroll_introduction_message_1" style="@style/TextAppearance.FacelockMessage" />
+    <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <View android:background="@color/asus_choose_lock_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/button_bar" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.android.settings.widget.CustomLockBackButton android:gravity="center" android:id="@id/cancel_button" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxWidth="@dimen/asus_fingerprint_btn_w" android:text="@string/security_settings_fingerprint_enroll_introduction_cancel" android:layout_weight="1.0" style="@style/ChooseLockButton.Negative" />
+        <com.android.settings.widget.CustomLockNextButton android:gravity="center" android:id="@id/next_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/security_settings_fingerprint_enroll_introduction_continue" android:layout_weight="1.0" style="@style/ChooseLockButton_Positive" />
+    </LinearLayout>
+</LinearLayout>

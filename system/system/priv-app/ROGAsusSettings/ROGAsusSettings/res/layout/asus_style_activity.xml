@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/preview_layout" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:id="@id/preview_ui" android:background="?android:colorBackgroundFloating" android:layout_width="fill_parent" android:layout_height="475.0dip" />
+        <LinearLayout android:background="@color/preview_sample_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="vertical" android:paddingTop="32.0dip" android:paddingBottom="32.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="?android:listPreferredItemPaddingStart" android:paddingEnd="?android:listPreferredItemPaddingEnd">
+            <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="?android:textColorPrimary" android:layout_gravity="center_horizontal" android:id="@id/preview_item_label" android:paddingBottom="32.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:elevation="2.0dip" />
+            <LinearLayout android:layout_gravity="center_horizontal" android:id="@id/preview_item_content" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <Button android:layout_gravity="center_horizontal" android:id="@id/button_apply" android:layout_width="200.0dip" android:layout_height="wrap_content" android:text="@string/btn_apply" />
+    </LinearLayout>
+</ScrollView>

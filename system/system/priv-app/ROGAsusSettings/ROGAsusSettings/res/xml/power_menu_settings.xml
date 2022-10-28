@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/power_menu_setting_name"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <Preference android:title="@string/cards_passes_sentence" android:key="gesture_global_actions_panel_summary" android:fragment="com.android.settings.gestures.GlobalActionsPanelSettings" settings:controller="com.android.settings.gestures.GlobalActionsPanelPreferenceController" />
+    <Preference android:title="@string/device_controls_sentence" android:key="gesture_device_controls_summary" android:fragment="com.android.settings.gestures.DeviceControlsSettings" settings:controller="com.android.settings.gestures.DeviceControlsPreferenceController" />
+    <SwitchPreference android:title="@string/power_menu_long_press_for_assist" android:key="gesture_power_menu_long_press_for_assist" android:summary="@string/power_menu_long_press_for_assist_summary" settings:controller="com.android.settings.gestures.LongPressPowerButtonPreferenceController" />
+    <PreferenceCategory android:title="@string/power_menu_lock_screen_category">
+        <SwitchPreference android:title="@string/power_menu_privacy" android:key="gesture_power_menu_privacy" settings:controller="com.android.settings.gestures.PowerMenuPrivacyPreferenceController" />
+    </PreferenceCategory>
+    <com.android.settingslib.widget.FooterPreference android:title="@string/power_menu_power_volume_up_hint" android:selectable="false" android:key="power_menu_power_volume_up_hint" settings:searchable="false" />
+</PreferenceScreen>

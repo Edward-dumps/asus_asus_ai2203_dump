@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_advanced_settings_title" android:key="advanced_settings_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/asus_advanced_settings_tools_category_title" android:key="tool_category">
+        <Preference android:title="@string/asus_advanced_settings_smart_key_title" android:key="side_key_settings" settings:controller="com.android.settings.asusadvancedsettings.SideKeyPreferenceController" settings:keywords="@string/asus_advanced_settings_keywords_smartkey">
+            <intent android:targetPackage="com.asus.smartkey" android:action="asus.intent.action.SMART_KEY_SETTING" />
+        </Preference>
+        <Preference android:title="@string/asus_advanced_settings_mobile_manager_title" android:key="mobile_manager_settings" settings:controller="com.android.settings.asusadvancedsettings.MobileManagerPreferenceController" settings:keywords="@string/asus_advanced_settings_keywords_mobile_manager">
+            <intent android:targetPackage="com.asus.mobilemanager" android:targetClass="com.asus.mobilemanager.entry.FunctionActivity" />
+        </Preference>
+        <Preference android:title="@string/asus_advanced_settings_gamegenie" android:key="game_toolbar_app_settings" settings:controller="com.android.settings.asusadvancedsettings.GameGeniePreferenceController" settings:keywords="@string/asus_advanced_settings_keywords_gamegenie" />
+        <Preference android:title="@string/asus_advanced_settings_twinapps" android:key="twinapps_settings" settings:controller="com.android.settings.asusadvancedsettings.TwinAppsPreferenceController" settings:keywords="@string/asus_advanced_settings_keywords_twinapps" />
+        <Preference android:title="@string/asus_advanced_settings_safeguard" android:key="toggle_safeguard" settings:controller="com.android.settings.asusadvancedsettings.SafeGuardPreferenceController" settings:keywords="@string/asus_advanced_settings_keywords_safeguard" />
+        <Preference android:title="@string/asus_advanced_settings_zenimoji" android:key="zenimoji_settings" settings:controller="com.android.settings.asusadvancedsettings.ZenimojiPreferenceController" />
+        <Preference android:title="@string/asus_advanced_settings_livemoji" android:key="livemoji_settings" />
+        <com.android.settings.widget.PrimarySwitchPreference android:title="@string/edge_tool_title" android:key="edge_tool" settings:controller="com.android.settings.asusadvancedsettings.EdgeToolPreferenceController">
+            <intent android:action="asus.intent.action.FREEFORM_SHORTCUT_SETTINGS" />
+        </com.android.settings.widget.PrimarySwitchPreference>
+        <com.android.settings.widget.PrimarySwitchPreference android:title="@string/asus_advanced_settings_memory_accelerate" android:key="toggle_optiflex" android:fragment="com.android.settings.accelerateapps.AccelerateAppsPreferenceFragment">
+            <intent android:action="com.android.settings.accelerateapps.AccelerateAppsActivity" />
+        </com.android.settings.widget.PrimarySwitchPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_advanced_settings_quick_action_category_title" android:key="quick_operation_category">
+        <Preference android:title="@string/gesture_preference_title" android:key="asus_apk_touch_gesture" settings:controller="com.android.settings.asusadvancedsettings.AsusZenmotionPreferenceController" settings:keywords="@string/asus_advanced_settings_keywords_zenmotion_v2" />
+        <SwitchPreference android:title="@string/asus_advanced_instant_camera_title" android:key="toggle_instant_camera" android:summary="@string/asus_advanced_instant_camera_summary" settings:controller="com.android.settings.asusadvancedsettings.InstantCameraPreferenceController" />
+        <com.android.settings.widget.PrimarySwitchPreference android:title="@string/one_handed_title" android:key="gesture_one_handed" android:fragment="com.android.settings.gestures.OneHandedSettings" settings:keywords="@string/asus_advanced_settings_keywords_one_hand_mode" />
+        <com.android.settings.widget.PrimarySwitchPreference android:title="@string/asus_double_tap_launch_title" android:key="toggle_asus_double_tap_launch" settings:controller="com.android.settings.asusadvancedsettings.AsusDoubleTapLaunchController" />
+        <com.android.settings.widget.PrimarySwitchPreference android:title="@string/asus_advanced_settings_gripsensor" android:key="grip_sensor_apk" settings:controller="com.android.settings.asusadvancedsettings.AirTriggerApkPreferenceController" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_advanced_settings_screenshot_category_title" android:key="screenshot_tools_category">
+        <Preference android:title="@string/asus_advanced_settings_screen_record" android:key="screen_record" settings:controller="com.android.settings.asusadvancedsettings.ScreenRecordPreferenceController" settings:keywords="@string/asus_advanced_settings_keywords_screen_record" />
+        <Preference android:title="@string/asus_advanced_settings_screenshot" android:key="toggle_screen_shot" android:fragment="com.android.settings.asusadvancedsettings.ScreenshotSettingsDashboardFragment" settings:keywords="@string/asus_advanced_settings_keywords_screen_shot" />
+        <Preference android:title="@string/asus_advanced_settings_flip_camera_features" android:key="flip_camera_features" android:fragment="com.android.settings.flipcamera.AsusFlipCameraFeaturesFragment" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_advanced_settings_touch_category_title" android:key="touch_category">
+        <SwitchPreference android:title="@string/asus_advanced_settings_inadvertent_touch" android:key="asus_inadvertent_touch_enable" android:summary="@string/asus_advanced_settings_inadvertent_touch_summary" settings:controller="com.android.settings.asusadvancedsettings.InadvertentTouchPerferenceController" />
+        <SwitchPreference android:title="@string/asus_advanced_settings_glove_mode" android:key="asus_glove_mode_setting" android:summary="@string/asus_advanced_settings_glove_mode_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

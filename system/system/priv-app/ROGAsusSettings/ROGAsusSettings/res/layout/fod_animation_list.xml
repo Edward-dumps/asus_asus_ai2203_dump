@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:background="@color/asus_fod_animation_background_mask_color" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="4.5">
+        <RelativeLayout android:layout_gravity="center" android:layout_width="27.78125mm" android:layout_height="60.32498mm">
+            <ImageView android:id="@id/preview" android:background="@drawable/fod_animation_preview_background" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/indicator" android:layout_width="fill_parent" android:layout_height="16.192474mm" android:layout_marginTop="37.62375mm" android:src="@drawable/fod_animation_indicator_classic1" scaleType="centerInside" />
+        </RelativeLayout>
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="3.2">
+        <TextView android:textSize="13.0sp" android:textColor="?android:textColorPrimary" android:layout_gravity="center_horizontal" android:id="@id/hintText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0799866mm" android:layout_marginBottom="4.439972mm" android:text="@string/asus_fingerprint_animation_title" android:fontFamily="sans-serif-medium" />
+        <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@id/list" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="@dimen/asus_fingerprint_fod_animation_item_height" android:paddingHorizontal="20.0dip" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        <com.android.settings.widget.CustomSettingsButton android:textSize="15.0sp" android:layout_gravity="center_horizontal" android:id="@id/apply_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.439972mm" android:minWidth="197.0dip" android:text="@string/apply" />
+        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

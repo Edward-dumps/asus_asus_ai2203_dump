@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/gesture_prevent_ringing_sound_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.AsusresMainSwitchPreference android:key="gesture_prevent_ringing_switch" />
+    <PreferenceCategory android:layout="@layout/asusresx_preference_category_with_first_place_material" android:title="@string/gesture_prevent_ringing_title" android:key="gesture_prevent_ringing_category" />
+</PreferenceScreen>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Qidirilmoqda…</item>
+        <item>Ulanmoqda…</item>
+        <item>Autentifikatsiya qilinmoqda…</item>
+        <item>IP manzil olinmoqda…</item>
+        <item>Ulandi</item>
+        <item>Bloklangan</item>
+        <item>Uzilmoqda…</item>
+        <item>Uzildi</item>
+        <item>Ulanmadi</item>
+        <item>Bloklandi</item>
+        <item>Signali kuchsiz tarmoqqa vaqtinchalik ulanilmasin</item>
+    </string-array>
+</resources>

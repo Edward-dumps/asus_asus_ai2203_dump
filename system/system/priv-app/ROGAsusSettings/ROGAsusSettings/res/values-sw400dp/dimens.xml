@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="asus_fingerprint_fod_animation_adapter_margin_land">7.139984mm</dimen>
+    <dimen name="asusres_list_item_min_height">66.0dip</dimen>
+    <dimen name="asusres_primary_text_size">18.0sp</dimen>
+    <dimen name="one_hand_mode_layout_mp4_width">62.649994mm</dimen>
+    <dimen name="settingslib_illustration_height">379.0dip</dimen>
+    <dimen name="settingslib_illustration_height_small">292.0dip</dimen>
+    <dimen name="settingslib_illustration_height_smaller">266.0dip</dimen>
+    <dimen name="settingslib_illustration_width">379.0dip</dimen>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/security_settings_fingerprint_preference_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/fingerprint_usage_category_title" android:key="secure_with_fingerprint">
+        <com.android.settings.widget.PrimarySwitchPreference android:persistent="false" android:title="@string/secure_unlock_with_fingerprint_item" android:key="unlock_device_with_fingerprint" android:summary="@string/secure_unlock_with_fingerprint_summary" />
+        <Preference android:title="@string/asus_fingerprint_animation_title" android:key="fingerprint_animation" android:summary="@string/asus_fingerprint_animation_title" />
+        <Preference android:title="@string/asus_fingerprint_indicator_title" android:key="fingerprint_indicator" android:summary="@string/asus_fingerprint_indicator_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/fingerprint_management_category" android:key="fingerprint_management" />
+    <com.android.settings.widget.NoticePreferenceWithIcon android:clickable="false" android:selectable="false" android:key="fingerprint_notice" />
+    <com.android.settings.widget.NoticePreferenceWithIcon android:clickable="false" android:selectable="false" android:key="fingerprint_disable_notice" />
+</PreferenceScreen>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/bluetooth_settings_title" android:key="bluetooth_pairing_detail" settings:keywords="@string/keywords_bluetooth_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <Preference android:title="@string/bluetooth_device_name" android:key="bt_pair_rename_devices" android:summary="@string/summary_placeholder" settings:controller="com.android.settings.bluetooth.BluetoothDeviceRenamePreferenceController" />
+    <PreferenceCategory android:title="@string/connected_device_media_device_title" android:key="available_device_list" settings:controller="com.android.settings.connecteddevice.AvailableMediaDeviceGroupController" />
+    <PreferenceCategory android:title="@string/connected_device_other_device_title" android:key="connected_device_list" settings:controller="com.android.settings.connecteddevice.ConnectedDeviceGroupController" />
+    <PreferenceCategory android:title="@string/connected_tws_device_saved_title" android:key="saved_tws_device_list" settings:controller="com.android.settings.connecteddevice.SavedTwsDeviceGroupController" />
+    <PreferenceCategory android:title="@string/connected_device_previously_connected_title" android:key="saved_device_list" settings:controller="com.android.settings.connecteddevice.SavedDeviceGroupController" />
+    <com.android.settings.bluetooth.BluetoothProgressCategory android:title="@string/bluetooth_paired_device_title" android:key="available_devices" />
+    <com.android.settingslib.widget.FooterPreference />
+</PreferenceScreen>

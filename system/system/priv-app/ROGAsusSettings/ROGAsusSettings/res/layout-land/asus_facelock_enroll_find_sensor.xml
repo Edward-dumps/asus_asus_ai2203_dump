@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/asus_faceunlock_content_view_left_padding" android:paddingRight="@dimen/asus_faceunlock_content_view_right_padding" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <TextView android:id="@id/find_sensor_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/asus_suw_description_margin_top" android:text="@string/asus_security_settings_facelock_enroll_find_sensor_message_1" style="@style/TextAppearance.FacelockMessage" />
+                <TextView android:id="@id/find_sensor_text_2" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/asus_security_settings_facelock_enroll_find_sensor_message_2" style="@style/TextAppearance.FacelockMessage" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <ImageView android:id="@id/image" android:layout_width="fill_parent" android:layout_height="253.0dip" android:src="@drawable/ic_asus_facerescan_pic_411" android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+        <View android:background="@color/asus_choose_lock_divider_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <Button android:layout_gravity="bottom|center" android:id="@id/next_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/fingerprint_enroll_button_next" style="@style/ChooseLockButton_Positive" />
+    </LinearLayout>
+</ScrollView>

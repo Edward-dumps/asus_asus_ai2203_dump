@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbars="none" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/fragment_container" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:clipChildren="true" android:clipToPadding="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/asus_fingerprint_enroll_header" />
+            <TextView android:id="@id/find_sensor_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/asus_security_settings_fingerprint_enroll_find_sensor_message_v2_fod" style="@style/TextAppearance.FingerprintMessage" />
+            <TextView android:id="@id/hint_message" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/asus_security_settings_fingerprint_enroll_hint" style="@style/TextAppearance.FingerprintMessage" />
+            <TextView android:textSize="13.0sp" android:textColor="?android:colorAccent" android:gravity="left" android:id="@id/protector_alert" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/asus_fingerprint_screen_protector_alert" style="@style/TextAppearance.FingerprintMessage" />
+            <View android:layout_width="fill_parent" android:layout_height="54.0dip" />
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/find_sensor_view" android:layout_width="@dimen/asus_fingerprint_find_sensor_content_back_w" android:layout_height="@dimen/asus_fingerprint_find_sensor_content_back_h" android:src="@drawable/asus_yoda_fingerprint_find_sensor_apng" />
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>

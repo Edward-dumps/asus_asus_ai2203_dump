@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/entity_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="?android:listPreferredItemPaddingStart" android:paddingEnd="?android:listPreferredItemPaddingEnd" style="@style/EntityHeader"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/name_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_marginStart="@dimen/asusres_preference_category_title_margin_start">
+        <TextView android:textSize="28.0sp" android:textColor="?android:colorAccent" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="false" android:drawableRight="@drawable/ic_edit" android:drawablePadding="8.0dip" android:textDirection="locale" style="@style/TextAppearance.EntityHeaderTitle" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+        <TextView android:textSize="16.0sp" android:gravity="center" android:id="@id/mac_address" android:paddingTop="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextAppearance.EntityHeaderSummary" />
+        <TextView android:textSize="16.0sp" android:gravity="center" android:id="@id/connection_state" android:paddingTop="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/TextAppearance.EntityHeaderSummary" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingTop="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceListItem" android:layout_gravity="center" android:id="@id/traffic_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wifi_tether_current_traffic_title" android:singleLine="true" />
+            <TextView android:textAppearance="?android:textAppearanceListItemSecondary" android:textColor="?android:textColorSecondary" android:layout_gravity="center" android:id="@id/traffic_value" android:paddingTop="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceListItem" android:layout_gravity="center" android:id="@id/time_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wifi_tether_current_connect_time_title" android:singleLine="true" />
+            <TextView android:textAppearance="?android:textAppearanceListItemSecondary" android:textColor="?android:textColorSecondary" android:layout_gravity="center" android:id="@id/time_value" android:paddingTop="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

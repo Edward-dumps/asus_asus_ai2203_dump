@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_advanced_settings_onehand_ctrl" android:key="three_finger_screenshot_fragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.VideoPreference android:persistent="false" android:title="@string/summary_placeholder" android:key="key_three_finger_screenshot_layout" settings:animation="@raw/three_finger_screenshot_gesture_screenshot" settings:controller="com.android.settings.widget.VideoPreferenceController" />
+    <com.android.settingslib.widget.LayoutPreference android:layout="@layout/three_finger_screenshot_desc" android:selectable="false" android:key="key_three_finger_screenshot_desc_layout" />
+    <SwitchPreference android:title="@string/three_finger_screenShot_in_gaming_title" android:key="toggle_tfs_allow_gaming" settings:controller="com.android.settings.display.ThreeFingerScreenshotGamingPreferenceController" />
+</PreferenceScreen>

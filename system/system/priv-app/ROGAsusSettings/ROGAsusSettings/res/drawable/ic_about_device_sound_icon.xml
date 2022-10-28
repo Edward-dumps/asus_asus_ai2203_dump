@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="26.0dip" android:width="28.0dip" android:viewportWidth="28.0" android:viewportHeight="26.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <group>
+        <clip-path android:pathData="M12.5,26H15.5V0H12.5V26ZM6.25,21.84H9.25V5.2H6.25V21.84ZM21.75,21.84H18.75V5.2H21.75V21.84ZM0,16.64H3V10.4H0V16.64ZM28,16.64H25V10.4H28V16.64Z" android:fillType="evenOdd" />
+        <path android:fillColor="@drawable/$ic_about_device_sound_icon__0" android:pathData="M-1,-2H29V29.2H-1V-2Z" />
+    </group>
+</vector>

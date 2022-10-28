@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/battery_visual_settings_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <Preference android:title="@string/battery_display_style_title" android:key="battery_percentage" android:fragment="com.android.settings.fuelgauge.BatteryDisplayStyleSettingsFragment" settings:controller="com.android.settings.display.BatteryPercentagePreferenceController" />
+    <SwitchPreference android:title="@string/super_saving_mode_hint_title2" android:key="ultra_durable_mode_hint" settings:controller="com.android.settings.fuelgauge.UltraDurableModeHintPreferenceController" />
+    <SwitchPreference android:title="@string/charging_animation_title" android:key="charging_animation" android:summary="@string/charging_animation_summary" settings:controller="com.android.settings.display.ChargingAniPreferenceController" />
+</PreferenceScreen>

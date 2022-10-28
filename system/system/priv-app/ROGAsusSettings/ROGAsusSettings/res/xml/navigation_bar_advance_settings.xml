@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference android:title="@string/recent_apps_key_long_press_control_title" android:key="recent_apps_key_long_press_control_settings" />
+    <PreferenceCategory android:title="@string/button_layout_preference_title" />
+    <com.android.settingslib.widget.LayoutPreference android:layout="@layout/navigation_button_layout" android:selectable="false" android:key="navigation_bar_button_layout" app:allowDividerBelow="true" />
+</PreferenceScreen>

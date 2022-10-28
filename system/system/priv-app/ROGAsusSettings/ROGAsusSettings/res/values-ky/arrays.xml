@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>Изделүүдө…</item>
+        <item>Туташууда…</item>
+        <item>Аутентификациядан өтүүдө…</item>
+        <item>IP дареги алынууда…</item>
+        <item>Туташып турат</item>
+        <item>Убактылуу токтотулду</item>
+        <item>Ажыратылууда…</item>
+        <item>Ажыратылды</item>
+        <item>Ката</item>
+        <item>Бөгөттөлдү</item>
+        <item>Байланыш начар болгондуктан өчүрүлдү</item>
+    </string-array>
+</resources>

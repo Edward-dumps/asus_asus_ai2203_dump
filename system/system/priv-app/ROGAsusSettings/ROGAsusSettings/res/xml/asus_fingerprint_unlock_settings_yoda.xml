@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/secure_unlock_with_fingerprint_item"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/asus_fingerprint_wakeup_category_title" android:key="category_wakeup">
+        <SwitchPreference android:persistent="false" android:title="@string/asus_fingerprint_wakeup_unlock_title" android:key="wakeup_with_fingerprint" android:summary="@string/asus_fingerprint_wakeup_unlock_summary" />
+        <com.android.settingslib.widget.LayoutPreference android:layout="@layout/asus_unlock_fod_indicator_enable" android:title="@string/summary_placeholder" android:selectable="false" android:key="fod_indicator_enable" />
+        <CheckBoxPreference android:persistent="false" android:title="@string/asus_fingerprint_wakeup_lift_phone" android:key="wakeup_lift_phone" />
+        <CheckBoxPreference android:persistent="false" android:title="@string/asus_fingerprint_wakeup_tap_screen" android:key="wakeup_tap_screen" />
+    </PreferenceCategory>
+    <com.android.settings.widget.FingerprintWakeupNoticePreference android:key="fingerprint_wakeup_notice" />
+</PreferenceScreen>

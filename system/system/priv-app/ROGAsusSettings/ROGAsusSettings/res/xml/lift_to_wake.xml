@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_lift_to_wake_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settingslib.widget.IllustrationPreference android:selectable="false" settings:IllustrationMessage="@string/ambient_display_pickup_summary" settings:lottie_rawRes="@drawable/display_lift_to_wake" settings:searchable="false" />
+</PreferenceScreen>

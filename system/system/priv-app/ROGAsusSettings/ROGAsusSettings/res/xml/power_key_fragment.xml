@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_power_key_selection_title" android:key="power_key_fragment"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settingslib.widget.IllustrationPreference android:selectable="false" android:key="power_key_header" settings:IllustrationMessage="@string/asus_power_key_selection_text" settings:lottie_rawRes="@drawable/ic_power_fullscreen_01_ww" settings:searchable="false" />
+    <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/asus_power_key_selection_classic" android:key="power_key_selection_classic" />
+    <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/asus_power_key_selection_full_screen_1" android:key="power_key_selection_full_screen_1" />
+    <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/asus_power_key_selection_full_screen_2" android:key="power_key_selection_full_screen_2" />
+    <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/asus_power_key_selection_full_screen_3" android:key="power_key_selection_full_screen_3" />
+</PreferenceScreen>

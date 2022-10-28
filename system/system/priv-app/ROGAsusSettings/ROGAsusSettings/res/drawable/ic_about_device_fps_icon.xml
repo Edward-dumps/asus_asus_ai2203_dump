@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="30.0dip" android:width="30.0dip" android:viewportWidth="30.0" android:viewportHeight="30.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <path android:fillColor="@drawable/$ic_about_device_fps_icon__0" android:pathData="M13.302,14.868h2.569v-1.87L13.3,12.998z" android:fillType="evenOdd" />
+    <path android:fillColor="#fff76d36" android:pathData="M4.765,11.862h6.281l-0.888,1.137L6.592,12.999v1.135h4.23l-0.905,1.137L6.592,15.271v2.868L4.765,18.139L4.765,11.862zM11.451,11.862h6.286v4.143h-4.422v2.134L11.451,18.139L11.451,11.862zM18.54,15.562L18.54,12.897l0.805,-1.035h5.892l-0.888,1.137h-3.654l-0.29,0.365v1.061h4.51v2.721l-0.78,0.993h-5.041l-0.904,-1.137h4.605l0.23,-0.295L23.025,15.562L18.54,15.562zM2.88,23.833h24.24L27.12,6.168L2.88,6.168v17.665z" android:fillType="evenOdd" />
+    <group>
+        <clip-path android:pathData="M4.765,11.862h6.281l-0.888,1.137L6.592,12.999v1.135h4.23l-0.905,1.137L6.592,15.271v2.868L4.765,18.139L4.765,11.862zM11.451,11.862h6.286v4.143h-4.422v2.134L11.451,18.139L11.451,11.862zM18.54,15.562L18.54,12.897l0.805,-1.035h5.892l-0.888,1.137h-3.654l-0.29,0.365v1.061h4.51v2.721l-0.78,0.993h-5.041l-0.904,-1.137h4.605l0.23,-0.295L23.025,15.562L18.54,15.562zM2.88,23.833h24.24L27.12,6.168L2.88,6.168v17.665z" />
+        <path android:fillColor="@drawable/$ic_about_device_fps_icon__1" android:pathData="M0.001,0h30v30h-30z" android:fillType="evenOdd" />
+    </group>
+    <group>
+        <clip-path android:pathData="M0,3h30v24L0,27z" />
+        <path android:fillColor="@drawable/$ic_about_device_fps_icon__2" android:pathData="M28.756,23.914c0,0.948 -0.7,1.719 -1.562,1.719L2.806,25.633c-0.862,0 -1.563,-0.771 -1.563,-1.72L1.243,6.088c0,-0.948 0.7,-1.72 1.563,-1.72h24.388c0.861,0 1.562,0.772 1.562,1.72v17.827zM28.182,3L1.818,3C0.814,3 0,3.896 0,5v20c0,1.105 0.814,2 1.818,2h26.364C29.186,27 30,26.105 30,25L30,5c0,-1.104 -0.814,-2 -1.818,-2z" android:fillType="evenOdd" />
+    </group>
+</vector>

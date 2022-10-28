@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/unlock_set_unlock_launch_picker_title" android:key="security_settings_password_sub_screen" settings:searchable="false"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/lockscreen_settings_what_to_show_category" android:key="asus_lockscreen_display_category">
+        <com.android.settings.RestrictedListPreference android:title="@string/lock_screen_notifications_title" android:key="security_setting_lock_screen_notif" android:summary="@string/summary_placeholder" settings:keywords="@string/keywords_lock_screen_notif" />
+        <SwitchPreference android:title="@string/asus_tint_on_lock_screen_title" android:key="tint_on_lock_screen" android:summary="@string/asus_tint_on_lock_screen_summary" />
+        <com.android.settingslib.RestrictedPreference android:title="@string/owner_info_settings_title" android:key="owner_info_settings" android:summary="@string/owner_info_settings_summary" />
+        <SwitchPreference android:title="@string/lockpattern_settings_enable_visible_pattern_title" android:key="visiblepattern" />
+        <SwitchPreference android:title="@string/asus_security_settings_lockscreen_show_cover" android:key="asus_show_music_cover" settings:controller="com.android.settings.security.LockscreenShowCoverPreferenceController" />
+        <SwitchPreference android:title="@string/asus_secure_lockscreen_big_clock_title" android:key="asus_lockscreen_big_clock" android:summary="@string/asus_secure_lockscreen_big_clock_summary" settings:controller="com.android.settings.security.AsusBigClockPreferenceController" />
+        <Preference android:title="@string/asus_lockscreen_shortcut_preference_title" android:key="lockscreen_shortcut2" settings:controller="com.android.settings.security.AsusLockScreenShortcutController2">
+            <intent android:targetPackage="com.asus.lockscreenshortcut" android:action="com.asus.lockscreenshortcut.SETTING" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_lockscreen_settings_title" android:key="asus_lockscreen_screen_category">
+        <com.android.settings.display.TimeoutListPreference android:entries="@array/lock_after_timeout_entries" android:title="@string/lock_after_timeout" android:key="lock_after_timeout" android:summary="@string/summary_placeholder" android:entryValues="@array/lock_after_timeout_values" />
+        <SwitchPreference android:title="@string/lockpattern_settings_enable_power_button_instantly_locks" android:key="power_button_instantly_locks" />
+        <com.android.settingslib.RestrictedSwitchPreference android:title="@string/user_add_on_lockscreen_menu" android:key="security_lockscreen_add_users_when_locked" settings:controller="com.android.settings.users.AddUserWhenLockedPreferenceController" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/profile_section_header" android:key="security_setting_lock_screen_notif_work_header" android:order="1001" settings:searchable="false">
+        <com.android.settings.RestrictedListPreference android:title="@string/locked_work_profile_notification_title" android:key="security_setting_lock_screen_notif_work" android:summary="@string/summary_placeholder" settings:searchable="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

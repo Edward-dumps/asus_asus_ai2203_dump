@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>កំពុងស្កេន…</item>
+        <item>កំពុងភ្ជាប់…</item>
+        <item>កំពុង​ផ្ទៀងផ្ទាត់…</item>
+        <item>កំពុង​ទទួល​អាសយដ្ឋាន IP…</item>
+        <item>បានភ្ជាប់</item>
+        <item>បាន​ផ្អាក</item>
+        <item>កំពុង​ផ្ដាច់…</item>
+        <item>បាន​ផ្ដាច់</item>
+        <item>មិន​ជោគជ័យ</item>
+        <item>បាន​ទប់ស្កាត់</item>
+        <item>កំពុង​ជៀសវាង​ការតភ្ជាប់​ខ្សោយ​ជា​បណ្ដោះអាសន្ន</item>
+    </string-array>
+</resources>

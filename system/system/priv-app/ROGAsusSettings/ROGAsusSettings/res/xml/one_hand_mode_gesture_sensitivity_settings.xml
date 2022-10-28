@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_advanced_settings_onehand_gesture_sensitivity" android:key="gesture_navigation_settings_page" settings:keywords="@string/asus_advanced_settings_onehand_gesture_sensitivity"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.LabeledSeekBarPreference android:max="3" android:title="" android:selectable="true" android:key="gesture_sensitivity" settings:textEnd="@string/high_label" settings:textStart="@string/low_label" />
+</PreferenceScreen>

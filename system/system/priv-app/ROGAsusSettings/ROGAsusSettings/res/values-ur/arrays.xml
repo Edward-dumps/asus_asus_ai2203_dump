@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>اسکین ہو رہا ہے…</item>
+        <item>منسلک ہو رہا ہے…</item>
+        <item>توثیق ہو رہی ہے…</item>
+        <item>‏IP پتہ حاصل کر رہا ہے…</item>
+        <item>منسلک</item>
+        <item>معطل</item>
+        <item>غیر منسلک ہو رہا ہے…</item>
+        <item>غیر منسلک</item>
+        <item>ناکام</item>
+        <item>مسدود</item>
+        <item>عارضی طور پر خراب کنکشن سے اجتناب کر رہا ہے</item>
+    </string-array>
+</resources>

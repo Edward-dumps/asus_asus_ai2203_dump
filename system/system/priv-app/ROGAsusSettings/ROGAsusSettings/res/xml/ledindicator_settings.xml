@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/led_indicator"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference android:title="@string/asus_led_indicate_charging" android:key="asus_led_indicate_charging" />
+    <SwitchPreference android:title="@string/asus_led_notification_come" android:key="asus_led_notification_come" />
+</PreferenceScreen>

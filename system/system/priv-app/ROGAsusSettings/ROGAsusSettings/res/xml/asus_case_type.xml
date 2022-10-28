@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/asus_advanced_settings_case_type_title"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <PreferenceCategory android:title="@string/asus_advanced_settings_case_type_select" android:key="case_type_select_category">
+        <com.android.settings.widget.VideoPreferenceThreeFrame android:selectable="false" android:key="key_case_type_select" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_advanced_settings_asus_cover_category2" android:key="asus_cover_category">
+        <SwitchPreference android:title="@string/asus_advanced_settings_asus_cover_mode_title2" android:key="asus_cover_mode" android:summary="@string/asus_advanced_settings_asus_cover_mode_summary2" />
+        <Preference android:title="@string/asus_advanced_settings_asus_cover_calibrate_title" android:key="asus_cover_calibrate" android:summary="@string/asus_advanced_settings_asus_cover_calibrate_summary2" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_advanced_settings_case_unlock_latch_title" android:key="asus_unlock_latch_category">
+        <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/asus_advanced_settings_case_asus_selfie_title" android:key="key_asus_case_selfie" android:summary="@string/asus_advanced_settings_case_asus_selfie_summary" />
+        <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/asus_advanced_settings_case_type_none" android:key="key_asus_case_selfie_none" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/asus_advanced_settings_case_rhinoshield_cover_title" android:key="case_rhinoshield_category">
+        <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/asus_advanced_settings_case_rhinoshield_camera_title" android:key="key_asus_rhinoshield_camera" android:summary="@string/asus_advanced_settings_case_rhinoshield_camera_title" />
+        <com.android.settingslib.widget.RadioButtonPreference android:persistent="false" android:title="@string/asus_advanced_settings_case_type_none" android:key="key_asus_rhinoshield_camera_none" />
+    </PreferenceCategory>
+</PreferenceScreen>

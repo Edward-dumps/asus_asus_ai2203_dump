@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/wifi_ap_white_list_title" settings:keywords="@string/wifi_ap_white_list_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.EmptyViewPreference android:title="@string/wifi_tether_user_empty" android:key="empty_message" settings:searchable="false" />
+    <PreferenceCategory android:title="@string/wifi_tether_saved_device_title" android:key="saved_list" settings:allowDividerAbove="false" settings:searchable="false" />
+    <PreferenceCategory android:title="@string/network_connected" android:key="connected_list" settings:allowDividerAbove="false" settings:searchable="false" />
+    <PreferenceCategory android:title="@string/dual_wifi_settings_no_connected_ap_message" android:key="disconnected_list" settings:searchable="false" />
+</PreferenceScreen>

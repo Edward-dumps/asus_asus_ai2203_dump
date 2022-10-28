@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ActionPrimaryButtonBase" parent="@style/Widget.AsusResx.Button" />
+    <style name="ActionSecondaryButton" parent="@style/Widget.AsusResx.Button" />
+    <style name="AsusResBlackTheme" parent="@style/Theme.AsusRes.Black" />
+    <style name="AsusResCinnamonTheme" parent="@style/Theme.AsusRes.Cinnamon" />
+    <style name="AsusResClassicTheme" parent="@style/Theme.AsusRes.Classic" />
+    <style name="AsusResGreenTheme" parent="@style/Theme.AsusRes.Green" />
+    <style name="AsusResOceanTheme" parent="@style/Theme.AsusRes.Ocean" />
+    <style name="AsusResOrchidTheme" parent="@style/Theme.AsusRes.Orchid" />
+    <style name="AsusResPurpleTheme" parent="@style/Theme.AsusRes.Purple" />
+    <style name="AsusResRogTheme" parent="@style/Theme.AsusRes.Rog" />
+    <style name="AsusResSpaceTheme" parent="@style/Theme.AsusRes.Space" />
+    <style name="AsusResTheme" parent="@style/Theme.AsusRes" />
+    <style name="AsusResxBlackTheme" parent="@style/Theme.AsusResx.Black" />
+    <style name="AsusResxCinnamonTheme" parent="@style/Theme.AsusResx.Cinnamon" />
+    <style name="AsusResxClassicTheme" parent="@style/Theme.AsusResx.Classic" />
+    <style name="AsusResxGreenTheme" parent="@style/Theme.AsusResx.Green" />
+    <style name="AsusResxOceanTheme" parent="@style/Theme.AsusResx.Ocean" />
+    <style name="AsusResxOrchidTheme" parent="@style/Theme.AsusResx.Orchid" />
+    <style name="AsusResxPurpleTheme" parent="@style/Theme.AsusResx.Purple" />
+    <style name="AsusResxRogTheme" parent="@style/Theme.AsusResx.Rog" />
+    <style name="AsusResxSpaceTheme" parent="@style/Theme.AsusResx.Space" />
+    <style name="AsusResxTheme" parent="@style/Theme.AsusResx" />
+    <style name="Base.Widget.AsusResx.AppBarLayout" parent="@style/Widget.Material3.AppBarLayout">
+        <item name="android:background">@color/asusresx_window_bg_dark</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+    <style name="GlifTheme.DayNight" parent="@style/GlifTheme" />
+    <style name="GlifV2Theme.DayNight" parent="@style/GlifV2Theme" />
+    <style name="GlifV2Theme.DayNight.Transparent" parent="@style/GlifV2Theme.Transparent" />
+    <style name="GlifV3Theme.DayNight" parent="@style/GlifV3Theme" />
+    <style name="GlifV3Theme.DayNight.NoActionBar" parent="@style/GlifV3Theme.NoActionBar" />
+    <style name="GlifV3Theme.DayNight.Transparent" parent="@style/GlifV3Theme.Transparent" />
+    <style name="SetupWizardTheme.DayNight.Transparent" parent="@style/SetupWizardTheme.Transparent" />
+    <style name="Style_Asusres_TimePicker">
+        <item name="android:radioButtonStyle">@android:style/Widget.Material.CompoundButton.RadioButton</item>
+    </style>
+    <style name="SubSettings.SetupWizard" parent="@style/SudThemeGlifV3" />
+    <style name="SudDynamicColorThemeGlifV3.DayNight" parent="@style/SudDynamicColorThemeGlifV3" />
+    <style name="SudFullDynamicColorThemeGlifV3.DayNight" parent="@style/SudFullDynamicColorThemeGlifV3" />
+    <style name="SudThemeGlif.DayNight" parent="@style/SudThemeGlif" />
+    <style name="SudThemeGlifV2.DayNight" parent="@style/SudThemeGlifV2" />
+    <style name="SudThemeGlifV3.DayNight" parent="@style/SudThemeGlifV3" />
+    <style name="SudThemeMaterial.DayNight" parent="@style/SudThemeMaterial" />
+    <style name="SuwAlertDialogThemeCompat.DayNight" parent="@style/SuwAlertDialogThemeCompat" />
+    <style name="Theme.AlertDialog.Base" parent="@style/Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:colorBackground">@color/surface_dark</item>
+        <item name="android:colorError">@color/settings_dialog_colorError</item>
+        <item name="colorAccent">@color/accent_device_default_dark</item>
+    </style>
+    <style name="Theme.AppCompat.DayNight" parent="@style/Theme.AppCompat" />
+    <style name="Theme.AppCompat.DayNight.DarkActionBar" parent="@style/Theme.AppCompat" />
+    <style name="Theme.AppCompat.DayNight.Dialog" parent="@style/Theme.AppCompat.Dialog" />
+    <style name="Theme.AppCompat.DayNight.Dialog.Alert" parent="@style/Theme.AppCompat.Dialog.Alert" />
+    <style name="Theme.AppCompat.DayNight.Dialog.MinWidth" parent="@style/Theme.AppCompat.Dialog.MinWidth" />
+    <style name="Theme.AppCompat.DayNight.DialogWhenLarge" parent="@style/Theme.AppCompat.DialogWhenLarge" />
+    <style name="Theme.AppCompat.DayNight.NoActionBar" parent="@style/Theme.AppCompat.NoActionBar" />
+    <style name="Theme.Asus.AlertDialog.Base" parent="@style/Theme.AsusResx.Rog.Dialog.Alert" />
+    <style name="Theme.Asus.AlertDialog.Native.Base" parent="@style/Theme.AsusRes.Rog.Dialog.Alert" />
+    <style name="Theme.Asus.Panel" parent="@style/Theme.AsusResx.Rog.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:listDivider">@drawable/list_divider_material</item>
+        <item name="android:dividerHorizontal">@drawable/list_divider_material</item>
+        <item name="android:fontFamily">@string/config_headlineFontFamilyMedium</item>
+    </style>
+    <style name="Theme.Asus.SettingsBase" parent="@style/Theme.AsusResx.Rog" />
+    <style name="Theme.CollapsingToolbar.Settings" parent="@style/Theme.MaterialComponents.DayNight">
+        <item name="colorAccent">@color/accent_device_default_dark</item>
+        <item name="colorPrimary">@color/primary_dark_device_default_settings</item>
+        <item name="elevationOverlayColor">?colorPrimary</item>
+        <item name="elevationOverlayEnabled">true</item>
+    </style>
+    <style name="Theme.DeviceDefault.Dialog.Alert.DayNight" parent="@android:style/Theme.DeviceDefault.Dialog.Alert" />
+    <style name="Theme.DeviceDefault.Settings.DialogBase" parent="@style/Theme.Material.BaseDialog">
+        <item name="android:alertDialogTheme">@android:style/Theme.DeviceDefault.Dialog.Alert</item>
+        <item name="android:colorPrimary">@color/primary_dark_device_default_settings</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark_device_default_settings</item>
+        <item name="android:colorAccent">@color/accent_device_default_dark</item>
+        <item name="android:colorSecondary">@color/secondary_device_default_settings</item>
+        <item name="android:colorError">@color/error_color_device_default_dark</item>
+    </style>
+    <style name="Theme.Material3.DayNight" parent="@style/Theme.Material3.Dark" />
+    <style name="Theme.Material3.DayNight.BottomSheetDialog" parent="@style/Theme.Material3.Dark.BottomSheetDialog" />
+    <style name="Theme.Material3.DayNight.Dialog" parent="@style/Theme.Material3.Dark.Dialog" />
+    <style name="Theme.Material3.DayNight.Dialog.Alert" parent="@style/Theme.Material3.Dark.Dialog.Alert" />
+    <style name="Theme.Material3.DayNight.Dialog.MinWidth" parent="@style/Theme.Material3.Dark.Dialog.MinWidth" />
+    <style name="Theme.Material3.DayNight.DialogWhenLarge" parent="@style/Theme.Material3.Dark.DialogWhenLarge" />
+    <style name="Theme.Material3.DayNight.NoActionBar" parent="@style/Theme.Material3.Dark.NoActionBar" />
+    <style name="Theme.Material3.DynamicColors.DayNight" parent="@style/Theme.Material3.DynamicColors.Dark" />
+    <style name="Theme.MaterialComponents.DayNight" parent="@style/Theme.MaterialComponents" />
+    <style name="Theme.MaterialComponents.DayNight.BottomSheetDialog" parent="@style/Theme.MaterialComponents.BottomSheetDialog" />
+    <style name="Theme.MaterialComponents.DayNight.Bridge" parent="@style/Theme.MaterialComponents.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.DarkActionBar" parent="@style/Theme.MaterialComponents" />
+    <style name="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge" parent="@style/Theme.MaterialComponents.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog" parent="@style/Theme.MaterialComponents.Dialog" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.Alert" parent="@style/Theme.MaterialComponents.Dialog.Alert" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.Alert.Bridge" parent="@style/Theme.MaterialComponents.Dialog.Alert.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.Bridge" parent="@style/Theme.MaterialComponents.Dialog.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.FixedSize" parent="@style/Theme.MaterialComponents.Dialog.FixedSize" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge" parent="@style/Theme.MaterialComponents.Dialog.FixedSize.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.MinWidth" parent="@style/Theme.MaterialComponents.Dialog.MinWidth" />
+    <style name="Theme.MaterialComponents.DayNight.Dialog.MinWidth.Bridge" parent="@style/Theme.MaterialComponents.Dialog.MinWidth.Bridge" />
+    <style name="Theme.MaterialComponents.DayNight.DialogWhenLarge" parent="@style/Theme.MaterialComponents.DialogWhenLarge" />
+    <style name="Theme.MaterialComponents.DayNight.NoActionBar" parent="@style/Theme.MaterialComponents.NoActionBar" />
+    <style name="Theme.MaterialComponents.DayNight.NoActionBar.Bridge" parent="@style/Theme.MaterialComponents.NoActionBar.Bridge" />
+    <style name="Theme.Settings.Home" parent="@style/Theme.Settings.HomeBase">
+        <item name="android:colorBackground">?android:colorPrimaryDark</item>
+        <item name="android:statusBarColor">?colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="colorPrimary">@color/primary_device_default_settings</item>
+        <item name="colorPrimaryDark">@color/primary_dark_device_default_settings</item>
+    </style>
+    <style name="Theme.TabTheme" parent="@style/Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/edge_effect_device_default_dark</item>
+    </style>
+    <style name="ThemeOverlay.AppCompat.DayNight" parent="@style/ThemeOverlay.AppCompat.Dark" />
+    <style name="ThemeOverlay.Asus.AlertDialog" parent="@style/ThemeOverlay.AsusResx.Dialog.Alert" />
+    <style name="ThemeOverlay.Asus.SwitchBar.Settings.Base" parent="@style/ThemeOverlay.AsusResx.ActionBar" />
+    <style name="ThemeOverlay.Material3.DynamicColors.DayNight" parent="@style/ThemeOverlay.Material3.DynamicColors.Dark" />
+    <style name="ThemeOverlay.SwitchBar.Settings" parent="@style/ThemeOverlay.SwitchBar.Settings.Base">
+        <item name="android:textColorPrimaryInverse">@android:color/black</item>
+    </style>
+    <style name="Widget.ActionBar.Base" parent="@android:style/Widget.DeviceDefault.ActionBar.Solid">
+        <item name="android:background">?android:colorPrimaryDark</item>
+    </style>
+    <style name="Widget.Asus.Button.Colored" parent="@style/Widget.AsusResx.Button" />
+    <style name="Widget.Asus.Button.Colored.Outlined" parent="@style/Widget.AsusRes.Button.OutlinedButton" />
+    <style name="Widget.Asus.SwitchBar.Switch" parent="@style/Widget.AsusResx.CompoundButton.Switch" />
+    <style name="Widget.MaterialComponents.ActionBar.PrimarySurface" parent="@style/Widget.MaterialComponents.ActionBar.Surface" />
+    <style name="Widget.MaterialComponents.AppBarLayout.PrimarySurface" parent="@style/Widget.MaterialComponents.AppBarLayout.Surface" />
+    <style name="Widget.MaterialComponents.BottomAppBar.PrimarySurface" parent="@style/Widget.MaterialComponents.BottomAppBar" />
+    <style name="Widget.MaterialComponents.BottomNavigationView.PrimarySurface" parent="@style/Widget.MaterialComponents.BottomNavigationView" />
+    <style name="Widget.MaterialComponents.NavigationRailView.PrimarySurface" parent="@style/Widget.MaterialComponents.NavigationRailView" />
+    <style name="Widget.MaterialComponents.TabLayout.PrimarySurface" parent="@style/Widget.MaterialComponents.TabLayout" />
+    <style name="Widget.MaterialComponents.Toolbar.PrimarySurface" parent="@style/Widget.MaterialComponents.Toolbar.Surface" />
+    <style name="Widget_Asus_ActionBar_SubSettings" parent="@style/Widget.AsusResx.ActionBar.Solid">
+        <item name="android:contentInsetStart">@dimen/actionbar_subsettings_contentInsetStart</item>
+    </style>
+    <style name="Theme.Material.BaseDialog" parent="@style/Theme.Material">
+        <item name="android:colorBackground">?colorBackgroundFloating</item>
+        <item name="android:windowBackground">@drawable/dialog_background_material</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@style/DialogWindowTitle.Material</item>
+        <item name="android:windowTitleBackgroundStyle">@style/DialogWindowTitleBackground.Material</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Material.Dialog</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside</item>
+        <item name="android:listPreferredItemPaddingLeft">?dialogPreferredPadding</item>
+        <item name="android:listPreferredItemPaddingRight">?dialogPreferredPadding</item>
+        <item name="android:listPreferredItemPaddingStart">?dialogPreferredPadding</item>
+        <item name="android:listPreferredItemPaddingEnd">?dialogPreferredPadding</item>
+        <item name="android:windowElevation">@dimen/floating_window_z</item>
+        <item name="preferencePanelStyle">@style/PreferencePanel.Dialog</item>
+    </style>
+</resources>

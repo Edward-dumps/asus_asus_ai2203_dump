@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TwoLineListItem android:background="?android:selectableItemBackground" android:paddingTop="@dimen/asusresx_list_item_vertical_padding" android:paddingBottom="@dimen/asusresx_list_item_vertical_padding" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/asusresx_list_item_min_height" android:mode="twoLine" android:paddingStart="?listPreferredItemPaddingStart" android:paddingEnd="?listPreferredItemPaddingEnd"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?textAppearanceListItem" android:id="@android:id/text1" android:paddingBottom="@dimen/asusresx_list_title_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <TextView android:textAppearance="?textAppearanceListItemSecondary" android:id="@android:id/text2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@android:id/text1" android:layout_alignStart="@android:id/text1" />
+</TwoLineListItem>

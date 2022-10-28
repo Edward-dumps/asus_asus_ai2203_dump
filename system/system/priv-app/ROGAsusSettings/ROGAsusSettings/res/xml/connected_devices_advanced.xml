@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/connected_device_connections_title" android:key="connected_devices_advanced_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.android.settings.widget.PrimarySwitchPreference android:icon="@drawable/ic_settings_bluetooth" android:title="@string/bluetooth_settings_title" android:key="bluetooth_settings" android:order="-9" android:fragment="com.android.settings.bluetooth.BluetoothPairingDetail" settings:searchable="false" />
+    <SwitchPreference android:icon="@drawable/ic_settings_bluetooth" android:title="@string/codec_switch_title" android:key="codec_switch" android:summary="@string/codec_switch_summary" android:order="-7" settings:controller="com.android.settings.bluetooth.BluetoothCodecSwitchController" />
+    <com.android.settings.widget.PrimarySwitchPreference android:icon="@drawable/ic_nfc" android:title="@string/nfc_quick_toggle_title" android:key="toggle_nfc" android:summary="@string/nfc_quick_toggle_summary" android:order="-6" android:fragment="com.android.settings.nfc.NfcSettingsPage" settings:controller="com.android.settings.nfc.NfcPreferenceController" />
+    <Preference android:icon="@drawable/ic_cast_24dp" android:title="@string/wifi_display_settings_title" android:key="wifi_display_settings" android:order="-5" android:fragment="com.android.settings.wfd.WifiDisplaySettings" settings:controller="com.android.settings.wfd.WifiDisplayPreferenceController" settings:keywords="@string/keywords_display_cast_screen" />
+    <com.android.settingslib.RestrictedPreference android:icon="@drawable/ic_android" android:title="@string/android_beam_settings_title" android:key="android_beam_settings" android:order="-4" android:fragment="com.android.settings.nfc.AndroidBeam" settings:controller="com.android.settings.nfc.AndroidBeamPreferenceController" />
+    <com.android.settingslib.RestrictedPreference android:icon="@drawable/ic_settings_print" android:title="@string/print_settings" android:key="connected_device_printing" android:summary="@string/summary_placeholder" android:order="-3" android:fragment="com.android.settings.print.PrintSettingsFragment" />
+    <Preference android:icon="@drawable/ic_usb" android:title="@string/usb_type_settings_title" android:key="usb_type_setting" android:order="-1" android:fragment="com.android.settings.usb.USBTypeSettings" />
+    <Preference android:icon="@drawable/ic_folder_vd_theme_24" android:title="@string/bluetooth_show_files_received_via_bluetooth" android:key="bt_received_files" />
+    <PreferenceCategory android:key="dashboard_tile_placeholder" android:order="-8" />
+</PreferenceScreen>

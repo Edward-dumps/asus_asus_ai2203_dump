@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/imei_information_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:title="@string/status_min_number" android:selectable="false" android:key="min_number_value" android:summary="@string/device_info_not_available" />
+    <Preference android:persistent="false" android:title="@string/status_prl_version" android:selectable="false" android:key="prl_version_value" android:summary="@string/device_info_not_available" />
+    <Preference android:persistent="false" android:title="@string/status_meid_number" android:selectable="false" android:key="meid_number_value" android:summary="@string/device_info_not_available" />
+    <Preference android:persistent="false" android:title="@string/status_imei" android:selectable="false" android:key="imei_value" android:summary="@string/device_info_not_available" />
+    <Preference android:persistent="false" android:title="@string/status_imei_sv" android:selectable="false" android:key="imei_sv_value" android:summary="@string/device_info_not_available" />
+</PreferenceScreen>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center|left" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:paddingStart="?android:listPreferredItemPaddingStart" android:paddingEnd="?android:listPreferredItemPaddingEnd">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="#ff000000" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:layout_below="@id/name" android:layout_alignLeft="@id/name" />
+    </LinearLayout>
+    <TextView android:textSize="15.0sp" android:textColor="#ff2894ff" android:gravity="right" android:id="@id/unblock" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:layout_marginBottom="13.0dip" android:text="@string/wifi_ap_white_list_unblock" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:paddingEnd="?android:listPreferredItemPaddingEnd" />
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/asus_fingerprint_fod_animation_item_bg_corner_radius" />
+            <stroke android:width="@dimen/asus_fingerprint_fod_animation_item_bg_stroke_width_select" android:color="?android:colorAccent" />
+            <solid android:color="@android:color/black" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/asus_fingerprint_fod_animation_item_bg_corner_radius" />
+            <stroke android:width="@dimen/asus_fingerprint_fod_animation_item_bg_stroke_width" android:color="@color/asus_fod_animation_background_mask_color" />
+            <solid android:color="@android:color/black" />
+        </shape>
+    </item>
+</selector>

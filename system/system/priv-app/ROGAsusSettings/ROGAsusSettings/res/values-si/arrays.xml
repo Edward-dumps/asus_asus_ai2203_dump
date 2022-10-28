@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifitrackerlib_wifi_status">
+        <item></item>
+        <item>ස්කෑන් කරමින්…</item>
+        <item>සබැඳෙමින්…</item>
+        <item>සත්‍යාපනය කරමින්…</item>
+        <item>IP ලිපිනය ලබා ගනිමින්…</item>
+        <item>සම්බන්ධිතයි</item>
+        <item>තහනම් කරන ලදි</item>
+        <item>විසන්ධි වෙමින්…</item>
+        <item>විසන්ධි විය</item>
+        <item>අසාර්ථකයි</item>
+        <item>අවහිරයි</item>
+        <item>දුර්වල සම්බන්ධතාව තාවකාලිකව මග හරිමින්</item>
+    </string-array>
+</resources>
