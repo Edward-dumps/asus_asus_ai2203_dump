@@ -1,0 +1,7 @@
+/data/media/2357/(.*)?          u:object_r:media_rw_data_file:s0
+/data/system/mt_fonts(/.*)?                u:object_r:flipfont_data_file:s0
+/data/system/mt_fonts/[0-9]                u:object_r:flipfont_data_file:s0
+/data/system/mt_fonts/[0-9]+(/.*)?         u:object_r:flipfont_data_file:s0
+/data/system/mt_fonts/[0-9]+/[^/]+(/.*)?   u:object_r:flipfont_data_file:s0
+/data/media/0/TwinApps/(^.)?	u:object_r:media_rw_data_file:s0
+/data/media/0/TwinApps		u:object_r:twinapps_file:s0

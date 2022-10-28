@@ -1,0 +1,15 @@
+#line 1 "vendor/ims/data/twinapps/sepolicy/property_contexts"
+# twinapp
+asus.twinapp.       u:object_r:system_prop:s0
+#line 1 "vendor/ims/sepolicy/property_contexts"
+#ASUS CTA property
+persist.vendor.sys.cta.security   u:object_r:system_prop:s0
+persist.vendor.sys.cta.os   u:object_r:system_prop:s0
+ro.vendor.build.cta   u:object_r:system_prop:s0
+persist.vendor.sys.cta.mode u:object_r:system_prop:s0
+
+#JPush id property
+persist.vendor.asus.as.id   u:object_r:system_prop:s0
+
+#OOBE
+persist.vendor.sys.setupwizard.active   u:object_r:system_prop:s0
